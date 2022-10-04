@@ -1,12 +1,20 @@
 local packer = require 'packer'
 
 packer.startup(function(use)
+	local function use_local(plugin, opts)
+		opts = opts or {}
+		local path = '~/code/' .. plugin
+		opts[1] = path
+
+		use(opts)
+	end
+
 	-- packer manage itself
 	use { 'wbthomason/packer.nvim' }
 
 	-- color schemes
-	use { 'laughingman-hass/tokyonight.nvim', config = 'require "config.color"' }
-	-- use { '~/code/tokyonight.nvim', config = 'require "config.color"' }
+	-- use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
+	use_local('tokyonight.nvim', { config = 'require "config.color"' })
 	use { 'rebelot/kanagawa.nvim' }
 
 	-- language server protocol
@@ -111,10 +119,7 @@ packer.startup(function(use)
 	use { 'nvim-lualine/lualine.nvim', config = 'require "config.lualine"' }
 
 	-- general
-	use {
-		'git@github.com:laughingman-hass/traverse.nvim.git',
-		config = 'require "config.traverse"',
-	}
+	use_local('traverse.nvim', { config = 'require "config.traverse"' })
 
 	use { 'tpope/vim-repeat' }
 	use { 'tpope/vim-surround' }
