@@ -24,46 +24,8 @@ packer.startup(function(use)
   --   }
   -- }
 
-  -- TODO: evaluate
   use {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
   }
-
-  -- TODO: evaluate
-  use {
-    'folke/trouble.nvim',
-    config = "require 'packer.config.trouble'",
-  }
-
-  -- TODO: evaluate
-  use {
-    'hoob3rt/lualine.nvim',
-    config = "require 'packer.config.lualine'",
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
-
-  --   'famiu/feline.nvim',
-  --   config = "require 'packer.config.feline'",
-  --   requires = {
-  --     {'kyazdani42/nvim-web-devicons'},
-  --     -- {
-  --     --   'lewis6991/gitsigns.nvim',
-  --     --   config = "require('gitsigns').setup()",
-  --     --   requires = {
-  --     --     'nvim-lua/plenary.nvim',
-  --     --   }
-  --     -- },
-  --   }
-  -- }
-
 
   -- plugins
   use {'sheerun/vim-polyglot'}
@@ -77,6 +39,26 @@ packer.startup(function(use)
   }
   use {'AndrewRadev/splitjoin.vim'}
   use {'jiangmiao/auto-pairs'}
+  use {
+    'hoob3rt/lualine.nvim',
+    config = "require 'packer.config.lualine'",
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+  use {
+    'folke/trouble.nvim',
+    config = "require 'packer.config.trouble'",
+  }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
   -- lazy plugins
   use {
