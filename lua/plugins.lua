@@ -5,7 +5,7 @@ packer.startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	-- color schemes
-	use { 'catppuccin/nvim', as =  'catppuccin', config = 'require "config.color"' }
+	use { 'catppuccin/nvim', as = 'catppuccin', config = 'require "config.color"' }
 
 	-- language server
 	use {
@@ -43,25 +43,28 @@ packer.startup(function(use)
 		},
 		config = 'require "config.telescope"',
 		setup = 'require "setup.telescope"',
-		cmd  = { 'Telescope' },
+		cmd = { 'Telescope' },
 	}
 
 	-- syntax
 	use {
-        'sheerun/vim-polyglot',
-        setup = function()
-            vim.g.polyglot_disabled = { 'autoindent', 'ftdetect' }
-        end,
-    }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        config = 'require "config.treesitter"',
-        requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
-    }
+		'sheerun/vim-polyglot',
+		setup = function()
+			vim.g.polyglot_disabled = { 'autoindent', 'ftdetect' }
+		end,
+	}
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		config = 'require "config.treesitter"',
+		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+	}
 
 	-- auto closer
 	use {
 		'windwp/nvim-autopairs',
-		config = 'require "config.autopairs"'
+		config = 'require "config.autopairs"',
 	}
+
+	-- status line
+	use { 'nvim-lualine/lualine.nvim', config = 'require "config.lualine"' }
 end)
