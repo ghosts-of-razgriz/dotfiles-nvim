@@ -15,5 +15,19 @@ packer.startup(function(use)
   use {'arcticicestudio/nord-vim', disable = true}
   use {'cocopon/iceberg.vim', disable = true}
   use {'joshdick/onedark.vim', disable = true}
+
+  -- plugins
+  use {'sheerun/vim-polyglot'}
+  use {'kana/vim-operator-user'}
+  use {'tpope/vim-repeat'}
+  use {'tpope/vim-commentary'}
+  use {'tpope/vim-surround'}
+  use {
+    'junegunn/vim-peekaboo',
+    config = function()
+      vim.g.peekaboo_window = 'vertical botright 80new'
+    end
+  }
+
 end)
 
