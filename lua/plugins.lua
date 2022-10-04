@@ -80,7 +80,19 @@ packer.startup(function(use)
       vim.api.nvim_set_keymap('n', '<localleader>e', ":Defx -buffer-name=defx -show-ignored-files `expand('%:p:h')`<cr>", settings)
     end,
     requires = {'kristijanhusak/defx-git', {
-        'kristijanhusak/defx-icons'
+        'kristijanhusak/defx-icons',
+        config = function()
+          vim.g.defx_icons_enable_syntax_highlight = 1
+          vim.g.defx_icons_column_length = 2
+          vim.g.defx_icons_directory_icon = ''
+          vim.g.defx_icons_mark_icon = '✓'
+          vim.g.defx_icons_parent_icon = ''
+          vim.g.defx_icons_default_icon = ''
+          vim.g.defx_icons_directory_symlink_icon = ''
+          vim.g.defx_icons_root_opened_tree_icon = ''
+          vim.g.defx_icons_nested_opened_tree_icon = ''
+          vim.g.defx_icons_nested_closed_tree_icon = ''
+        end,
     }}
   }
 end)
