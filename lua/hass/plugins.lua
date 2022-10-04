@@ -29,11 +29,17 @@ packer.startup(function(use)
 
 	use { 'folke/trouble.nvim', config = "require 'hass.config.trouble'" }
 
-	-- autocomplete
 	use {
-		'hrsh7th/nvim-compe',
-		config = "require 'hass.config.compe'",
-		setup = "require 'hass.setup.compe'",
+		'hrsh7th/nvim-cmp',
+		config = "require 'hass.config.cmp'",
+		requires = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-nvim-lsp',
+			'onsails/lspkind-nvim',
+			'L3MON4D3/LuaSnip',
+		},
 	}
 
 	-- syntax detection
@@ -102,6 +108,5 @@ packer.startup(function(use)
 		'abecodes/tabout.nvim',
 		config = "require 'hass.config.tabout'",
 		wants = 'nvim-treesitter',
-		after = 'nvim-compe',
 	}
 end)
