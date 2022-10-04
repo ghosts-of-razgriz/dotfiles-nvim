@@ -7,7 +7,7 @@ trouble.setup {
 	height = 8,
 	-- action_keys
 	auto_open = true,
-	auto_close = true,
+	auto_close = false,
 	use_daignostic_signs = true,
 }
 
