@@ -52,18 +52,18 @@ neovim_lsp.efm.setup{
   },
 }
 
-local function eslintd_status()
-  if vim.cmd("!eslin_d status | grep -v 'Not running'") then
-    return false
-  else
-    return true
-  end
-end
+-- local function eslintd_status()
+--   if vim.cmd("!eslin_d status | grep -v 'Not running'") then
+--     return false
+--   else
+--     return true
+--   end
+-- end
 
-function eslintd_stop()
-  if eslintd_status() then
-    vim.cmd("!eslint_d stop")
-  end
-end
+-- function eslintd_stop()
+--   if eslintd_status() then
+--     vim.cmd("!eslint_d stop")
+--   end
+-- end
 
-vim.cmd("autocmd VimLeavePre * lua eslintd_stop()")
+-- vim.cmd("autocmd VimLeavePre * lua eslintd_stop()")
