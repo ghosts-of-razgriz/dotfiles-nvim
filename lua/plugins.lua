@@ -133,7 +133,8 @@ packer.startup(function(use)
       'javascript.jsx',
       'javascript',
       'jsx',
-      'eruby'
+      'eruby',
+      'gohtml',
     },
   }
 
