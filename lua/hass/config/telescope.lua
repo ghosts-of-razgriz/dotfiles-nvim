@@ -1,4 +1,7 @@
-require('telescope').setup {
+local telescope = require 'telescope'
+local trouble_provider = require 'trouble.providers.telescope'
+
+telescope.setup {
 	defaults = {
 		prompt_prefix = '🔍 ',
 		selection_caret = ' ',
@@ -17,6 +20,11 @@ require('telescope').setup {
 		selection_strategy = 'reset',
 		sorting_strategy = 'descending',
 		scroll_strategy = 'cycle',
+
+		mappings = {
+			i = { ['<c-t>'] = trouble_provider.open_with_trouble },
+			n = { ['<c-t>'] = trouble_provider.open_with_trouble },
+		},
 	},
 	pickers = { find_files = { hidden = false } },
 }
