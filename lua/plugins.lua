@@ -23,11 +23,12 @@ packer.startup(function(use)
   }
 
   -- color schemes
-  use {'dracula/vim', as = 'dracula', config = "vim.cmd('colorscheme dracula')"}
-  -- use {'arcticicestudio/nord-vim', config = "vim.cmd('colorscheme nord')"}
-  -- use {'cocopon/iceberg.vim', config = "vim.cmd('colorscheme iceberg')"}
-  -- use {'joshdick/onedark.vim', config = "vim.cmd('colorscheme onedark')"}
-  -- use {'rakr/vim-one', config = "vim.cmd('colorscheme one')"}
+  use {'dracula/vim', as = 'dracula'}
+  use {'gosukiwi/vim-atom-dark'} -- , config = "vim.cmd('colorscheme atom-dark')" }
+  use {'drewtempelmeyer/palenight.vim', config = "vim.cmd('colorscheme palenight')"}
+  -- use {'arcticicestudio/nord-vim'}
+  -- use {'nanotech/jellybeans.vim'}
+  -- use {'joshdick/onedark.vim'}
 
   -- plugins
   use {'sheerun/vim-polyglot'}
@@ -96,6 +97,7 @@ packer.startup(function(use)
       'Gstatus',
       'Gwrite',
     },
+    requires = {'junegunn/gv.vim'},
     setup = "require 'packer.setup.fugitive'",
   }
 
