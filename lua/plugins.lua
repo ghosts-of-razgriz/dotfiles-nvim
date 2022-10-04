@@ -16,7 +16,10 @@ packer.startup(function(use)
   use {'tpope/vim-repeat'}
   use {'tpope/vim-commentary'}
   use {'tpope/vim-surround'}
-  use {'junegunn/vim-peekaboo', config = "vim.g.peekaboo_window = 'vertical botright 80new'"}
+  use {
+    'junegunn/vim-peekaboo',
+    config = "vim.g.peekaboo_window = 'vertical botright 80new'",
+  }
   use {'AndrewRadev/splitjoin.vim'}
 
   -- lazy plugins
@@ -55,8 +58,16 @@ packer.startup(function(use)
   use {
     'tpope/vim-fugitive',
     cmd = {
-      'Gblame', 'Gcommit', 'Gdiff', 'Gedit', 'Gfetch', 'Git', 'Gpull', 'Gpush',
-      'Gstatus', 'Gwrite'
+      'Gblame',
+      'Gcommit',
+      'Gdiff',
+      'Gedit',
+      'Gfetch',
+      'Git',
+      'Gpull',
+      'Gpush',
+      'Gstatus',
+      'Gwrite',
     },
     setup = "require 'packer.setup.fugitive'",
   }
@@ -109,15 +120,40 @@ packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     ft = {
-      'bash', 'css', 'go', 'javascript', 'lua', 'python', 'ruby', 'toml', 'yaml'
+      'bash',
+      'css',
+      'go',
+      'javascript',
+      'lua',
+      'python',
+      'ruby',
+      'toml',
+      'yaml',
     },
     config = function()
       require 'nvim-treesitter.configs'.setup{
         ensure_installed = {
-          'bash', 'css', 'go', 'javascript', 'lua', 'python', 'ruby', 'toml', 'yaml'
+          'bash',
+          'css',
+          'go',
+          'javascript',
+          'lua',
+          'python',
+          'ruby',
+          'toml',
+          'yaml',
         },
         highlight = { enable = true },
-        indent = { enable = true }
+        indent = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "gji",
+            node_incremental = "gjj",
+            scope_incremental = "gjg",
+            node_decremental = "gjk",
+          },
+        },
       }
     end
   }
