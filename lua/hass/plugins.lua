@@ -51,6 +51,7 @@ packer.startup(function(use)
 		requires = { { 'kristijanhusak/defx-icons', config = "require 'hass.config.defx-icons'" } },
 	}
 
+	-- git integration
 	use {
 		'junegunn/gv.vim',
 		cmd = { 'GV' },
@@ -62,6 +63,12 @@ packer.startup(function(use)
 				cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
 			},
 		},
+	}
+
+	-- auto closer
+	use {
+		'windwp/nvim-autopairs',
+		config = "require 'hass.config.autopairs'",
 	}
 
 	use {
