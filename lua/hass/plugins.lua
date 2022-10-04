@@ -5,7 +5,8 @@ packer.startup(function(use)
 	use { 'wbthomason/packer.nvim', opt = true }
 
 	-- color schemes
-	use { 'folke/tokyonight.nvim', config = "require 'hass.config.tokyonight'" }
+	use { 'folke/tokyonight.nvim', config = "require 'hass.config.color'" }
+	use { 'EdenEast/nightfox.nvim' }
 
 	-- fuzzy finder
 	use {
