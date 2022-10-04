@@ -137,4 +137,9 @@ packer.startup(function(use)
 		requires = { 'anuvyklack/nvim-keymap-amend' },
 		config = 'require "config.fold-preview"',
 	}
+
+	use {
+		'Einenlum/yaml-revealer',
+		ft = { 'yaml' },
+	}
 end)
