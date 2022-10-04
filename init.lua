@@ -1,6 +1,6 @@
 -- map leader keys
-vim.g.mapleader = '<space>'
-vim.g.maplocalleader = '<c-space>'
+vim.cmd [[let g:mapleader = "\<space>"]]
+vim.cmd [[let g:maplocalleader = "\<c-space>"]]
 
 -- initialize packer
 require 'hass.init-packer'
