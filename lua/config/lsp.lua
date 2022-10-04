@@ -20,7 +20,7 @@ require 'lsp.null_ls'
 local lspconfig = require 'lspconfig'
 
 lspconfig.emmet_ls.setup {
-	filetypes = { 'html', 'css', 'typescriptreact' },
+	filetypes = { 'html', 'css', 'typescriptreact', 'gohtmltmpl' },
 }
 -- lspconfig.tailwindcss.setup {}
 
