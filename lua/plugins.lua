@@ -21,10 +21,15 @@ packer.startup(function(use)
 
   -- plugins
   use {'sheerun/vim-polyglot'}
+
   use {'kana/vim-operator-user'}
+
   use {'tpope/vim-repeat'}
+
   use {'tpope/vim-commentary'}
+
   use {'tpope/vim-surround'}
+
   use {
     'junegunn/vim-peekaboo',
     config = function()
@@ -99,7 +104,9 @@ packer.startup(function(use)
   }
 
   use {'jiangmiao/auto-pairs', event = 'InsertEnter *'}
+
   use {'godlygeek/tabular', cmd = {'Tab', 'Tabularize'}}
+
   use {
     'tpope/vim-fugitive',
     cmd = {
@@ -122,7 +129,32 @@ packer.startup(function(use)
       vim.api.nvim_set_keymap('n', '<localleader>gc',  ':Gcommit --amend<cr>', settings)
       vim.api.nvim_set_keymap('n', '<localleader>gw',  ':Git add --patch %<cr>', settings)
       vim.api.nvim_set_keymap('n', '<leader>ge',       ':Gedit<space>', settings)
+    end,
+    -- requires = {{'junegunn/gv.vim', cmd = {'GV', 'GV!', 'GV?'}}}
+  }
+
+  use {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious'
+    },
+    setup = function()
+      vim.g.tmux_navigator_no_mappings = 1
+
+      local settings = {silent = true, noremap = true}
+      vim.api.nvim_set_keymap('n', '<c-h>', ':TmuxNavigateLeft<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<c-j>', ':TmuxNavigateDown<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<c-k>', ':TmuxNavigateUp<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<c-l>', ':TmuxNavigateRight<cr>', settings)
     end
   }
-end)
 
+  use {
+    'christoomey/vim-system-copy',
+    keys = {'cp', 'cP'}
+  }
+end)
