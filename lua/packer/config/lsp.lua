@@ -1,21 +1,6 @@
 local neovim_lsp = require 'lspconfig'
-local rbprettier = {
-  command = 'rbprettier',
-  args = { '--write', '%filepath' },
-  rootPatterns = { '.git' },
-}
 
-
-neovim_lsp.solargraph.setup{
-  settings = {
-    formatFiletypes = {
-      ruby = 'rbprettier',
-    },
-    formatters = {
-      rbprettier = rbprettier,
-    },
-  }
-}
+neovim_lsp.solargraph.setup{ }
 neovim_lsp.gopls.setup{}
 neovim_lsp.vimls.setup{}
 neovim_lsp.ccls.setup{}
