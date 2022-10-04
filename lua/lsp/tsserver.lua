@@ -21,6 +21,12 @@ if vim.fn.executable 'typescript-language-server' == 0 then
 end
 
 lspconfig.tsserver.setup {
+	cmd = {
+		'typescript-language-server',
+		'--stdio',
+		'--tsserver-path',
+		'node_modules/.bin/tsserver',
+	},
 	capabilities = lsputils.make_capabilities(),
 	on_attach = function(client, bufnr)
 		lsputils.disable_formatting(client)

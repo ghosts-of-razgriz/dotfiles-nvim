@@ -56,10 +56,10 @@ end
 
 null_ls.setup {
 	sources = {
-		b.code_actions.eslint_d.with {
+		b.code_actions.eslint.with {
 			cwd = has_eslint,
 		},
-		b.diagnostics.eslint_d.with {
+		b.diagnostics.eslint.with {
 			cwd = has_eslint,
 		},
 		b.formatting.clang_format.with {
