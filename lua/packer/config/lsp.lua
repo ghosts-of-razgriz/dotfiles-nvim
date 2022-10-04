@@ -1,8 +1,25 @@
-require 'lspconfig'.solargraph.setup{}
-require 'lspconfig'.gopls.setup{}
-require 'lspconfig'.vimls.setup{}
-require 'lspconfig'.ccls.setup{}
-require 'lspconfig'.sumneko_lua.setup{}
+local neovim_lsp = require 'lspconfig'
+local rbprettier = {
+  command = 'rbprettier',
+  args = { '--write', '%filepath' },
+  rootPatterns = { '.git' },
+}
+
+
+neovim_lsp.solargraph.setup{
+  settings = {
+    formatFiletypes = {
+      ruby = 'rbprettier',
+    },
+    formatters = {
+      rbprettier = rbprettier,
+    },
+  }
+}
+neovim_lsp.gopls.setup{}
+neovim_lsp.vimls.setup{}
+neovim_lsp.ccls.setup{}
+neovim_lsp.sumneko_lua.setup{}
 
 function goimports(timeoutms)
   local context = { source = { organizeImports = true } }
@@ -21,7 +38,7 @@ function goimports(timeoutms)
     end
   end
 
-  vim.lsp.buf.formatting()
+  vim.lsp.buf.formatting_sync()
 end
 
 vim.cmd("autocmd BufWritePre *.go lua goimports(1000)")
