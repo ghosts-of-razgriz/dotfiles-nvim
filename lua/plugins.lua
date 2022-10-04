@@ -43,12 +43,12 @@ packer.startup(function(use)
     config = "require 'packer.config.defx'",
     setup = "require 'packer.setup.defx'",
     requires = {'kristijanhusak/defx-git', {
-        'kristijanhusak/defx-icons',
-        config = "require 'packer.config.defx-icons'",
+      'kristijanhusak/defx-icons',
+      config = "require 'packer.config.defx-icons'",
     }}
   }
 
-  use {'jiangmiao/auto-pairs', event = 'InsertEnter *'}
+  use {'cohama/lexima.vim', event = 'InsertEnter *'}
   use {'godlygeek/tabular', cmd = {'Tab', 'Tabularize'}}
   use {
     'tpope/vim-fugitive',
