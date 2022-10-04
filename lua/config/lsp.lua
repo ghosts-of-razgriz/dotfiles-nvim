@@ -16,6 +16,9 @@ require 'lsp.sumneko'
 require 'lsp.tsserver'
 require 'lsp.null_ls'
 
--- local lspconfig = require 'lspconfig'
+local lspconfig = require 'lspconfig'
 
+lspconfig.emmet_ls.setup {
+	filetypes = { 'html', 'css', 'typescriptreact' },
+}
 -- lspconfig.tailwindcss.setup {}

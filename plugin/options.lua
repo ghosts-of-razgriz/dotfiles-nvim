@@ -43,8 +43,10 @@ opt.termguicolors = true
 opt.conceallevel = 1
 
 -- auto balance panes if window changes size
+local augVimResize = vim.api.nvim_create_augroup('VimResize', { clear = true })
 vim.api.nvim_create_autocmd('VimResized', {
 	pattern = { '*' },
+	group = augVimResize,
 	callback = function()
 		vim.schedule(function()
 			vim.cmd [[:wincmd =]]
@@ -86,3 +88,7 @@ opt.showmode = false
 
 -- global statusline, overwritten by lualine
 opt.laststatus = 3
+
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevel = 10

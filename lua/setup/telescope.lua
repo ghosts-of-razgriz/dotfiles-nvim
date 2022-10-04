@@ -18,3 +18,10 @@ utils.set_keymaps({
 		u = { '<cmd>Telescope git_files<cr>', 'Find Git Files' },
 	},
 }, { prefix = '<localleader>' })
+
+-- local augTelescopeBufEnter = vim.api.nvim_create_augroup('TelescopeBufEnter', { clear = true })
+-- vim.api.nvim_create_autocmd('BufEnter', {
+-- 	pattern = { '*' },
+-- 	command = 'normal zx',
+-- 	group = augTelescopeBufEnter,
+-- })
