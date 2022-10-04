@@ -108,6 +108,7 @@ lualine.setup {
 			'dapui_watches',
 			'dap-repl',
 		},
+		globalstatus = true,
 	},
 	sections = {
 		lualine_a = {

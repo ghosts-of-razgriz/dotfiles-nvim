@@ -76,3 +76,6 @@ opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }
 opt.list = false
 
 opt.showmode = false
+
+-- global statusline, overwritten by lualine
+opt.laststatus = 3
