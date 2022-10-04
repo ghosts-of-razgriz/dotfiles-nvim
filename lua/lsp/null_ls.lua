@@ -20,10 +20,31 @@ if vim.fn.executable 'goimports' == 0 then
 	utils.run 'go install golang.org/x/tools/cmd/goimports@latest'
 end
 
+if vim.fn.executable 'prettierd' == 0 then
+	if vim.fn.executable 'yarn' == 0 then
+		print 'Error: yarn is required to install prettierd'
+	end
+
+	print 'Info: Installing prettierd'
+	utils.run 'yarn global add @fsouza/prettierd'
+end
+
+if vim.fn.executable 'eslint_d' == 0 then
+	if vim.fn.executable 'yarn' == 0 then
+		print 'Error: yarn is required to install prettierd'
+	end
+
+	print 'Info: Installed eslint_d'
+	utils.run 'yarn global add eslint_d'
+end
+
 null_ls.setup {
 	sources = {
 		b.formatting.stylua,
 		b.formatting.goimports,
+		b.formatting.prettierd,
+		b.code_actions.eslint_d,
+		b.diagnostics.eslint_d,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
