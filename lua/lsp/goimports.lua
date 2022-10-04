@@ -1,4 +1,4 @@
-function goimports(timeoutms)
+function Goimports(timeoutms)
   local context = { source = { organizeImports = true } }
   vim.validate { context = { context, "t", true } }
 
@@ -18,5 +18,5 @@ function goimports(timeoutms)
   vim.lsp.buf.formatting_sync()
 end
 
-vim.cmd("autocmd BufWritePre *.go lua goimports(1000)")
+vim.cmd("autocmd BufWritePre *.go lua Goimports(1000)")
 
