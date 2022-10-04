@@ -17,7 +17,6 @@ packer.startup(function(use)
 		config = "require 'packer.config.defx'",
 		setup = "require 'packer.setup.defx'",
 		requires = {
-			'kristijanhusak/defx-git',
 			{
 				'kristijanhusak/defx-icons',
 				config = "require 'packer.config.defx-icons'",
@@ -76,10 +75,10 @@ packer.startup(function(use)
 		config = "require 'packer.config.trouble'",
 	}
 	use {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-	config = "require 'packer.config.todo-comments'",
-  }
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = "require 'packer.config.todo-comments'",
+	}
 
 	-- autocomplete
 	use {
