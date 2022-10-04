@@ -14,7 +14,7 @@ packer.startup(function(use)
 		config = "require 'packer.config.defx'",
 		setup = "require 'packer.setup.defx'",
 		requires = {
-			'kristijanhusak/defx-git', 
+			'kristijanhusak/defx-git',
 			{
 				'kristijanhusak/defx-icons',
 				config = "require 'packer.config.defx-icons'",
@@ -26,7 +26,10 @@ packer.startup(function(use)
 	use {
 		'hoob3rt/lualine.nvim',
 		config = "require 'packer.config.lualine'",
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		requires = {
+			'kyazdani42/nvim-web-devicons',
+			opt = true
+		}
 	}
 
 	-- fuzzy finder
@@ -38,6 +41,15 @@ packer.startup(function(use)
 		},
 		config = "require 'packer.config.telescope'",
 		setup = "require 'packer.setup.telescope'",
+	}
+
+	-- lsp
+	use {
+		'neovim/nvim-lspconfig',
+		config = "require 'packer.config.lsp'",
+		requires = {
+			'folke/lsp-colors.nvim',
+		}
 	}
 
 end)
