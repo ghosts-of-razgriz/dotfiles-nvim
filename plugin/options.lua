@@ -43,7 +43,14 @@ opt.termguicolors = true
 opt.conceallevel = 1
 
 -- auto balance panes if window changes size
-vim.cmd [[autocmd VimResized * :wincmd =]]
+vim.api.nvim_create_autocmd('VimResized', {
+	pattern = { '*' },
+	callback = function()
+		vim.schedule(function()
+			vim.cmd [[:wincmd =]]
+		end)
+	end,
+})
 
 -- persistent undo
 local undodir = config_path .. '/tmp/undo'
