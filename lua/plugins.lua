@@ -50,4 +50,11 @@ packer.startup(function(use)
 		'windwp/nvim-autopairs',
 		config = 'require "config.autopairs"',
 	}
+
+	-- git
+	use {
+		'tpope/vim-fugitive',
+		setup = 'require "setup.fugitive"',
+		cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
+	}
 end)
