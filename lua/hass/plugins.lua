@@ -88,7 +88,7 @@ packer.startup(function(use)
 
 	use { 'AndrewRadev/splitjoin.vim' }
 	use { 'tpope/vim-repeat' }
-	use { 'b3nj5m1n/kommentary', keys = 'gc' }
+	use { 'b3nj5m1n/kommentary', keys = 'gc', config = "require 'hass.config.kommentary'" }
 	use { 'tpope/vim-surround' }
 	use { 'junegunn/vim-peekaboo', config = "require 'hass.config.peekaboo'" }
 end)
