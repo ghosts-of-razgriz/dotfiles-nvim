@@ -4,6 +4,15 @@ packer.startup(function(use)
   -- packer managing itself
   use {'wbthomason/packer.nvim', opt = true}
 
+  -- color schemes
+  use { 'folke/tokyonight.nvim', config = "require 'packer.config.tokyonight'" }
+  -- use {'drewtempelmeyer/palenight.vim'} -- , config = "vim.cmd('colorscheme palenight')"}
+  -- use {'dracula/vim', as = 'dracula'}
+  -- use {'gosukiwi/vim-atom-dark'} -- , config = "vim.cmd('colorscheme atom-dark')" }
+  -- use {'arcticicestudio/nord-vim'}
+  -- use {'nanotech/jellybeans.vim'}
+  -- use {'joshdick/onedark.vim'}
+
   -- Experimental
   -- TODO: evaluate
   use {
@@ -26,29 +35,25 @@ packer.startup(function(use)
 
   -- TODO: evaluate
   use {
-    'famiu/feline.nvim',
-    config = "require 'packer.config.feline'",
-    requires = {
-      {'kyazdani42/nvim-web-devicons'},
-      -- {
-      --   'lewis6991/gitsigns.nvim',
-      --   config = "require('gitsigns').setup()",
-      --   requires = {
-      --     'nvim-lua/plenary.nvim',
-      --   }
-      -- },
-    }
+    'hoob3rt/lualine.nvim',
+    config = "require 'packer.config.lualine'",
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
+  --   'famiu/feline.nvim',
+  --   config = "require 'packer.config.feline'",
+  --   requires = {
+  --     {'kyazdani42/nvim-web-devicons'},
+  --     -- {
+  --     --   'lewis6991/gitsigns.nvim',
+  --     --   config = "require('gitsigns').setup()",
+  --     --   requires = {
+  --     --     'nvim-lua/plenary.nvim',
+  --     --   }
+  --     -- },
+  --   }
+  -- }
 
-  -- color schemes
-  use { 'folke/tokyonight.nvim', config = "require 'packer.config.tokyonight'" }
-  -- use {'drewtempelmeyer/palenight.vim'} -- , config = "vim.cmd('colorscheme palenight')"}
-  -- use {'dracula/vim', as = 'dracula'}
-  -- use {'gosukiwi/vim-atom-dark'} -- , config = "vim.cmd('colorscheme atom-dark')" }
-  -- use {'arcticicestudio/nord-vim'}
-  -- use {'nanotech/jellybeans.vim'}
-  -- use {'joshdick/onedark.vim'}
 
   -- plugins
   use {'sheerun/vim-polyglot'}
