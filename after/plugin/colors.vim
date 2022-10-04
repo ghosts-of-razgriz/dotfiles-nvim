@@ -1,2 +1,4 @@
-highlight Comment cterm=italic gui=italic
+highlight Comment cterm=italic,bold gui=italic,bold
+
+" hello world
 
