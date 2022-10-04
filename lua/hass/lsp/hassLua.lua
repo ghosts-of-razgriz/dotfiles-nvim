@@ -1,6 +1,6 @@
 local neovim_lsp = require 'lspconfig'
 local util = require 'lspconfig.util'
-local configs = require 'lspconfig/configs'
+local configs = require 'lspconfig.configs'
 local keymap = require 'hass.lsp.keymap'
 
 local luaFormat = { formatCommand = 'stylua -', formatStdin = true }
