@@ -2,6 +2,9 @@
 autocmd FileType denite call s:denite_key_mapping()
 function! s:denite_key_mapping() abort
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> - denite#do_map('do_action', 'split')
+  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   nnoremap <silent><buffer><expr> a denite#do_map('choose_action')
   nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
