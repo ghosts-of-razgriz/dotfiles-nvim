@@ -14,6 +14,16 @@ packer.startup(function(use)
   -- use {'joshdick/onedark.vim'}
 
   -- Experimental
+
+  -- TODO: need to enable and check
+  -- use {
+  --   'nvim-telescope/telescope.nvim',
+  --   requires = {
+  --     {'nvim-lua/popup.nvim'},
+  --     {'nvim-lua/plenary.nvim'},
+  --   }
+  -- }
+
   -- TODO: evaluate
   use {
     "folke/todo-comments.nvim",
@@ -92,14 +102,6 @@ packer.startup(function(use)
     config = "require 'packer.config.denite'",
     setup = "require 'packer.setup.denite'",
   }
-  
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   requires = {
-  --     {'nvim-lua/popup.nvim'},
-  --     {'nvim-lua/plenary.nvim'},
-  --   }
-  -- }
 
   use {
     'Shougo/defx.nvim',
