@@ -16,7 +16,6 @@ telescope.setup {
 			'--smart-case',
 		},
 		winblend = 10,
-
 		selection_strategy = 'reset',
 		sorting_strategy = 'descending',
 		scroll_strategy = 'cycle',
@@ -28,3 +27,4 @@ telescope.setup {
 	},
 	pickers = { find_files = { hidden = false } },
 }
+telescope.load_extension 'fzf'

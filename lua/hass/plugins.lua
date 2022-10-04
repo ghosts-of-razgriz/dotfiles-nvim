@@ -10,7 +10,11 @@ packer.startup(function(use)
 	-- fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
+		requires = {
+			{ 'nvim-lua/popup.nvim' },
+			{ 'nvim-lua/plenary.nvim' },
+			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+		},
 		config = "require 'hass.config.telescope'",
 		setup = "require 'hass.setup.telescope'",
 	}
