@@ -32,7 +32,15 @@ packer.startup(function(use)
 	}
 
 	-- syntax detection
-	use { 'nvim-treesitter/nvim-treesitter', config = "require 'hass.config.treesitter'" }
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		config = "require 'hass.config.treesitter'",
+	}
+	use {
+		'folke/todo-comments.nvim',
+		requires = 'nvim-lua/plenary.nvim',
+		config = "require 'hass.config.todo'",
+	}
 
 	-- file explorer
 	use {
