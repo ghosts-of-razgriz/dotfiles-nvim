@@ -93,6 +93,14 @@ local function lsp_name()
 	return table.concat(client_names, ', ')
 end
 
+local function lsp_format()
+	if vim.g.lsp_format == 1 then
+		return ''
+	else
+		return ''
+	end
+end
+
 lualine.setup {
 	options = {
 		theme = lualine_theme,
@@ -129,6 +137,7 @@ lualine.setup {
 			},
 		},
 		lualine_x = {
+			{ lsp_format, icon = '', color = { fg = '#ffeaa7', gui = 'bold' } },
 			{ lsp_name, icon = ' LSP:', color = { fg = '#ffffff', gui = 'bold' } },
 			'diff',
 			'filetype',
