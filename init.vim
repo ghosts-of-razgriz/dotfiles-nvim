@@ -9,3 +9,4 @@ let $CONFPATH = fnamemodify(expand('<sfile>'), ':h')
 
 lua require 'init'
 lua require 'plugins'
+lua require 'pluginscolor'
