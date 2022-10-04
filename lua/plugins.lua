@@ -52,4 +52,21 @@ packer.startup(function(use)
 		}
 	}
 
+	use {
+		'tpope/vim-fugitive',
+		cmd = {
+			'Gblame',
+			'Gcommit',
+			'Gdiff',
+			'Gedit',
+			'Gfetch',
+			'Git',
+			'Gpull',
+			'Gpush',
+			'Gstatus',
+			'Gwrite',
+		},
+		requires = { 'junegunn/gv.vim' },
+		setup = "require 'packer.setup.fugitive'",
+	}
 end)
