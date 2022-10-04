@@ -27,6 +27,13 @@ end
 
 lsp.sumneko_lua.setup {
 	on_attach = keymap,
+	init_options = {
+		codeAction = true,
+		completion = true,
+		documentFormatting = false,
+		documentSymbol = true,
+		hover = true,
+	},
 	cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
 	settings = {
 		Lua = {
