@@ -1,8 +1,12 @@
+if vim.fn.executable 'lua-language-server' == 0 then
+	return
+end
+
 local fn = vim.fn
 local lspconfig = require 'lspconfig'
 local lsputils = require 'lsp.utils'
--- local sumneko_bin = fn.system("which lua-language-server")
-local sumneko_bin = '/opt/homebrew/bin/lua-language-server'
+local sumneko_bin = fn.system 'which lua-language-server'
+sumneko_bin = string.gsub(sumneko_bin, '\n', '')
 
 lspconfig.sumneko_lua.setup {
 	capabilities = lsputils.make_capabilities(),
