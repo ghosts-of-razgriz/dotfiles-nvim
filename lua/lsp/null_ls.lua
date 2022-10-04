@@ -3,6 +3,8 @@ local b = null_ls.builtins
 local utils = require 'utils'
 local lsputils = require 'lspconfig.util'
 
+vim.g.lsp_format = 1
+
 if vim.fn.executable 'stylua' == 0 then
 	if vim.fn.executable 'brew' == 0 then
 		print 'Error: brew is required to install stylua'
@@ -69,7 +71,8 @@ null_ls.setup {
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
-			vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+			vim.cmd [[autocmd BufWritePre <buffer> lua require('lsp.utils').format_file()]]
 		end
 	end,
 }
+

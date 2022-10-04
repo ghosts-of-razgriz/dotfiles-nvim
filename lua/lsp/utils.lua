@@ -34,4 +34,10 @@ function M.set_lsp_keymap(bufnr)
 	}, { mode = 'i', buffer = bufnr })
 end
 
+function M.format_file()
+	if vim.g.lsp_format == 1 then
+		vim.lsp.buf.formatting_sync(nil, 1000)
+	end
+end
+
 return M
