@@ -16,7 +16,7 @@ function goimports(timeoutms)
     local result = req_s[1].result
     if result and result[1] then
       local edit = result[1].edit
-        vim.lsp.util.apply_workspace_edit(edit)
+      vim.lsp.util.apply_workspace_edit(edit)
     end
   end
 
