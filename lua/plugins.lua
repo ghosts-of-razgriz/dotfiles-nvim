@@ -66,6 +66,17 @@ packer.startup(function(use)
 		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
 	}
 
+	-- file explorer
+	use {
+		'Shougo/defx.nvim',
+		cmd = 'Defx',
+		config = 'require "config.defx"',
+		setup = 'require "setup.defx"',
+		requires = {
+			{ 'kristijanhusak/defx-icons', config = 'require "config.defx-icons"' },
+		},
+	}
+
 	-- auto closer
 	use {
 		'windwp/nvim-autopairs',
@@ -74,4 +85,10 @@ packer.startup(function(use)
 
 	-- status line
 	use { 'nvim-lualine/lualine.nvim', config = 'require "config.lualine"' }
+
+	-- navigation
+	use {
+		'ssh://git@git.razgriz.io:12222/neovim/traverse.nvim.git',
+		config = 'require "config.traverse"',
+	}
 end)
