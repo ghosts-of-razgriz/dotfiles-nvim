@@ -30,7 +30,7 @@ function DefxKeymap()
 	vim.api.nvim_buf_set_keymap(0, 'n', 'q', 'defx#do_action("quit")', opts)
 	vim.api.nvim_buf_set_keymap(0, 'n', 'o', 'defx#do_action("open_or_close_tree")', opts)
 	vim.api.nvim_buf_set_keymap(0, 'n', 'O', 'defx#do_action("open_tree_recursive")', opts)
-	vim.api.nvim_buf_set_keymap(0, 'n', '<c-l>', 'defx#do_action("redraw")', opts)
+	vim.api.nvim_buf_set_keymap(0, 'n', '<c-r>', 'defx#do_action("redraw")', opts)
 	vim.api.nvim_buf_set_keymap(
 		0,
 		'n',
