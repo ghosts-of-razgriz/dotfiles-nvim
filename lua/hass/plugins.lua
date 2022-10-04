@@ -14,4 +14,11 @@ packer.startup(function(use)
 		config = "require 'hass.config.telescope'",
 		setup = "require 'hass.setup.telescope'",
 	}
+
+	-- language server protocol
+	use {
+		'neovim/nvim-lspconfig',
+		config = "require 'hass.config.lsp'",
+		requires = { 'folke/lsp-colors.nvim' },
+	}
 end)
