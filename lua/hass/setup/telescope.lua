@@ -3,7 +3,7 @@ local function set_keymap(...)
 end
 local opts = { noremap = true, silent = true }
 
-set_keymap('n', '<leader>u<space>', '<cmd>Telescope ', { noremap = true })
+set_keymap('n', '<leader>u<space>', ':Telescope ', { noremap = true })
 set_keymap('n', '<leader>uu', '<cmd>Telescope find_files<cr>', opts)
 set_keymap('n', '<localleader>uu', '<cmd>Telescope git_files<cr>', opts)
 set_keymap('n', '<leader>ut', '<cmd>Telescope<cr>', opts)
