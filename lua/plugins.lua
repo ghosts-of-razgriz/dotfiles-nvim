@@ -81,6 +81,18 @@ packer.startup(function(use)
 		cmd = { 'Twilight', 'TwilightEnable', 'TwilightDisable' },
 	}
 
+	-- debugging
+	use {
+		'mfussenegger/nvim-dap',
+		config = 'require "config.dap"',
+		requires = { 'leoluz/nvim-dap-go' },
+	}
+	use {
+		'rcarriga/nvim-dap-ui',
+		config = 'require "config.dap_ui"',
+		requires = 'mfussenegger/nvim-dap',
+	}
+
 	-- auto closer
 	use {
 		'windwp/nvim-autopairs',
