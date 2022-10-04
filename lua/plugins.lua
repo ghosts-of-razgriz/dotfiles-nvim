@@ -6,6 +6,7 @@ packer.startup(function(use)
 
 	-- color schemes
 	use { 'laughingman-hass/tokyonight.nvim', config = 'require "config.color"' }
+	-- use { '~/code/tokyonight.nvim', config = 'require "config.color"' }
 	use { 'rebelot/kanagawa.nvim' }
 
 	-- language server protocol
