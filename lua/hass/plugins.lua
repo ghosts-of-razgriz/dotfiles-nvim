@@ -82,4 +82,13 @@ packer.startup(function(use)
 		},
 		setup = "require 'hass.setup.vim-tmux-navigator'",
 	}
+
+	-- clip board
+	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
+
+	use { 'AndrewRadev/splitjoin.vim' }
+	use { 'tpope/vim-repeat' }
+	use { 'b3nj5m1n/kommentary', keys = 'gc' }
+	use { 'tpope/vim-surround' }
+	use { 'junegunn/vim-peekaboo', config = "require 'hass.config.peekaboo'" }
 end)
