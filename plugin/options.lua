@@ -45,13 +45,13 @@ opt.conceallevel = 1
 -- auto balance panes if window changes size
 local augVimResize = vim.api.nvim_create_augroup('VimResize', { clear = true })
 vim.api.nvim_create_autocmd('VimResized', {
-    pattern = { '*' },
-    group = augVimResize,
-    callback = function()
-        vim.schedule(function()
-            vim.cmd [[:wincmd =]]
-        end)
-    end,
+	pattern = { '*' },
+	group = augVimResize,
+	callback = function()
+		vim.schedule(function()
+			vim.cmd [[:wincmd =]]
+		end)
+	end,
 })
 
 -- persistent undo
@@ -70,15 +70,15 @@ opt.pumheight = 15
 opt.pumwidth = 20
 
 opt.formatoptions = opt.formatoptions
-    - 'a' -- Auto formatting is BAD.
-    - 't' -- Don't auto format my code. I got linters for that.
-    + 'c' -- In general, I like it when comments respect textwidth
-    + 'q' -- Allow formatting comments w/ gq
-    - 'o' -- O and o, don't continue comments
-    + 'r' -- But do continue when pressing enter.
-    + 'n' -- Indent past the formatlistpat, not underneath it.
-    + 'j' -- Auto-remove comments if possible.
-    - '2' -- I'm not in gradeschool anymore
+	- 'a' -- Auto formatting is BAD.
+	- 't' -- Don't auto format my code. I got linters for that.
+	+ 'c' -- In general, I like it when comments respect textwidth
+	+ 'q' -- Allow formatting comments w/ gq
+	- 'o' -- O and o, don't continue comments
+	+ 'r' -- But do continue when pressing enter.
+	+ 'n' -- Indent past the formatlistpat, not underneath it.
+	+ 'j' -- Auto-remove comments if possible.
+	- '2' -- I'm not in gradeschool anymore
 
 -- invisiable characters
 opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }

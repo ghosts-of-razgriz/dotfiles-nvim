@@ -7,7 +7,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	local packer_repo = 'https://github.com/wbthomason/packer.nvim'
 	local out = fn.system(string.format('git clone %s %s', packer_repo, install_path))
 	print(out)
-	print('Packer download, need to restart neovim')
+	print 'Packer download, need to restart neovim'
 	vim.fn.input 'Press ENTRE to quit, and then start neovim'
 	vim.cmd [[quit]]
 end
