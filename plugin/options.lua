@@ -74,3 +74,5 @@ opt.formatoptions = opt.formatoptions
 -- invisiable characters
 opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }
 opt.list = false
+
+opt.showmode = false
