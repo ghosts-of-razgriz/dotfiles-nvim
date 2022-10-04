@@ -36,24 +36,24 @@ neovim_lsp.efm.setup {
 		'javascript.jsx',
 		'javascriptreact',
 		'lua',
-		'typescript',
-		'typescript.tsx',
-		'typescriptreact',
+		'html',
+		'css',
+		'json',
 	},
 	settings = {
 		rootMarkers = { '.git/' },
 		languages = {
+			css = { prettier },
+			html = { prettier },
+			json = { prettier },
 			javascript = { eslint, prettier },
 			javascriptreact = { eslint, prettier },
 			["javascript.jsx"] = { eslint, prettier },
 			lua = { luaFormat },
-			typescript = { eslint, prettier },
-			typescriptreact = { eslint, prettier },
-			["typescript.tsx"] = { eslint, prettier },
 		},
 	},
 }
 
 vim.cmd [[autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+vim.cmd [[autocmd BufWritePre *.js,*.jsx,*.html,*.css,*.json, lua vim.lsp.buf.formatting_sync(nil, 1000)]]
 

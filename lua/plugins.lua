@@ -111,6 +111,7 @@ packer.startup(function(use)
 	use { 'tpope/vim-surround' }
 	use { 'AndrewRadev/splitjoin.vim' }
 	use { 'junegunn/vim-peekaboo', config = "require 'packer.config.peekaboo'" }
+	use { 'Shougo/context_filetype.vim' }
 
 	use {
 		'janko-m/vim-test',
@@ -138,6 +139,24 @@ packer.startup(function(use)
 					'VtrAttachToPane',
 				},
 			},
+		},
+	}
+
+	-- filetype plugins
+	-- html
+	use {
+		'mattn/emmet-vim',
+		cmd = 'EmmetInstall',
+		ft = {
+			'html',
+			'css',
+			'scss',
+			'javascript.jsx',
+			'javascript',
+			'jsx',
+			'eruby',
+			'gohtmltmpl',
+			'gohtml',
 		},
 	}
 end)
