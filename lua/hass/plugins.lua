@@ -53,4 +53,16 @@ packer.startup(function(use)
 			},
 		},
 	}
+
+	use {
+		'christoomey/vim-tmux-navigator',
+		cmd = {
+			'TmuxNavigateLeft',
+			'TmuxNavigateDown',
+			'TmuxNavigateUp',
+			'TmuxNavigateRight',
+			'TmuxNavigatePrevious',
+		},
+		setup = "require 'hass.setup.vim-tmux-navigator'",
+	}
 end)
