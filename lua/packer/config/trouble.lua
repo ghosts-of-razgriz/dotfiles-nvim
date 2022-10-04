@@ -1,6 +1,6 @@
 require('trouble').setup{
   height = 3,
-  auto_open = true,
+  auto_open = false,
   auto_close = true,
   use_lsp_diagnostic_signs = true,
 }
