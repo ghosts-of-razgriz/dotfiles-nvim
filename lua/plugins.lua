@@ -57,4 +57,10 @@ packer.startup(function(use)
 		setup = 'require "setup.fugitive"',
 		cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
 	}
+
+	-- general
+	use {
+		'git@github.com:laughingman-hass/traverse.nvim.git',
+		config = 'require "config.traverse"',
+	}
 end)
