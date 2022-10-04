@@ -1,6 +1,6 @@
 local lualine = require 'lualine'
 
-local lualine_theme = 'auto'
+local lualine_theme = 'tokyonight'
 
 local mode_icons = {
 	['n'] = '🄽',
@@ -87,20 +87,20 @@ lualine.setup {
 		lualine_z = { { 'location', separator = { left = '', right = '' } } },
 	},
 	inactive_sections = {
-		lualine_c = {
-			{
-				filepath,
-				separator = { left = '' },
-			},
-			{
-				'diagnostics',
-				sources = { 'nvim_diagnostic' },
-				sections = { 'error', 'warn', 'info', 'hint' },
-				always_visible = is_file_open,
-				update_in_insert = true,
-			},
-		},
-		lualine_x = { { 'filetype', separator = { left = '', right = '' } } },
-		extensions = {},
+		-- lualine_c = {
+		-- 	{
+		-- 		filepath,
+		-- 		separator = { left = '' },
+		-- 	},
+		-- 	{
+		-- 		'diagnostics',
+		-- 		sources = { 'nvim_diagnostic' },
+		-- 		sections = { 'error', 'warn', 'info', 'hint' },
+		-- 		always_visible = is_file_open,
+		-- 		update_in_insert = true,
+		-- 	},
+		-- },
+		-- lualine_x = { { 'filetype', separator = { left = '', right = '' } } },
 	},
+	extensions = {},
 }
