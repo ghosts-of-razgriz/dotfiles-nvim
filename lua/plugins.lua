@@ -39,7 +39,7 @@ packer.startup(function(use)
           vim.call('deoplete#enable')
         end,
         setup = function()
-          vim.g.deoplete_loaded = 1
+          vim.g.loaded_deoplete = 1
         end,
         event = "InsertEnter *",
         run = ":UpdateRemotePlugins",
@@ -48,6 +48,9 @@ packer.startup(function(use)
           'Shougo/deoplete-lsp',
           {
             'neovim/nvim-lspconfig',
+            config = function()
+              require 'plugin.lsp'
+            end
           }
         }
       }

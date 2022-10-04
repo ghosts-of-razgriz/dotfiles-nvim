@@ -1,4 +1,4 @@
-if g:deoplete_loaded
+if exists('g:loaded_deoplete')
   " ----- deoplete key map -------------------------------------------------------
   " <tab> completion
   inoremap <silent><expr> <TAB>
