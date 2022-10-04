@@ -1,6 +1,7 @@
 local null_ls = require 'null-ls'
 local b = null_ls.builtins
 local utils = require 'utils'
+local lsputils = require 'lspconfig.util'
 
 if vim.fn.executable 'stylua' == 0 then
 	if vim.fn.executable 'brew' == 0 then
@@ -38,13 +39,21 @@ if vim.fn.executable 'eslint_d' == 0 then
 	utils.run 'yarn global add eslint_d'
 end
 
+local function has_eslint(params)
+	return lsputils.root_pattern('package.json', '.eslintrc.json', '.eslintrc.yaml')(params.bufname)
+end
+
 null_ls.setup {
 	sources = {
 		b.formatting.stylua,
 		b.formatting.goimports,
 		b.formatting.prettierd,
-		b.code_actions.eslint_d,
-		b.diagnostics.eslint_d,
+		b.code_actions.eslint_d.with {
+			cwd = has_eslint,
+		},
+		b.diagnostics.eslint_d.with {
+			cwd = has_eslint,
+		},
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
