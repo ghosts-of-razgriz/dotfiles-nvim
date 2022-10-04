@@ -1,7 +1,8 @@
 local settings = {  noremap = true, silent = true, expr = true }
 
 vim.api.nvim_set_keymap('i', '<C-Space>', "compe#complete()", settings)
-vim.api.nvim_set_keymap('i', '<CR>',      "compe#confirm(lexima#expand('<LT>CR>', 'i'))", settings)
+-- vim.api.nvim_set_keymap('i', '<CR>',      "compe#confirm(lexima#expand('<LT>CR>', 'i'))", settings)
+vim.api.nvim_set_keymap('i', '<CR>',      "compe#confirm('<CR>')", settings)
 vim.api.nvim_set_keymap('i', '<C-e>',     "compe#close('<C-e>')", settings)
 vim.api.nvim_set_keymap('i', '<C-f>',     "compe#scroll({ 'delta': +4 })", settings)
 vim.api.nvim_set_keymap('i', '<C-d>',     "compe#scroll({ 'delta': -4 })", settings)
