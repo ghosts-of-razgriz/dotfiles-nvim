@@ -16,6 +16,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 neovim_lsp.gopls.setup{ on_attach = keybinding }
-neovim_lsp.solargraph.setup{ on_attach = keybinding }
 neovim_lsp.vimls.setup{ on_attach = keybinding }
 require('lsp.sumneko')
+require('lsp.goimports')
