@@ -26,3 +26,7 @@ set_keymap('n', '<localleader>l', '<cmd>tabnext<cr>', noresilent)
 
 -- search highlight
 set_keymap('n', '<leader>h', '<cmd>set hlsearch!<cr>', noresilent)
+
+-- zoom
+set_keymap('n', '<leader>-', '<cmd>wincmd _<cr><cmd>wincmd |<cr>', noresilent)
+set_keymap('n', '<leader>=', '<cmd>wincmd =<cr>', noresilent)
