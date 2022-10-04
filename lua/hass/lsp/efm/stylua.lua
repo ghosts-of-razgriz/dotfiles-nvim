@@ -1,13 +1,12 @@
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig.util'
 local configs = require 'lspconfig.configs'
-local keymap = require 'hass.lsp.keymap'
 
-local luaFormat = { formatCommand = 'stylua -', formatStdin = true }
+local stylua = { formatCommand = 'stylua -', formatStdin = true }
 
 -- Check if it's already defined for when reloading this file.
-if not configs.hassLua then
-	configs.hassLua = {
+if not configs.stylua then
+	configs.stylua = {
 		default_config = {
 			cmd = { 'efm-langserver' },
 			filetypes = { 'lua' },
@@ -16,8 +15,7 @@ if not configs.hassLua then
 	}
 end
 
-lspconfig.hassLua.setup {
-	on_attach = keymap,
+lspconfig.stylua.setup {
 	init_options = {
 		codeAction = false,
 		completion = false,
@@ -31,7 +29,7 @@ lspconfig.hassLua.setup {
 	settings = {
 		rootMarker = { '.git', 'stylua.toml' },
 		languages = {
-			lua = { luaFormat },
+			lua = { stylua },
 		},
 	},
 }
