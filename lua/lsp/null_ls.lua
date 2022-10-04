@@ -70,11 +70,14 @@ null_ls.setup {
 		b.formatting.stylua,
 	},
 	on_attach = function(client)
+		P(client.server_capabilities)
 		if client.server_capabilities.documentFormattingProvider then
 			vim.api.nvim_create_autocmd('BufWritePre', {
 				pattern = { '<buffer>' },
 				callback = function()
-					require('lsp.utils').format_file()
+					if vim.g.lsp_format == 1 then
+						vim.lsp.buf.format()
+					end
 				end,
 			})
 		end
