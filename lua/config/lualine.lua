@@ -77,7 +77,16 @@ lualine.setup {
 		theme = lualine_theme,
 		component_separators = { left = '|', right = '|' },
 		section_separators = { left = '', right = '' },
-		disabled_filetypes = { 'term', 'terminal', 'TelescopePrompt' },
+		disabled_filetypes = {
+			'term',
+			'terminal',
+			'TelescopePrompt',
+			'dapui_scopes',
+			'dapui_breakpoints',
+			'dapui_stacks',
+			'dapui_watches',
+			'dap-repl',
+		},
 	},
 	sections = {
 		lualine_a = {
