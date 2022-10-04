@@ -20,9 +20,9 @@ set_keymap('n', '<localleader>\\', ':vsplit<cr>', noresilent)
 set_keymap('n', '<localleader>-', ':split<cr>', noresilent)
 
 -- tabs
-set_keymap('n', '<localheader><tab>', ':tabnew<cr>', noresilent)
-set_keymap('n', '<localheader>h', ':tabprevious<cr>', noresilent)
-set_keymap('n', '<localheader>l', ':tabnext<cr>', noresilent)
+set_keymap('n', '<localleader><tab>', ':tabnew<cr>', noresilent)
+set_keymap('n', '<localleader>h', ':tabprevious<cr>', noresilent)
+set_keymap('n', '<localleader>l', ':tabnext<cr>', noresilent)
 
 -- search highlight
 set_keymap('n', '<leader>h', ':set hlsearch!<cr>', noresilent)
