@@ -121,6 +121,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     ft = {
       'bash',
+      'c',
       'css',
       'go',
       'javascript',
@@ -134,6 +135,7 @@ packer.startup(function(use)
       require 'nvim-treesitter.configs'.setup{
         ensure_installed = {
           'bash',
+          'c',
           'css',
           'go',
           'javascript',
