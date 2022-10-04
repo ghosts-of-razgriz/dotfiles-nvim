@@ -59,7 +59,9 @@ packer.startup(function(use)
 		cmd = 'Defx',
 		config = "require 'hass.config.defx'",
 		setup = "require 'hass.setup.defx'",
-		requires = { { 'kristijanhusak/defx-icons', config = "require 'hass.config.defx-icons'" } },
+		requires = {
+			{ 'kristijanhusak/defx-icons', config = "require 'hass.config.defx-icons'" },
+		},
 	}
 
 	-- git integration
@@ -108,5 +110,12 @@ packer.startup(function(use)
 		'abecodes/tabout.nvim',
 		config = "require 'hass.config.tabout'",
 		wants = 'nvim-treesitter',
+	}
+
+	use {
+		'mattn/emmet-vim',
+		config = "require 'hass.config.emmet'",
+		setup = "require 'hass.setup.emmet'",
+		ft = { 'html', 'css' },
 	}
 end)
