@@ -13,10 +13,7 @@ packer.startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	-- color schemes
-	-- use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
-	use_local('tokyonight.nvim', { config = 'require "config.color"' })
-	use { 'rebelot/kanagawa.nvim' }
-
+	use { 'catppuccin/nvim', as = 'catppuccin', config = 'require "config.color"' }
 	-- language server protocol
 	use {
 		'neovim/nvim-lspconfig',

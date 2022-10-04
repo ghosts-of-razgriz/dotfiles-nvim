@@ -1,6 +1,6 @@
 local lualine = require 'lualine'
 
-local lualine_theme = 'tokyonight'
+local lualine_theme = 'catppuccin'
 
 local mode_icons = {
 	['n'] = '🄽',
