@@ -2,8 +2,9 @@ local telescope = require 'telescope'
 
 telescope.setup {
 	defaults = {
-		prompt_prefix = '🔍 ',
-		selection_caret = ' ',
+		prompt_prefix = ' ',
+		selection_caret = ' ',
+		color_devicons = true,
 		set_env = { ['COLORTERM'] = 'truecolor' },
 		vimgrep_arguments = {
 			'rg',
