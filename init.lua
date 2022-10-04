@@ -4,3 +4,4 @@ vim.cmd [[let g:maplocalleader = "\<c-space>"]]
 
 -- initialize packer
 require 'init-packer'
+require 'plugins'
