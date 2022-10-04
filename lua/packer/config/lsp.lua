@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+local neovim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -16,6 +16,35 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', 'gwd', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', 'gwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+end
+
+neovim_lsp.gopls.setup{ on_attach = on_attach }
+neovim_lsp.solargraph.setup{ on_attach = on_attach }
+neovim_lsp.vimls.setup{ on_attach = on_attach }
+
+
+function goimports(timeoutms)
+  local context = { source = { organizeImports = true } }
+  vim.validate { context = { context, "t", true } }
+
+  local params = vim.lsp.util.make_range_params()
+  params.context = context
+
+  local method = "textDocument/codeAction"
+  local req_s = vim.lsp.buf_request_sync(0, method, params, timeoutms)
+  if req_s and req_s[1] then
+    local result = req_s[1].result
+    if result and result[1] then
+      local edit = result[1].edit
+      vim.lsp.util.apply_workspace_edit(edit)
+    end
+  end
+
+  vim.lsp.buf.formatting_sync()
+end
+
+vim.cmd("autocmd BufWritePre *.go lua goimports(1000)")
+
   -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -46,39 +75,3 @@ local on_attach = function(client, bufnr)
   --     augroup END
   --   ]], false)
   -- end
-end
-
--- Use a loop to conveniently both setup defined servers 
--- and map buffer local keybindings when the language server attaches
-local servers = { "solargraph", "gopls", "vimls",}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
-
--- nvim_lsp.eslint.setup{
---   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
--- }
-
-
-
-function goimports(timeoutms)
-  local context = { source = { organizeImports = true } }
-  vim.validate { context = { context, "t", true } }
-
-  local params = vim.lsp.util.make_range_params()
-  params.context = context
-
-  local method = "textDocument/codeAction"
-  local req_s = vim.lsp.buf_request_sync(0, method, params, timeoutms)
-  if req_s and req_s[1] then
-    local result = req_s[1].result
-    if result and result[1] then
-      local edit = result[1].edit
-      vim.lsp.util.apply_workspace_edit(edit)
-    end
-  end
-
-  vim.lsp.buf.formatting_sync()
-end
-
-vim.cmd("autocmd BufWritePre *.go lua goimports(1000)")
