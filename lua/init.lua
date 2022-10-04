@@ -11,7 +11,7 @@ end
 execute('packadd packer.nvim')
 
 
-packer = require('packer')
+local packer = require('packer')
 packer.init({
     package_root = pack_path
   })

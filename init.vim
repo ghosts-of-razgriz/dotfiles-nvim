@@ -1,8 +1,8 @@
 " ----- global leader
- let g:mapleader = "\<space>"
+let g:mapleader = "\<space>"
 
  " ----- local leader
- let g:maplocalleader = "\<c-space>"
+let g:maplocalleader = "\<c-space>"
 
 " ----- set confpath variable
 let $CONFPATH = fnamemodify(expand('<sfile>'), ':h')
