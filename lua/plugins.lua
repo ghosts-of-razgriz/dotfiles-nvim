@@ -32,6 +32,17 @@ packer.startup(function(use)
 		},
 	}
 
+	-- file explorer
+	use {
+		'Shougo/defx.nvim',
+		cmd = 'Defx',
+		config = 'require "config.defx"',
+		setup = 'require "setup.defx"',
+		requires = {
+			{ 'kristijanhusak/defx-icons', config = 'require "config.defx-icons"' },
+		},
+	}
+
 	-- fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
