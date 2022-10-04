@@ -4,6 +4,7 @@ local b = null_ls.builtins
 null_ls.setup {
 	sources = {
 		b.formatting.stylua,
+		b.formatting.goimports,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then

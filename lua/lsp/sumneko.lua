@@ -1,5 +1,6 @@
 local fn = vim.fn
 local lspconfig = require 'lspconfig'
+local lsputils = require 'lsp.utils'
 
 local function run(...)
 	local cmd = string.format('!%s', ...)
@@ -27,9 +28,8 @@ if fn.filereadable(sumneko_bin) ~= 1 then
 end
 
 lspconfig.sumneko_lua.setup {
-	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = false
-	end,
+	capabilities = lsputils.make_capabilities(),
+	on_attach = lsputils.disable_formatting,
 	cmd = { sumneko_bin, '-E', sumneko_root_path .. '/main.lua' },
 	settings = {
 		Lua = {

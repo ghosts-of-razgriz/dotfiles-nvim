@@ -6,12 +6,17 @@ packer.startup(function(use)
 
 	-- color schemes
 	use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
+	use { 'rebelot/kanagawa.nvim' }
 
 	-- language server protocol
 	use {
 		'neovim/nvim-lspconfig',
 		config = 'require "config.lsp"',
-		requires = { 'folke/lsp-colors.nvim', 'jose-elias-alvarez/null-ls.nvim' },
+		requires = {
+			'folke/lsp-colors.nvim',
+			{ 'jose-elias-alvarez/null-ls.nvim', wants = 'plenary' },
+		},
+		wants = 'cmp-nvim-lsp',
 	}
 
 	use {
