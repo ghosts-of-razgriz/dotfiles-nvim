@@ -22,6 +22,8 @@ vim.cmd [[command! PackerSync     lua require('packer').sync()]]
 vim.cmd [[command! PackerClean    lua require('packer').clean()]]
 vim.cmd [[command! PackerCompile  lua require('packer').compile()]]
 
+vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
+
 -- check or install the python3 neovim plugin
 if fn.has('python3') ~= 1 then
   execute('!pip3 install --user neovim')
