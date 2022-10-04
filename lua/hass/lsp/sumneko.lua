@@ -1,5 +1,7 @@
 local fn = vim.fn
 local lsp = require 'lspconfig'
+local keymap = require 'hass.lsp.keymap'
+
 local function run(...)
 	local cmd = string.format('!%s', ...)
 	vim.api.nvim_command(cmd)
@@ -24,6 +26,7 @@ if fn.filereadable(sumneko_binary) ~= 1 then
 end
 
 lsp.sumneko_lua.setup {
+	on_attach = keymap,
 	cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
 	settings = {
 		Lua = {
