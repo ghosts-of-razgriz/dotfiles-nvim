@@ -124,4 +124,5 @@ packer.startup(function(use)
 	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 	use { 'kyazdani42/nvim-web-devicons' }
 	use { 'rafcamlet/nvim-luapad', cmd = { 'Luapad' }, config = 'require "config.luapad"' }
+	use { 'folke/which-key.nvim', config = 'require "config.whichkey"' }
 end)
