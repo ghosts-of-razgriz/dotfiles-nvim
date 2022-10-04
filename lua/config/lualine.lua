@@ -63,10 +63,14 @@ end
 lualine.setup {
 	options = {
 		theme = lualine_theme,
+		component_separators = '|',
+		section_separators = { left = '', right = '' },
 		disabled_filetypes = { 'term', 'terminal', 'TelescopePrompt' },
 	},
 	sections = {
-		lualine_a = { get_mode },
+		lualine_a = {
+			{ get_mode, separator = { left = '', right = '' } },
+		},
 		lualine_b = { 'branch' },
 		lualine_c = {
 			filepath,
@@ -80,8 +84,8 @@ lualine.setup {
 		},
 		lualine_x = { 'filetype' },
 		lualine_y = { 'progress' },
-		lualine_z = { 'location' },
+		lualine_z = { { 'location', separator = { left = '', right = '' } } },
+		inactive_sections = {},
+		extensions = {},
 	},
-	inactive_sections = {},
-	extensions = {},
 }
