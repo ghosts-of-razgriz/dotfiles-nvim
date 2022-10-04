@@ -1,4 +1,0 @@
--- FIX: integrate lsp with stylua, currently wipes the lsp diagnostics
--- TODO: golang lsp, including goimports
--- TODO: typescipt lsp, including prettier and eslint
--- PERF: improve start up times, most plugins are not lazy loaded
