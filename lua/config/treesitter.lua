@@ -17,4 +17,9 @@ treesitter.setup {
 		'yaml',
 	},
 	hightlight = { enable = true },
+	indent = { enable = true },
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
 }

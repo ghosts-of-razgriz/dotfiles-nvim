@@ -63,7 +63,7 @@ end
 lualine.setup {
 	options = {
 		theme = lualine_theme,
-		disabled_filetypes = { 'NvimTree', 'term', 'terminal', 'TelescopePrompt' },
+		disabled_filetypes = { 'term', 'terminal', 'TelescopePrompt' },
 	},
 	sections = {
 		lualine_a = { get_mode },
