@@ -4,7 +4,6 @@ local configs = require 'lspconfig.configs'
 
 local stylua = { formatCommand = 'stylua -', formatStdin = true }
 
--- Check if it's already defined for when reloading this file.
 if not configs.stylua then
 	configs.stylua = {
 		default_config = {
@@ -22,9 +21,6 @@ lspconfig.stylua.setup {
 		documentFormatting = true,
 		documentSymbol = false,
 		hover = false,
-	},
-	filetypes = {
-		'lua',
 	},
 	settings = {
 		rootMarker = { '.git', 'stylua.toml' },
