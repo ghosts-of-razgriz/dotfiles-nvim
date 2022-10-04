@@ -10,3 +10,4 @@ vim.api.nvim_create_autocmd('FileType', {
 	end,
 	group = augDefexKeymap,
 })
+vim.cmd [[highlight! link defxExrenameModified NvimStringBody]]
