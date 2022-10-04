@@ -1,6 +1,7 @@
 require 'lspconfig'.solargraph.setup{}
 require 'lspconfig'.gopls.setup{}
 require 'lspconfig'.vimls.setup{}
+require 'lspconfig'.ccls.setup{}
 require 'lspconfig'.sumneko_lua.setup{}
 
 function goimports(timeoutms)
