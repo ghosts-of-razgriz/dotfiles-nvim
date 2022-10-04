@@ -6,7 +6,7 @@ local keymap = require 'hass.lsp.keymap'
 local luaFormat = { formatCommand = 'stylua -', formatStdin = true }
 
 -- Check if it's already defined for when reloading this file.
-if not neovim_lsp.hassLua then
+if not configs.hassLua then
 	configs.hassLua = {
 		default_config = {
 			cmd = { 'efm-langserver' },
