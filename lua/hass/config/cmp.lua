@@ -20,7 +20,7 @@ cmp.setup {
 		{ name = 'nvim_lua' },
 		{ name = 'nvim_lsp', keyword_length = 2 },
 		{ name = 'path', keyword_length = 3 },
-		{ name = 'buffer', keyword_length = 5 },
+		{ name = 'buffer', keyword_length = 3 },
 	},
 	snippet = {
 		expand = function(args)
@@ -44,3 +44,5 @@ cmp.setup {
 		ghost_text = true,
 	},
 }
+
+vim.cmd [[set pumheight=5]]
