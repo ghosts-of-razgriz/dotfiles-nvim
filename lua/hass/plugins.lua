@@ -40,4 +40,17 @@ packer.startup(function(use)
 		setup = "require 'hass.setup.defx'",
 		requires = { { 'kristijanhusak/defx-icons', config = "require 'hass.config.defx-icons'" } },
 	}
+
+	use {
+		'junegunn/gv.vim',
+		cmd = { 'GV' },
+		setup = "require 'hass.setup.gv'",
+		requires = {
+			{
+				'tpope/vim-fugitive',
+				setup = "require 'hass.setup.fugitive'",
+				cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
+			},
+		},
+	}
 end)
