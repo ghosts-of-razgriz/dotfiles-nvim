@@ -70,3 +70,7 @@ opt.formatoptions = opt.formatoptions
 	+ 'n' -- Indent past the formatlistpat, not underneath it.
 	+ 'j' -- Auto-remove comments if possible.
 	- '2' -- I'm not in gradeschool anymore
+
+-- invisiable characters
+opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }
+opt.list = false
