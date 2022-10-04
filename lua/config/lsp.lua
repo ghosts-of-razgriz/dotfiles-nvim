@@ -10,8 +10,9 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	{ virtual_text = { spacing = 5, prefix = '' } }
 )
 
-require 'lsp.sumneko'
+require 'lsp.ccls'
 require 'lsp.gopls'
+require 'lsp.sumneko'
 require 'lsp.tsserver'
 require 'lsp.null_ls'
 
