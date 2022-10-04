@@ -1,7 +1,7 @@
 FROM archlinux:latest
 
 RUN pacman -Sy --noconfirm \
-      base-devel nodejs python3 python-pip ruby sudo git go yarn && \
+      base-devel nodejs python3 python-pip ruby ripgrep sudo git go yarn && \
       useradd neovim-dev -m -g wheel && \
       echo 'neovim-dev ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/neovim-dev
 
