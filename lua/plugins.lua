@@ -124,10 +124,17 @@ packer.startup(function(use)
 	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 	use { 'kyazdani42/nvim-web-devicons' }
 	use { 'rafcamlet/nvim-luapad', cmd = { 'Luapad' }, config = 'require "config.luapad"' }
-	use { 'mattn/emmet-vim', cmd = { 'EmmetInstall' }, config = 'require "config.emmet"' }
+
 	use {
 		'simrat39/symbols-outline.nvim',
 		cmd = { 'SymbolsOutline', 'SymbolsOutlineOpen', 'SymbolsOutlineClose' },
+		setup = 'require "setup.outline"',
 		config = 'require "config.outline"',
+	}
+
+	use {
+		'anuvyklack/pretty-fold.nvim',
+		requires = { 'anuvyklack/nvim-keymap-amend' },
+		config = 'require "config.pretty-fold"',
 	}
 end)

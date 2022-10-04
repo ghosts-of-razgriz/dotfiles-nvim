@@ -1,5 +1,3 @@
-local utils = require 'utils'
-
 vim.g.symbols_outline = {
 	width = 20,
 	keymaps = { -- These keymaps can be a string or a table for multiple keys
@@ -12,7 +10,3 @@ vim.g.symbols_outline = {
 		code_actions = 'a',
 	},
 }
-
-utils.set_keymaps({
-	o = { '<cmd>SymbolsOutline<cr>', 'Toggle Outline' },
-}, { prefix = '<localleader>' })
