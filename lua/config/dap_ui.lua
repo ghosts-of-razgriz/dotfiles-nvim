@@ -1,5 +1,4 @@
 local dapui = require 'dapui'
-local utils = require 'utils'
 
 dapui.setup {
 	mappings = {
@@ -10,5 +9,3 @@ dapui.setup {
 		repl = 'r',
 	},
 }
-
-utils.set_keymap('n', '<m-d><m-d>', '<cmd>lua require("dapui").toggle()<cr>', utils.noresilent)

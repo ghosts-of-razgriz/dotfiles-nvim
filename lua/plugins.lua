@@ -89,7 +89,7 @@ packer.startup(function(use)
 	use {
 		'mfussenegger/nvim-dap',
 		config = 'require "config.dap"',
-		requires = { 'leoluz/nvim-dap-go' },
+		requires = { 'leoluz/nvim-dap-go', 'folke/which-key.nvim' },
 	}
 	use {
 		'rcarriga/nvim-dap-ui',
