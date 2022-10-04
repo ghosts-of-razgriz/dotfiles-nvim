@@ -26,7 +26,10 @@ if fn.filereadable(sumneko_binary) ~= 1 then
 end
 
 lsp.sumneko_lua.setup {
-	on_attach = keymap,
+	on_attach = function(client)
+		client.resolved_capabilities.document_formatting = false
+		keymap()
+	end,
 	init_options = {
 		codeAction = true,
 		completion = true,
