@@ -14,6 +14,16 @@ function M.make_capabilities()
 	return cmp_nvim_lsp.update_capabilities(capabilities)
 end
 
+function M.toggle_formatting()
+	if vim.g.lsp_format == 1 then
+		vim.g.lsp_format = 0
+		print 'Auto formatting disabled'
+	else
+		vim.g.lsp_format = 1
+		print 'Auto formatting enabled'
+	end
+end
+
 function M.set_lsp_keymap(bufnr)
 	utils.set_keymaps({
 		['\\'] = {

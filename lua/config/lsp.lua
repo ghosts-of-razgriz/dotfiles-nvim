@@ -1,4 +1,5 @@
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+local utils = require 'utils'
 
 for type, icon in pairs(signs) do
 	local hl = 'DiagnosticSign' .. type
@@ -22,3 +23,7 @@ lspconfig.emmet_ls.setup {
 	filetypes = { 'html', 'css', 'typescriptreact' },
 }
 -- lspconfig.tailwindcss.setup {}
+
+utils.set_keymaps({
+	['\\'] = { '<cmd>lua require "lsp.utils".toggle_formatting()<cr>', 'Toggle LSP Formatting' },
+}, { prefix = '<leader>' })
