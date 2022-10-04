@@ -142,7 +142,9 @@ packer.startup(function(use)
   use {'pangloss/vim-javascript', ft = 'javascript', disable = true}
   use {'mxw/vim-jsx', ft = 'javascript', config = "vim.g.jsx_ext_required = 0"}
   use {
-    'prettier/vim-prettier', ft = {
+    'laughingman-hass/vim-prettier',
+    cmd = 'PrettierAsync',
+    ft = {
       'javascript',
       'jsx',
       'javascript.jsx',
@@ -151,9 +153,9 @@ packer.startup(function(use)
       'less',
       'scss',
       'json',
-      'graphql'
+      'graphql',
     },
-    run = 'yarn install'
+    run = 'yarn install',
   }
 
   -- json
