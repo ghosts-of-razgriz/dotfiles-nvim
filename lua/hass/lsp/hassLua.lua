@@ -1,4 +1,4 @@
-local neovim_lsp = require 'lspconfig'
+local lspconfig = require 'lspconfig'
 local util = require 'lspconfig.util'
 local configs = require 'lspconfig.configs'
 local keymap = require 'hass.lsp.keymap'
@@ -16,7 +16,7 @@ if not configs.hassLua then
 	}
 end
 
-neovim_lsp.hassLua.setup {
+lspconfig.hassLua.setup {
 	on_attach = keymap,
 	init_options = {
 		codeAction = false,

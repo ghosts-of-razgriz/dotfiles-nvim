@@ -1,6 +1,6 @@
-local neovim_lsp = require 'lspconfig'
+local lspconfig = require 'lspconfig'
 local keymap = require 'hass.lsp.keymap'
 
-neovim_lsp.dockerls.setup {
+lspconfig.dockerls.setup {
 	on_attach = keymap,
 }
