@@ -71,6 +71,15 @@ packer.startup(function(use)
 		},
 		config = "require 'packer.config.treesitter'",
 	}
+	use {
+		'folke/trouble.nvim',
+		config = "require 'packer.config.trouble'",
+	}
+	use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+	config = "require 'packer.config.todo-comments'",
+  }
 
 	-- autocomplete
 	use {
@@ -110,5 +119,20 @@ packer.startup(function(use)
 			'TmuxNavigatePrevious'
 		},
 		setup = "require 'packer.setup.vim-tmux-navigator'"
+	}
+
+	use {
+		'christoomey/vim-system-copy',
+		keys = {'cp', 'cP'},
+	}
+
+	use { 'kana/vim-operator-user' }
+	use { 'tpope/vim-repeat' }
+	use { 'tpope/vim-commentary' }
+	use { 'tpope/vim-surround' }
+	use { 'AndrewRadev/splitjoin.vim' }
+	use {
+		'junegunn/vim-peekaboo',
+		config = "require 'packer.config.peekaboo'",
 	}
 end)
