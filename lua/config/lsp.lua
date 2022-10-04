@@ -11,4 +11,5 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 )
 
 require 'lsp.sumneko'
+require 'lsp.gopls'
 require 'lsp.null_ls'
