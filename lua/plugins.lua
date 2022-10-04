@@ -21,4 +21,11 @@ packer.startup(function(use)
 			},
 		}
 	}
+
+	-- status bar
+	use {
+		'hoob3rt/lualine.nvim',
+		config = "require 'packer.config.lualine'",
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
 end)
