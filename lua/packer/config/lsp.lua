@@ -27,3 +27,5 @@ function goimports(timeoutms)
 end
 
 vim.cmd("autocmd BufWritePre *.go lua goimports(1000)")
+
+require 'packer.config.lsp-eslintd'
