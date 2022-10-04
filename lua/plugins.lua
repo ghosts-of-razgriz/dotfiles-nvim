@@ -214,6 +214,7 @@ packer.startup(function(use)
     'laughingman-hass/vim-prettier',
     cmd = 'PrettierAsync',
     ft = {
+      'html',
       'javascript',
       'jsx',
       'javascript.jsx',
