@@ -6,9 +6,10 @@ packer.startup(function(use)
 
   -- color schemes
   use {'dracula/vim', as = 'dracula', config = "vim.cmd('colorscheme dracula')"}
-  use {'arcticicestudio/nord-vim', disable = true}
-  use {'cocopon/iceberg.vim', disable = true}
-  use {'joshdick/onedark.vim', disable = true}
+  -- use {'arcticicestudio/nord-vim', config = "vim.cmd('colorscheme nord')"}
+  -- use {'cocopon/iceberg.vim', config = "vim.cmd('colorscheme iceberg')"}
+  -- use {'joshdick/onedark.vim', config = "vim.cmd('colorscheme onedark')"}
+  -- use {'rakr/vim-one', config = "vim.cmd('colorscheme one')"}
 
   -- plugins
   use {'sheerun/vim-polyglot'}
@@ -34,11 +35,19 @@ packer.startup(function(use)
     }
   }
 
+  -- use {
+  --   'Shougo/denite.nvim',
+  --   cmd = 'Denite',
+  --   config = "require 'packer.config.denite'",
+  --   setup = "require 'packer.setup.denite'",
+  -- }
+  
   use {
-    'Shougo/denite.nvim',
-    cmd = 'Denite',
-    config = "require 'packer.config.denite'",
-    setup = "require 'packer.setup.denite'",
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    }
   }
 
   use {
