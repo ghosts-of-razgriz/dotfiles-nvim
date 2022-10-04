@@ -116,7 +116,7 @@ packer.startup(function(use)
 		'mattn/emmet-vim',
 		config = "require 'hass.config.emmet'",
 		setup = "require 'hass.setup.emmet'",
-		ft = { 'html', 'css' },
+		ft = { 'html', 'css', 'javascript', 'javascript.jsx' },
 	}
 
 	use {
