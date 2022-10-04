@@ -10,7 +10,7 @@ end
 vim.call('denite#custom#option', 'default', {
     cursor_shape = true,
     cursor_wrap = true,
-    prompt = '> ',
+    prompt = ' ',
     split = 'floating',
     start_filter = true,
     unique = true,
