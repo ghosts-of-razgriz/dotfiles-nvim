@@ -40,6 +40,7 @@ packer.startup(function(use)
     config = "vim.g.peekaboo_window = 'vertical botright 80new'",
   }
   use {'AndrewRadev/splitjoin.vim'}
+  use {'jiangmiao/auto-pairs'}
 
   -- lazy plugins
   use {
@@ -80,7 +81,6 @@ packer.startup(function(use)
   }
 
   use {'cohama/lexima.vim', event = 'InsertEnter *', disable = true}
-  use {'jiangmiao/auto-pairs', event = 'InsertEnter *'}
   use {'godlygeek/tabular', cmd = {'Tab', 'Tabularize'}}
   use {
     'tpope/vim-fugitive',
