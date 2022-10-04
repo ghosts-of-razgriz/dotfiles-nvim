@@ -46,6 +46,12 @@ packer.startup(function(use)
 
 	-- syntax
 	use {
+		'sheerun/vim-polyglot',
+		setup = function()
+			vim.g.polyglot_disabled = { 'autoindent', 'ftdetect' }
+		end,
+	}
+	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = 'require "config.treesitter"',
 		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
