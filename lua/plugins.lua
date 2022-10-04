@@ -11,7 +11,7 @@ packer.startup(function(use)
   use {'joshdick/onedark.vim', disable = true}
 
   -- plugins
-  use {'sheerun/vim-polyglot'}
+  use {'sheerun/vim-polyglot', disable = true}
   use {'kana/vim-operator-user'}
   use {'tpope/vim-repeat'}
   use {'tpope/vim-commentary'}
@@ -105,6 +105,7 @@ packer.startup(function(use)
   }
 
   -- filetype plugins
+  -- html
   use {
     'mattn/emmet-vim',
     ft = {
@@ -117,4 +118,25 @@ packer.startup(function(use)
       'eruby'
     },
   }
+
+  -- javascript
+  use {'pangloss/vim-javascript', ft = 'javascript', disable = true}
+  use {'mxw/vim-jsx', ft = 'javascript', config = "vim.g.jsx_ext_required = 0"}
+  use {
+    'prettier/vim-prettier', ft = {
+      'javascript',
+      'jsx',
+      'javascript.jsx',
+      'typescript',
+      'css',
+      'less',
+      'scss',
+      'json',
+      'graphql'
+    },
+    run = 'yarn install'
+  }
+
+  -- json
+  use {'elzr/vim-json', ft = 'json', setup = "vim.o.conceallevel = 1"}
 end)
