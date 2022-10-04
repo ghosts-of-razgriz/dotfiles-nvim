@@ -63,4 +63,9 @@ packer.startup(function(use)
 		'git@github.com:laughingman-hass/traverse.nvim.git',
 		config = 'require "config.traverse"',
 	}
+
+	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
+	use { 'tpope/vim-repeat' }
+	use { 'tpope/vim-surround' }
+	use { 'b3nj5m1n/kommentary', keys = 'gc', config = 'require "config.kommentary"' }
 end)
