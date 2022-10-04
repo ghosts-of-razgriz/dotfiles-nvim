@@ -8,8 +8,11 @@ wk.register({
 		c = { '<cmd>Git commit<cr>', 'Commit' },
 		d = { '<cmd>Gdiff<cr>', 'Diff' },
 		f = { '<cmd>Git fetch<cr>', 'Fetch' },
-		g = { '<cmd>Git<space>', 'Git <prompt>' },
-		k = { ':Git checkout<space>', 'Checkout <prompt>' },
+		g = { '<cmd>lua vim.cmd("Git " .. vim.fn.input("Git: "))<cr>', 'Git <prompt>' },
+		k = {
+			'<cmd>lua vim.cmd("Git checkout " .. vim.fn.input("Checkout: "))<cr>',
+			'Checkout <prompt>',
+		},
 		l = { '<cmd>Git pull<cr>', 'Pull' },
 		p = { '<cmd>Git push<cr>', 'Push' },
 		s = { '<cmd>Git<cr><c-w><s-h>', 'Status' },
