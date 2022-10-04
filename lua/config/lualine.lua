@@ -63,7 +63,7 @@ end
 lualine.setup {
 	options = {
 		theme = lualine_theme,
-		component_separators = '|',
+		component_separators = { left = '|', right = '|' },
 		section_separators = { left = '', right = '' },
 		disabled_filetypes = { 'term', 'terminal', 'TelescopePrompt' },
 	},
@@ -82,10 +82,25 @@ lualine.setup {
 				update_in_insert = true,
 			},
 		},
-		lualine_x = { 'filetype' },
+		lualine_x = { 'diff', 'filetype' },
 		lualine_y = { 'progress' },
 		lualine_z = { { 'location', separator = { left = '', right = '' } } },
-		inactive_sections = {},
+	},
+	inactive_sections = {
+		lualine_c = {
+			{
+				filepath,
+				separator = { left = '' },
+			},
+			{
+				'diagnostics',
+				sources = { 'nvim_diagnostic' },
+				sections = { 'error', 'warn', 'info', 'hint' },
+				always_visible = is_file_open,
+				update_in_insert = true,
+			},
+		},
+		lualine_x = { { 'filetype', separator = { left = '', right = '' } } },
 		extensions = {},
 	},
 }
