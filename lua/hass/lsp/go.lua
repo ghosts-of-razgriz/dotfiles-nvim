@@ -6,7 +6,7 @@ lspconfig.gopls.setup {
 	cmd = { 'gopls', 'serve' },
 	settings = {
 		gopls = {
-			analysis = {
+			analyses = {
 				unusedparams = true,
 			},
 			staticcheck = true,
