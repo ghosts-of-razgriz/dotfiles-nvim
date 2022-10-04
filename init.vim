@@ -6,3 +6,5 @@ let $CONFPATH = fnamemodify(expand('<sfile>'), ':h')
 
 " initialize packer
 lua require 'init'
+" load plugins via packer
+lua require 'plugins'
