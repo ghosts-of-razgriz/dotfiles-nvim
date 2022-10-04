@@ -19,3 +19,6 @@ nnoremap <silent><localleader><tab> :tabnew<cr>
 nnoremap <silent><localleader>h :tabprevious<cr>
 nnoremap <silent><localleader>l :tabnext<cr>
 nnoremap <silent><localleader>; :tabclose<cr>
+
+" ----- search highlight
+nnoremap <leader>h :set hlsearch!<cr>
