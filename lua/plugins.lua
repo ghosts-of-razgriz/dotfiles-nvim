@@ -7,6 +7,9 @@ packer.startup(function(use)
 	-- color schemes
 	use { 'folke/tokyonight.nvim', config = "require 'packer.config.tokyonight'" }
 
+	-- syntax
+	use { 'sheerun/vim-polyglot' }
+
 	-- file explorer
 	use {
 		'Shougo/defx.nvim',
@@ -52,6 +55,22 @@ packer.startup(function(use)
 		}
 	}
 
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		ft = {
+			'bash',
+			'c',
+			'css',
+			'go',
+			'javascript',
+			'lua',
+			'python',
+			'ruby',
+			'toml',
+			'yaml',
+		},
+		config = "require 'packer.config.treesitter'",
+	}
 	use {
 		'tpope/vim-fugitive',
 		cmd = {
