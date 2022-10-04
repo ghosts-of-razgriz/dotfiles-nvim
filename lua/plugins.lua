@@ -138,5 +138,5 @@ packer.startup(function(use)
   }
 
   -- json
-  use {'elzr/vim-json', ft = 'json', setup = "vim.o.conceallevel = 1"}
+  use {'elzr/vim-json', ft = 'json'}
 end)

@@ -68,4 +68,4 @@ if has('termguicolors')
   set termguicolors
 endif
 
-
+set conceallevel=1
