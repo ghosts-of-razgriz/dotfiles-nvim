@@ -118,4 +118,9 @@ packer.startup(function(use)
 		setup = "require 'hass.setup.emmet'",
 		ft = { 'html', 'css' },
 	}
+
+	use {
+		'rafcamlet/nvim-luapad',
+		cmd = { 'Luapad', 'LuaRun' },
+	}
 end)
