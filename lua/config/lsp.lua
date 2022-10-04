@@ -11,5 +11,10 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	{ virtual_text = { spacing = 5, prefix = '' } }
 )
 
+require 'lsp.gopls'
 require 'lsp.sumneko'
 require 'lsp.null_ls'
+
+utils.set_keymaps({
+	['\\'] = { '<cmd>lua require "lsp.utils".toggle_formatting()<cr>', 'Toggle LSP Formatting' },
+}, { prefix = '<leader>' })
