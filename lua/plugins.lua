@@ -5,7 +5,7 @@ packer.startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	-- color schemes
-	use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
+	use { 'laughingman-hass/tokyonight.nvim', config = 'require "config.color"' }
 	use { 'rebelot/kanagawa.nvim' }
 
 	-- language server protocol
@@ -32,6 +32,13 @@ packer.startup(function(use)
 		},
 	}
 
+	use {
+		'folke/trouble.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = 'require "config.trouble"',
+		cmd = { 'Trouble', 'TroubleToggle', 'TroubleClose', 'TroubleRefresh' },
+	}
+
 	-- file explorer
 	use {
 		'Shougo/defx.nvim',
@@ -50,6 +57,7 @@ packer.startup(function(use)
 			'nvim-lua/popup.nvim',
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+			'folke/trouble.nvim',
 		},
 		config = 'require "config.telescope"',
 		setup = 'require "setup.telescope"',
