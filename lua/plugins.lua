@@ -5,26 +5,47 @@ packer.startup(function(use)
   use {'wbthomason/packer.nvim', opt = true}
 
   -- Experimental
+  -- TODO: evaluate
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- TODO: evaluate
+  use {
+    'folke/trouble.nvim',
+    config = "require 'packer.config.trouble'",
+  }
+
+  -- TODO: evaluate
   use {
     'famiu/feline.nvim',
     config = "require 'packer.config.feline'",
     requires = {
       {'kyazdani42/nvim-web-devicons'},
-      {
-        'lewis6991/gitsigns.nvim',
-        config = "require('gitsigns').setup()",
-        requires = {
-          'nvim-lua/plenary.nvim',
-        }
-      },
+      -- {
+      --   'lewis6991/gitsigns.nvim',
+      --   config = "require('gitsigns').setup()",
+      --   requires = {
+      --     'nvim-lua/plenary.nvim',
+      --   }
+      -- },
     }
   }
 
 
   -- color schemes
-  use {'dracula/vim', as = 'dracula'}
-  use {'gosukiwi/vim-atom-dark'} -- , config = "vim.cmd('colorscheme atom-dark')" }
-  use {'drewtempelmeyer/palenight.vim', config = "vim.cmd('colorscheme palenight')"}
+  use { 'folke/tokyonight.nvim', config = "require 'packer.config.tokyonight'" }
+  -- use {'drewtempelmeyer/palenight.vim'} -- , config = "vim.cmd('colorscheme palenight')"}
+  -- use {'dracula/vim', as = 'dracula'}
+  -- use {'gosukiwi/vim-atom-dark'} -- , config = "vim.cmd('colorscheme atom-dark')" }
   -- use {'arcticicestudio/nord-vim'}
   -- use {'nanotech/jellybeans.vim'}
   -- use {'joshdick/onedark.vim'}
