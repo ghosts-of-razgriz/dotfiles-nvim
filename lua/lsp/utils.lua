@@ -4,8 +4,8 @@ local utils = require 'utils'
 
 function M.disable_formatting(client)
 	if client.name ~= 'null-ls' then
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.document_range_formatting = false
+		client.server_capabilities.document_formatting = false
+		client.server_capabilities.document_range_formatting = false
 	end
 end
 
@@ -36,7 +36,7 @@ end
 
 function M.format_file()
 	if vim.g.lsp_format == 1 then
-		vim.lsp.buf.formatting_sync(nil, 1000)
+		vim.lsp.buf.format()
 	end
 end
 
