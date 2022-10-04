@@ -86,6 +86,8 @@ packer.startup(function(use)
 	-- clip board
 	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 
+	use { 'kyazdani42/nvim-web-devicons' }
+
 	use { 'AndrewRadev/splitjoin.vim' }
 	use { 'tpope/vim-repeat' }
 	use { 'b3nj5m1n/kommentary', keys = 'gc', config = "require 'hass.config.kommentary'" }
