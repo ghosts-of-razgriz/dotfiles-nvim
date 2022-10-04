@@ -42,6 +42,16 @@ local function build_sources()
 		table.insert(sources, b.formatting.prettierd)
 	end
 
+	-- fish
+	if vim.fn.executable 'fish' == 1 then
+		table.insert(sources, b.diagnostics.fish)
+	end
+
+	-- fish formatter
+	if vim.fn.executable 'fish_indent' == 1 then
+		table.insert(sources, b.formatting.fish_indent)
+	end
+
 	return sources
 end
 
