@@ -17,5 +17,5 @@ RUN git clone https://aur.archlinux.org/pikaur.git  &&\
       pikaur -S --noconfirm neovim-nightly-git &&\
       gem install neovim &&\
       echo "alias pip3=pip" >> /home/neovim-dev/.bashrc &&\
-      echo 'export PATH="/home/neovim-dev/.gem/ruby/2.7.0/bin:$PATH"' >> /home/neovim-dev/.bashrc
+      echo 'export PATH="/home/neovim-dev/.config/yarn/global/node_modules/.bin:/home/neovim-dev/.gem/ruby/2.7.0/bin:$PATH"' >> /home/neovim-dev/.bashrc
 
