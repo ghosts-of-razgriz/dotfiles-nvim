@@ -36,7 +36,6 @@ packer.startup(function(use)
 		'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 		config = 'require "config.trouble"',
-		cmd = { 'Trouble', 'TroubleToggle', 'TroubleClose', 'TroubleRefresh' },
 	}
 
 	-- file explorer
@@ -61,6 +60,7 @@ packer.startup(function(use)
 		},
 		config = 'require "config.telescope"',
 		setup = 'require "setup.telescope"',
+		cmd = { 'Telescope' },
 	}
 
 	-- syntax
