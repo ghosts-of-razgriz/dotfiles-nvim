@@ -17,6 +17,6 @@ function! DockerTransform(cmd) abort
   return 'docker-compose exec app ' . a:cmd
 endfunction
 
-let g:test#custom_transformations = {'docker': function('DockerTransform')}
-let g:test#transformation = 'docker'
+" let g:test#custom_transformations = {'docker': function('DockerTransform')}
+" let g:test#transformation = 'docker'
 
