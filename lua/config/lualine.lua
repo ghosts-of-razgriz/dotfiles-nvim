@@ -42,18 +42,30 @@ local function get_mode()
 	return mode_icons[mode] .. ' '
 end
 
+local function dirty()
+	local buf = vim.fn.bufnr '%'
+	local is_dirty = vim.fn.getbufinfo(buf)[1].changed
+	local m = ''
+
+	if is_dirty == 1 then
+		m = ''
+	end
+
+	return m
+end
+
 local function filepath()
 	local path = vim.fn.expand '%'
 	if vim.fn.winwidth(0) <= 84 then
 		path = vim.fn.pathshorten(path)
 	end
+	path = vim.fn.pathshorten(path)
 
 	if not path or #path == 0 then
 		return ''
 	end
 
-	local icon = require('nvim-web-devicons').get_icon(path)
-	return icon .. '  ' .. path
+	return path
 end
 
 local function is_file_open()
@@ -73,7 +85,9 @@ lualine.setup {
 		},
 		lualine_b = { 'branch' },
 		lualine_c = {
-			filepath,
+			{ 'filetype', icon_only = true, separator = '' },
+			{ filepath, separator = '' },
+			dirty,
 			{
 				'diagnostics',
 				sources = { 'nvim_diagnostic' },
@@ -86,21 +100,6 @@ lualine.setup {
 		lualine_y = { 'progress' },
 		lualine_z = { { 'location', separator = { left = '', right = '' } } },
 	},
-	inactive_sections = {
-		-- lualine_c = {
-		-- 	{
-		-- 		filepath,
-		-- 		separator = { left = '' },
-		-- 	},
-		-- 	{
-		-- 		'diagnostics',
-		-- 		sources = { 'nvim_diagnostic' },
-		-- 		sections = { 'error', 'warn', 'info', 'hint' },
-		-- 		always_visible = is_file_open,
-		-- 		update_in_insert = true,
-		-- 	},
-		-- },
-		-- lualine_x = { { 'filetype', separator = { left = '', right = '' } } },
-	},
+	inactive_sections = {},
 	extensions = {},
 }
