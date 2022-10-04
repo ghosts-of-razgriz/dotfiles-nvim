@@ -117,7 +117,8 @@ lualine.setup {
 		lualine_b = { 'branch' },
 		lualine_c = {
 			{ 'filetype', icon_only = true, separator = '' },
-			{ filepath, separator = '' },
+			-- { filepath, separator = '' },
+			{ 'filename', path = 1 },
 			dirty,
 			{
 				'diagnostics',
