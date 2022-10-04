@@ -72,6 +72,27 @@ local function is_file_open()
 	return #(vim.fn.expand '%') > 0
 end
 
+local function lsp_name()
+	local msg = 'No Active LSP'
+	local clients = vim.lsp.get_active_clients()
+	if next(clients) == nil then
+		return msg
+	end
+
+	local known_clients = {}
+	local client_names = {}
+
+	for _, client in ipairs(clients) do
+		local name = client.name
+		if known_clients[name] == nil then
+			known_clients[name] = 1
+			table.insert(client_names, name)
+		end
+	end
+
+	return table.concat(client_names, ', ')
+end
+
 lualine.setup {
 	options = {
 		theme = lualine_theme,
@@ -105,7 +126,11 @@ lualine.setup {
 				update_in_insert = true,
 			},
 		},
-		lualine_x = { 'diff', 'filetype' },
+		lualine_x = {
+			{ lsp_name, icon = ' LSP:', color = { fg = '#ffffff', gui = 'bold' } },
+			'diff',
+			'filetype',
+		},
 		lualine_y = { 'progress' },
 		lualine_z = { { 'location', separator = { left = '', right = '' } } },
 	},
