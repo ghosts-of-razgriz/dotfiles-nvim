@@ -103,4 +103,18 @@ packer.startup(function(use)
         }
     }}
   }
+
+  -- filetype plugins
+  use {
+    'mattn/emmet-vim',
+    ft = {
+      'html',
+      'css',
+      'scss',
+      'javascript.jsx',
+      'javascript',
+      'jsx',
+      'eruby'
+    },
+  }
 end)
