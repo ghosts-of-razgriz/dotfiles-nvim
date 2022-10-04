@@ -75,4 +75,5 @@ packer.startup(function(use)
 	use { 'AndrewRadev/splitjoin.vim', keys = { 'gJ', 'gS' } }
 	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 	use { 'kyazdani42/nvim-web-devicons' }
+	use { 'rafcamlet/nvim-luapad', cmd = { 'Luapad' }, config = 'require "config.luapad"' }
 end)
