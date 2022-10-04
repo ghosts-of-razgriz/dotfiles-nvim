@@ -69,4 +69,15 @@ packer.startup(function(use)
 		requires = { 'junegunn/gv.vim' },
 		setup = "require 'packer.setup.fugitive'",
 	}
+	use {
+		'christoomey/vim-tmux-navigator',
+		cmd = {
+			'TmuxNavigateLeft',
+			'TmuxNavigateDown',
+			'TmuxNavigateUp',
+			'TmuxNavigateRight',
+			'TmuxNavigatePrevious'
+		},
+		setup = "require 'packer.setup.vim-tmux-navigator'"
+	}
 end)
