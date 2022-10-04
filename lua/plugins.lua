@@ -17,6 +17,7 @@ packer.startup(function(use)
   use {'tpope/vim-commentary'}
   use {'tpope/vim-surround'}
   use {'junegunn/vim-peekaboo', config = "vim.g.peekaboo_window = 'vertical botright 80new'"}
+  use {'AndrewRadev/splitjoin.vim'}
 
   -- lazy plugins
   use {
