@@ -135,4 +135,37 @@ packer.startup(function(use)
 		'junegunn/vim-peekaboo',
 		config = "require 'packer.config.peekaboo'",
 	}
+
+	use {
+		'janko-m/vim-test',
+		cmd = {
+			'TestNearest',
+			'TestFile',
+			'TestSuite',
+			'TestLast',
+			'TestVisit'
+		},
+		setup = "require 'packer.setup.vim-test'",
+		requires = {{
+			'christoomey/vim-tmux-runner',
+			setup = "require 'packer.setup.vim-tmux-runner'",
+			cmd = {
+				'VtrSendCommandToRunner',
+				'VtrSendLinesToRunner',
+				'VtrOpenRunner',
+				'VtrKillRunner',
+				'VtrFocusRunner',
+				'VtrResizeRunner',
+				'VtrReorientRunner',
+				'VtrDetachRunner',
+				'VtrReattachRunner',
+				'VtrClearRunner',
+				'VtrFlushCommand',
+				'VtrSendCtrlD',
+				'VtrSendFile',
+				'VtrSendCommand',
+				'VtrAttachToPane'
+			}
+		}}
+	}
 end)
