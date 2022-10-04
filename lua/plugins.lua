@@ -16,15 +16,14 @@ packer.startup(function(use)
   -- Experimental
 
   -- TODO: need to enable and check
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   requires = {
-  --     {'nvim-lua/popup.nvim'},
-  --     {'nvim-lua/plenary.nvim'},
-  --   }
-  -- }
-
   use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    },
+    config = "require 'packer.config.telescope'",
+    setup = "require 'packer.setup.telescope'",
   }
 
   -- plugins
@@ -78,12 +77,12 @@ packer.startup(function(use)
     }
   }
 
-  use {
-    'Shougo/denite.nvim',
-    cmd = 'Denite',
-    config = "require 'packer.config.denite'",
-    setup = "require 'packer.setup.denite'",
-  }
+  -- use {
+  --   'Shougo/denite.nvim',
+  --   cmd = 'Denite',
+  --   config = "require 'packer.config.denite'",
+  --   setup = "require 'packer.setup.denite'",
+  -- }
 
   use {
     'Shougo/defx.nvim',
