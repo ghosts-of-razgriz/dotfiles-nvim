@@ -2,7 +2,7 @@
 local fn = vim.fn
 
 local pack_path = fn.stdpath 'config' .. '/pack'
-local install_path = pack_path .. '/packer/opt/packer.nvim'
+local install_path = pack_path .. '/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
 	local packer_repo = 'https://github.com/wbthomason/packer.nvim'
