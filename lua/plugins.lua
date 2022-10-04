@@ -48,7 +48,8 @@ packer.startup(function(use)
     }}
   }
 
-  use {'cohama/lexima.vim', event = 'InsertEnter *'}
+  use {'cohama/lexima.vim', event = 'InsertEnter *', disable = true}
+  use {'jiangmiao/auto-pairs', event = 'InsertEnter *'}
   use {'godlygeek/tabular', cmd = {'Tab', 'Tabularize'}}
   use {
     'tpope/vim-fugitive',
