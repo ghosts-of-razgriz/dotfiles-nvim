@@ -84,11 +84,6 @@ packer.startup(function(use)
 		config = 'require "config.treesitter"',
 		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
 	}
-	use {
-		'folke/twilight.nvim',
-		config = 'require "config.twilight"',
-		cmd = { 'Twilight', 'TwilightEnable', 'TwilightDisable' },
-	}
 
 	-- debugging
 	use {
