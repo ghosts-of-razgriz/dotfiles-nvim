@@ -22,6 +22,8 @@ packer.startup(function(use)
 		requires = { 'folke/lsp-colors.nvim' },
 	}
 
+	use { 'folke/trouble.nvim', config = "require 'hass.config.trouble'" }
+
 	-- autocomplete
 	use {
 		'hrsh7th/nvim-compe',
