@@ -65,7 +65,8 @@ packer.startup(function(use)
       vim.api.nvim_set_keymap('n', '<leader>ub', ':Denite buffer<cr>', settings)
       vim.api.nvim_set_keymap('n', '<leader>ur', ':Denite -resume<cr>', settings)
       vim.api.nvim_set_keymap('n', '<leader>uh', ':Denite help<cr>', settings)
-    end
+    end,
+    run = ":UpdateRemotePlugins",
   }
 
   use {
@@ -79,6 +80,7 @@ packer.startup(function(use)
       vim.api.nvim_set_keymap('n', '<leader>e', ':Defx -buffer-name=defx -show-ignored-files<cr>', settings)
       vim.api.nvim_set_keymap('n', '<localleader>e', ":Defx -buffer-name=defx -show-ignored-files `expand('%:p:h')`<cr>", settings)
     end,
+    run = ":UpdateRemotePlugins",
     requires = {'kristijanhusak/defx-git', {
         'kristijanhusak/defx-icons',
         config = function()
@@ -94,6 +96,33 @@ packer.startup(function(use)
           vim.g.defx_icons_nested_closed_tree_icon = ''
         end,
     }}
+  }
+
+  use {'jiangmiao/auto-pairs', event = 'InsertEnter *'}
+  use {'godlygeek/tabular', cmd = {'Tab', 'Tabularize'}}
+  use {
+    'tpope/vim-fugitive',
+    cmd = {
+      'Gblame', 'Gcommit', 'Gdiff', 'Gedit', 'Gfetch', 'Git', 'Gpull', 'Gpush',
+      'Gstatus', 'Gwrite'
+    },
+    setup = function()
+      local settings = { noremap = true }
+      vim.api.nvim_set_keymap('n', '<leader>ga',       ':Git add --patch<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gb',       ':Gblame<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gc',       ':Gcommit<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gd',       ':Gdiff<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gf',       ':Gfetch<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gg',       ':Git<space>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gk',       ':Git checkout<space>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gl',       ':Gpull<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gp',       ':Gpush<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gs',       ':Gstatus<cr><c-w><s-h>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>gw',       ':Gwrite<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<localleader>gc',  ':Gcommit --amend<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<localleader>gw',  ':Git add --patch %<cr>', settings)
+      vim.api.nvim_set_keymap('n', '<leader>ge',       ':Gedit<space>', settings)
+    end
   }
 end)
 
