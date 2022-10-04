@@ -17,30 +17,21 @@ packer.startup(function(use)
 		config = "require 'packer.config.defx'",
 		setup = "require 'packer.setup.defx'",
 		requires = {
-			{
-				'kristijanhusak/defx-icons',
-				config = "require 'packer.config.defx-icons'",
-			},
-		}
+			{ 'kristijanhusak/defx-icons', config = "require 'packer.config.defx-icons'" },
+		},
 	}
 
 	-- status bar
 	use {
 		'hoob3rt/lualine.nvim',
 		config = "require 'packer.config.lualine'",
-		requires = {
-			'kyazdani42/nvim-web-devicons',
-			opt = true
-		}
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 	}
 
 	-- fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = {
-			{'nvim-lua/popup.nvim'},
-			{'nvim-lua/plenary.nvim'},
-		},
+		requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
 		config = "require 'packer.config.telescope'",
 		setup = "require 'packer.setup.telescope'",
 	}
@@ -49,9 +40,7 @@ packer.startup(function(use)
 	use {
 		'neovim/nvim-lspconfig',
 		config = "require 'packer.config.lsp'",
-		requires = {
-			'folke/lsp-colors.nvim',
-		}
+		requires = { 'folke/lsp-colors.nvim' },
 	}
 
 	use {
@@ -70,10 +59,7 @@ packer.startup(function(use)
 		},
 		config = "require 'packer.config.treesitter'",
 	}
-	use {
-		'folke/trouble.nvim',
-		config = "require 'packer.config.trouble'",
-	}
+	use { 'folke/trouble.nvim', config = "require 'packer.config.trouble'" }
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -81,10 +67,7 @@ packer.startup(function(use)
 	}
 
 	-- autocomplete
-	use {
-		'cohama/lexima.vim',
-		config = "require 'packer.config.lexima'",
-	}
+	use { 'cohama/lexima.vim', config = "require 'packer.config.lexima'" }
 	use {
 		'hrsh7th/nvim-compe',
 		config = "require 'packer.config.compe'",
@@ -115,56 +98,46 @@ packer.startup(function(use)
 			'TmuxNavigateDown',
 			'TmuxNavigateUp',
 			'TmuxNavigateRight',
-			'TmuxNavigatePrevious'
+			'TmuxNavigatePrevious',
 		},
-		setup = "require 'packer.setup.vim-tmux-navigator'"
+		setup = "require 'packer.setup.vim-tmux-navigator'",
 	}
 
-	use {
-		'christoomey/vim-system-copy',
-		keys = {'cp', 'cP'},
-	}
+	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 
 	use { 'kana/vim-operator-user' }
 	use { 'tpope/vim-repeat' }
 	use { 'tpope/vim-commentary' }
 	use { 'tpope/vim-surround' }
 	use { 'AndrewRadev/splitjoin.vim' }
-	use {
-		'junegunn/vim-peekaboo',
-		config = "require 'packer.config.peekaboo'",
-	}
+	use { 'junegunn/vim-peekaboo', config = "require 'packer.config.peekaboo'" }
 
 	use {
 		'janko-m/vim-test',
-		cmd = {
-			'TestNearest',
-			'TestFile',
-			'TestSuite',
-			'TestLast',
-			'TestVisit'
-		},
+		cmd = { 'TestNearest', 'TestFile', 'TestSuite', 'TestLast', 'TestVisit' },
 		setup = "require 'packer.setup.vim-test'",
-		requires = {{
-			'christoomey/vim-tmux-runner',
-			setup = "require 'packer.setup.vim-tmux-runner'",
-			cmd = {
-				'VtrSendCommandToRunner',
-				'VtrSendLinesToRunner',
-				'VtrOpenRunner',
-				'VtrKillRunner',
-				'VtrFocusRunner',
-				'VtrResizeRunner',
-				'VtrReorientRunner',
-				'VtrDetachRunner',
-				'VtrReattachRunner',
-				'VtrClearRunner',
-				'VtrFlushCommand',
-				'VtrSendCtrlD',
-				'VtrSendFile',
-				'VtrSendCommand',
-				'VtrAttachToPane'
-			}
-		}}
+		requires = {
+			{
+				'christoomey/vim-tmux-runner',
+				setup = "require 'packer.setup.vim-tmux-runner'",
+				cmd = {
+					'VtrSendCommandToRunner',
+					'VtrSendLinesToRunner',
+					'VtrOpenRunner',
+					'VtrKillRunner',
+					'VtrFocusRunner',
+					'VtrResizeRunner',
+					'VtrReorientRunner',
+					'VtrDetachRunner',
+					'VtrReattachRunner',
+					'VtrClearRunner',
+					'VtrFlushCommand',
+					'VtrSendCtrlD',
+					'VtrSendFile',
+					'VtrSendCommand',
+					'VtrAttachToPane',
+				},
+			},
+		},
 	}
 end)
