@@ -44,11 +44,16 @@ packer.startup(function(use)
 		setup = 'require "setup.telescope"',
 	}
 
-	-- synctax
+	-- syntax
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = 'require "config.treesitter"',
 		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+	}
+	use {
+		'folke/twilight.nvim',
+		config = 'require "config.twilight"',
+		cmd = { 'Twilight', 'TwilightEnable', 'TwilightDisable' },
 	}
 
 	-- auto closer
