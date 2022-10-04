@@ -14,5 +14,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 fn.system 'packadd packer.nvim'
 
+vim.cmd [[
+	augroup PackerAuto
+		autocmd BufWritePost plugins.lua :luafile %
+	augroup END
+]]
+
 local packer = require 'packer'
 packer.init { package_root = pack_path }
