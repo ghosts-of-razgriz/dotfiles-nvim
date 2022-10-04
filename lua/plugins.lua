@@ -63,7 +63,7 @@ packer.startup(function(use)
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = 'require "config.treesitter"',
-		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+		-- requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
 	}
 
 	-- file explorer
@@ -95,7 +95,7 @@ packer.startup(function(use)
 
 	-- general
 	use {
-		'ssh://git@git.razgriz.io:12222/neovim/traverse.nvim.git',
+		'git@gitlab.razgriz.io:neovim/traverse.nvim',
 		config = 'require "config.traverse"',
 	}
 
