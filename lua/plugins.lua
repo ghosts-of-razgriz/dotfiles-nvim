@@ -1,5 +1,4 @@
 local packer = require 'packer'
-local utils = require 'utils'
 
 packer.startup(function(use)
 	-- packer manage itself
@@ -7,4 +6,11 @@ packer.startup(function(use)
 
 	-- color schemes
 	use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
+
+	-- language server protocol
+	use {
+		'neovim/nvim-lspconfig',
+		config = 'require "config.lsp"',
+		requires = { 'folke/lsp-colors.nvim' },
+	}
 end)
