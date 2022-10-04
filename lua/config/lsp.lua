@@ -14,3 +14,7 @@ require 'lsp.sumneko'
 require 'lsp.gopls'
 require 'lsp.tsserver'
 require 'lsp.null_ls'
+
+local lspconfig = require 'lspconfig'
+
+lspconfig.tailwindcss.setup {}
