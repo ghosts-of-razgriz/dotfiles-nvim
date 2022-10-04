@@ -18,3 +18,33 @@ vim.call('denite#custom#option', 'default', {
 
 vim.call('denite#custom#filter', 'matcher_ignore_globs', 'ignore_globs', {'.git/'})
 
+                            -- *denite-option-highlight-filter-background*
+-- -highlight-filter-background
+		-- Change backgroud color group in floating filter window.
+		-- Default: "NormalFloat"
+
+					-- *denite-option-highlight-matched-char*
+-- -highlight-matched-char
+		-- Matched characters highlight.
+		-- Default: "None"
+
+				-- *denite-option-highlight-matched-range*
+-- -highlight-matched-range
+		-- Matched range highlight.
+		-- Default: "Underlined"
+
+					-- *denite-option-highlight-preview-line*
+-- -highlight-preview-line
+		-- Previewed line highlight.
+		-- Default: "Search"
+
+					-- *denite-option-highlight-prompt*
+-- -highlight-prompt
+		-- Prompt highlight in filter window.
+		-- Default: "Special"
+
+                            -- *denite-option-highlight-window-background*
+-- -highlight-window-background
+		-- Change backgroud color group in floating window.
+		-- Default: "NormalFloat"
+
