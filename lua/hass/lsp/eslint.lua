@@ -1,9 +1,6 @@
 local lspconfig = require 'lspconfig'
 local keymap = require 'hass.lsp.keymap'
 
-lspconfig.tsserver.setup {
+lspconfig.eslint.setup {
 	on_attach = keymap,
-	init_options = {
-		documentFormatting = false,
-	},
 }

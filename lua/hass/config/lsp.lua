@@ -8,10 +8,11 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	{ virtual_text = { spacing = 5, prefix = '' } }
 )
 
-require 'hass.lsp.sumneko'
-require 'hass.lsp.go'
-require 'hass.lsp.vimscript'
 require 'hass.lsp.docker'
--- require 'hass.lsp.tsserver'
+require 'hass.lsp.go'
+require 'hass.lsp.sumneko'
+require 'hass.lsp.vimscript'
+require 'hass.lsp.eslint'
+
 require 'hass.lsp.efm.stylua'
 require 'hass.lsp.efm.prettier'

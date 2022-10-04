@@ -2,7 +2,7 @@ local lspconfig = require 'lspconfig'
 local util = require 'lspconfig.util'
 local configs = require 'lspconfig.configs'
 
-local prettier = { formatCommand = 'prettier', formatStdin = false }
+local prettier = { formatCommand = 'prettier --stdin-filepath ${INPUT}', formatStdin = true }
 
 if not configs.prettier then
 	configs.prettier = {
