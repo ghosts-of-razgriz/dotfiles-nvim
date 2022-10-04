@@ -10,6 +10,7 @@ set_keymap('i', 'jk', '<esc>', utils.nore)
 -- quit
 set_keymap('n', leader .. 'q', '<cmd>quit<cr>', utils.noresilent)
 set_keymap('n', lleader .. 'q', '<cmd>quit!<cr>', utils.noresilent)
+set_keymap('n', lleader .. 'a', '<cmd>quitall!<cr>', utils.noresilent)
 
 -- write
 set_keymap('n', leader .. 'w', '<cmd>write<cr>', utils.nore)
