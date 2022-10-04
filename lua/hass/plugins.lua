@@ -28,4 +28,7 @@ packer.startup(function(use)
 		config = "require 'hass.config.compe'",
 		setup = "require 'hass.setup.compe'",
 	}
+
+	-- syntax detection
+	use { 'nvim-treesitter/nvim-treesitter', config = "require 'hass.config.treesitter'" }
 end)
