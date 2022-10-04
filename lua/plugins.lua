@@ -50,7 +50,13 @@ packer.startup(function(use)
     requires = {
       'Shougo/context_filetype.vim',
       'Shougo/deoplete-lsp',
-      {'neovim/nvim-lspconfig', config = "require 'packer.config.lsp'"}
+      {
+        'neovim/nvim-lspconfig',
+        config = "require 'packer.config.lsp'",
+        requires = {
+          'folke/lsp-colors.nvim',
+        }
+      }
     }
   }
 
