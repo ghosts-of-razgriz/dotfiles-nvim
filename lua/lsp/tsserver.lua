@@ -22,5 +22,8 @@ end
 
 lspconfig.tsserver.setup {
 	capabilities = lsputils.make_capabilities(),
-	on_attach = lsputils.disable_formatting,
+	on_attach = function(client, bufnr)
+		lsputils.disable_formatting(client)
+		lsputils.set_lsp_keymap(bufnr)
+	end,
 }
