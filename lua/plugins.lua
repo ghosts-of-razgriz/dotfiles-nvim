@@ -18,6 +18,13 @@ packer.startup(function(use)
 		},
 	}
 
+	-- diagnostic
+	use {
+		'folke/trouble.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = 'require "config.trouble"',
+	}
+
 	-- auto-complete
 	use {
 		'hrsh7th/nvim-cmp',
