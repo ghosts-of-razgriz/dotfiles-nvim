@@ -157,4 +157,35 @@ packer.startup(function(use)
     'christoomey/vim-system-copy',
     keys = {'cp', 'cP'}
   }
+
+  use {
+    'janko-m/vim-test',
+    cmd = {
+      'TestNearest',
+      'TestFile',
+      'TestSuite',
+      'TestLast',
+      'TestVisit'
+    },
+    requires = {{
+        'christoomey/vim-tmux-runner',
+        cmd = {
+          'VtrSendCommandToRunner',
+          'VtrSendLinesToRunner',
+          'VtrOpenRunner',
+          'VtrKillRunner',
+          'VtrFocusRunner',
+          'VtrResizeRunner',
+          'VtrReorientRunner',
+          'VtrDetachRunner',
+          'VtrReattachRunner',
+          'VtrClearRunner',
+          'VtrFlushCommand',
+          'VtrSendCtrlD',
+          'VtrSendFile',
+          'VtrSendCommand',
+          'VtrAttachToPane'
+        }
+    }}
+  }
 end)
