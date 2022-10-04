@@ -1,0 +1,34 @@
+local packer = require 'packer'
+
+packer.startup(function(use)
+	-- packer manage itself
+	use { 'wbthomason/packer.nvim' }
+
+	-- color schemes
+	use { 'catppuccin/nvim', as =  'catppuccin', config = 'require "config.color"' }
+
+	-- language server
+	use {
+		'neovim/nvim-lspconfig',
+		config = 'require "config.lsp"',
+		requires = {
+			'folke/lsp-colors.nvim',
+			{ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' },
+			'hrsh7th/cmp-nvim-lsp',
+		},
+	}
+
+	-- auto-complete
+	use {
+		'hrsh7th/nvim-cmp',
+		config = 'require "config.cmp"',
+		requires = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-nvim-lsp',
+			'onsails/lspkind-nvim',
+			'L3MON4D3/LuaSnip',
+		},
+	}
+end)
