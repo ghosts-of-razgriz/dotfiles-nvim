@@ -26,4 +26,16 @@ packer.startup(function(use)
 			'L3MON4D3/LuaSnip',
 		},
 	}
+
+	-- fuzzy finder
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			'nvim-lua/popup.nvim',
+			'nvim-lua/plenary.nvim',
+			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+		},
+		config = 'require "config.telescope"',
+		setup = 'require "setup.telescope"',
+	}
 end)
