@@ -10,3 +10,4 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 
 require 'hass.lsp.sumneko'
 require 'hass.lsp.go'
+require 'hass.lsp.hassLua'
