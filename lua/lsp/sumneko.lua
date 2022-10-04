@@ -2,11 +2,6 @@ local fn = vim.fn
 local lspconfig = require 'lspconfig'
 local lsputils = require 'lsp.utils'
 
-local function run(...)
-	local cmd = string.format('!%s', ...)
-	vim.api.nvim_command(cmd)
-end
-
 local sumneko_repo = 'https://github.com/sumneko/lua-language-server'
 local sumneko_root_path = fn.stdpath 'config' .. '/tmp/lua-language-server'
 local sumneko_bin = sumneko_root_path .. '/bin/lua-language-server'
@@ -15,15 +10,15 @@ local set_dir = vim.api.nvim_set_current_dir
 if fn.filereadable(sumneko_bin) ~= 1 then
 	local working_dir = fn.getcwd()
 	if fn.filereadable(sumneko_root_path) ~= 1 then
-		run(string.format('git clone %s %s', sumneko_repo, sumneko_root_path))
+		lsputils.run(string.format('git clone %s %s', sumneko_repo, sumneko_root_path))
 		set_dir(sumneko_root_path)
-		run 'git submodule update --init --recursive'
+		lsputils.run 'git submodule update --init --recursive'
 	end
 
 	set_dir(sumneko_root_path .. '/3rd/luamake')
-	run 'compile/install.sh'
+	lsputils.run 'compile/install.sh'
 	set_dir(sumneko_root_path)
-	run './3rd/luamake/luamake rebuild'
+	lsputils.run './3rd/luamake/luamake rebuild'
 	set_dir(working_dir)
 end
 
