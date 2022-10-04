@@ -126,6 +126,7 @@ packer.startup(function(use)
   -- html
   use {
     'mattn/emmet-vim',
+    cmd = 'EmmetInstall',
     ft = {
       'html',
       'css',
@@ -134,6 +135,7 @@ packer.startup(function(use)
       'javascript',
       'jsx',
       'eruby',
+      'gohtmltmpl',
       'gohtml',
     },
   }
