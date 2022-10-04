@@ -11,7 +11,7 @@ packer.startup(function(use)
   use {'joshdick/onedark.vim', disable = true}
 
   -- plugins
-  use {'sheerun/vim-polyglot', disable = true}
+  use {'sheerun/vim-polyglot'}
   use {'kana/vim-operator-user'}
   use {'tpope/vim-repeat'}
   use {'tpope/vim-commentary'}
