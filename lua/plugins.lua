@@ -100,6 +100,14 @@ packer.startup(function(use)
 		requires = 'mfussenegger/nvim-dap',
 	}
 
+	-- testing
+	use {
+		'rcarriga/vim-ultest',
+		requires = { 'vim-test/vim-test' },
+		run = ':UpdateRemotePlugins',
+		config = 'require "config.ultest"',
+	}
+
 	-- auto closer
 	use {
 		'windwp/nvim-autopairs',
