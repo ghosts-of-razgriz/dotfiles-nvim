@@ -95,12 +95,7 @@ packer.startup(function(use)
 	}
 
 	-- testing
-	use {
-		'rcarriga/vim-ultest',
-		requires = { 'vim-test/vim-test' },
-		run = ':UpdateRemotePlugins',
-		config = 'require "config.ultest"',
-	}
+	-- checkout neotest https://github.com/nvim-neotest/neotest
 
 	-- auto closer
 	use {
@@ -130,4 +125,9 @@ packer.startup(function(use)
 	use { 'kyazdani42/nvim-web-devicons' }
 	use { 'rafcamlet/nvim-luapad', cmd = { 'Luapad' }, config = 'require "config.luapad"' }
 	use { 'mattn/emmet-vim', cmd = { 'EmmetInstall' }, config = 'require "config.emmet"' }
+	use {
+		'simrat39/symbols-outline.nvim',
+		cmd = { 'SymbolsOutline', 'SymbolsOutlineOpen', 'SymbolsOutlineClose' },
+		config = 'require "config.outline"',
+	}
 end)
