@@ -12,7 +12,7 @@ cmp.setup {
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		},
-		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		['<C-d>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 	},
