@@ -98,4 +98,10 @@ packer.startup(function(use)
 	use { 'b3nj5m1n/kommentary', keys = 'gc', config = "require 'hass.config.kommentary'" }
 	use { 'tpope/vim-surround' }
 	use { 'junegunn/vim-peekaboo', config = "require 'hass.config.peekaboo'" }
+	use {
+		'abecodes/tabout.nvim',
+		config = "require 'hass.config.tabout'",
+		wants = 'nvim-treesitter',
+		after = 'nvim-compe',
+	}
 end)
