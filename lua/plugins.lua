@@ -11,7 +11,7 @@ packer.startup(function(use)
 	use {
 		'neovim/nvim-lspconfig',
 		config = 'require "config.lsp"',
-		requires = { 'folke/lsp-colors.nvim' },
+		requires = { 'folke/lsp-colors.nvim', 'jose-elias-alvarez/null-ls.nvim' },
 	}
 
 	use {

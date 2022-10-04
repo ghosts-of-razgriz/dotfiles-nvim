@@ -9,5 +9,4 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 )
 
 require 'lsp.sumneko'
-
-require 'lsp.efm.stylua'
+require 'lsp.null_ls'
