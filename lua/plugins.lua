@@ -43,6 +43,7 @@ packer.startup(function(use)
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = 'require "config.treesitter"',
+		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
 	}
 
 	-- auto closer
@@ -58,14 +59,20 @@ packer.startup(function(use)
 		cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
 	}
 
+	-- status line
+	use { 'nvim-lualine/lualine.nvim', config = 'require "config.lualine"' }
+
 	-- general
 	use {
 		'git@github.com:laughingman-hass/traverse.nvim.git',
 		config = 'require "config.traverse"',
 	}
 
-	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 	use { 'tpope/vim-repeat' }
 	use { 'tpope/vim-surround' }
+
 	use { 'b3nj5m1n/kommentary', keys = 'gc', config = 'require "config.kommentary"' }
+	use { 'AndrewRadev/splitjoin.vim', keys = { 'gJ', 'gS' } }
+	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
+	use { 'kyazdani42/nvim-web-devicons' }
 end)
