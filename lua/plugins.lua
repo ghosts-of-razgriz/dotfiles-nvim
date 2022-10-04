@@ -83,25 +83,41 @@ packer.startup(function(use)
       'TestVisit'
     },
     requires = {{
-        'christoomey/vim-tmux-runner',
-        cmd = {
-          'VtrSendCommandToRunner',
-          'VtrSendLinesToRunner',
-          'VtrOpenRunner',
-          'VtrKillRunner',
-          'VtrFocusRunner',
-          'VtrResizeRunner',
-          'VtrReorientRunner',
-          'VtrDetachRunner',
-          'VtrReattachRunner',
-          'VtrClearRunner',
-          'VtrFlushCommand',
-          'VtrSendCtrlD',
-          'VtrSendFile',
-          'VtrSendCommand',
-          'VtrAttachToPane'
-        }
+      'christoomey/vim-tmux-runner',
+      cmd = {
+        'VtrSendCommandToRunner',
+        'VtrSendLinesToRunner',
+        'VtrOpenRunner',
+        'VtrKillRunner',
+        'VtrFocusRunner',
+        'VtrResizeRunner',
+        'VtrReorientRunner',
+        'VtrDetachRunner',
+        'VtrReattachRunner',
+        'VtrClearRunner',
+        'VtrFlushCommand',
+        'VtrSendCtrlD',
+        'VtrSendFile',
+        'VtrSendCommand',
+        'VtrAttachToPane'
+      }
     }}
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    ft = {
+      'bash', 'css', 'go', 'javascript', 'lua', 'python', 'ruby', 'toml', 'yaml'
+    },
+    config = function()
+      require 'nvim-treesitter.configs'.setup{
+        ensure_installed = {
+          'bash', 'css', 'go', 'javascript', 'lua', 'python', 'ruby', 'toml', 'yaml'
+        },
+        highlight = { enable = true },
+        indent = { enable = true }
+      }
+    end
   }
 
   -- filetype plugins
