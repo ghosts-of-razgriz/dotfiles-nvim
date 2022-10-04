@@ -4,6 +4,24 @@ packer.startup(function(use)
   -- packer managing itself
   use {'wbthomason/packer.nvim', opt = true}
 
+  -- Experimental
+  -- use {
+  --   'akinsho/nvim-bufferline.lua',
+  --   requires = {
+  --     'kyazdani42/nvim-web-devicons',
+  --     config = function()
+  --       require'nvim-web-devicons'.setup {
+  --         default=true;
+  --       }
+  --     end,
+  --   }
+  -- }
+  use {
+    'glepnir/galaxyline.nvim',
+    config = "require 'packer.config.galaxyline'",
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
   -- color schemes
   use {'dracula/vim', as = 'dracula', config = "vim.cmd('colorscheme dracula')"}
   -- use {'arcticicestudio/nord-vim', config = "vim.cmd('colorscheme nord')"}
@@ -35,20 +53,20 @@ packer.startup(function(use)
     }
   }
 
-  -- use {
-  --   'Shougo/denite.nvim',
-  --   cmd = 'Denite',
-  --   config = "require 'packer.config.denite'",
-  --   setup = "require 'packer.setup.denite'",
-  -- }
-  
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-    }
+    'Shougo/denite.nvim',
+    cmd = 'Denite',
+    config = "require 'packer.config.denite'",
+    setup = "require 'packer.setup.denite'",
   }
+  
+  -- use {
+  --   'nvim-telescope/telescope.nvim',
+  --   requires = {
+  --     {'nvim-lua/popup.nvim'},
+  --     {'nvim-lua/plenary.nvim'},
+  --   }
+  -- }
 
   use {
     'Shougo/defx.nvim',
