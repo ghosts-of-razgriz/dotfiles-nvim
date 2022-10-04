@@ -1,6 +1,6 @@
 local M = {}
 local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-local wk = require 'which-key'
+local utils = require 'utils'
 
 function M.disable_formatting(client)
 	if client.name ~= 'null-ls' then
@@ -15,8 +15,7 @@ function M.make_capabilities()
 end
 
 function M.set_lsp_keymap(bufnr)
-	wk.register({
-		name = 'LSP',
+	utils.set_keymaps({
 		['\\'] = {
 			d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Go to Definition' },
 			i = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'Show implementations' },
@@ -30,7 +29,7 @@ function M.set_lsp_keymap(bufnr)
 		['<c-p>'] = { '<cmd>lua vim.diagnostic.goto_prev()<cr>', 'Go to Previous Diagnostic' },
 	}, { buffer = bufnr })
 
-	wk.register({
+	utils.set_keymaps({
 		['<c-x><c-x>'] = { '<cmd>lua vim.lsp.buf.signature_help()<cr>', '' },
 	}, { mode = 'i', buffer = bufnr })
 end

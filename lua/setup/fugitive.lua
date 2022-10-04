@@ -1,8 +1,7 @@
-local wk = require 'which-key'
+local utils = require 'utils'
 
-wk.register({
+utils.set_keymaps({
 	g = {
-		name = 'Git',
 		a = { '<cmd>Git add --patch<cr>', 'Add patch' },
 		b = { '<cmd>Git blame<cr>', 'Blame' },
 		c = { '<cmd>Git commit<cr>', 'Commit' },
@@ -21,9 +20,8 @@ wk.register({
 	},
 }, { prefix = '<leader>' })
 
-wk.register({
+utils.set_keymaps({
 	g = {
-		name = 'Git',
 		c = { '<cmd>Git commit --amend<cr>', 'Amend Commit' },
 		w = { '<cmd>Git add --patch %<cr>', 'Add patch current file' },
 	},

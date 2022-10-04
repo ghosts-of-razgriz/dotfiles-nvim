@@ -8,10 +8,9 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = '', linehl = '', numhl = '' })
 end
 
-local wk = require 'which-key'
-wk.register {
+local utils = require 'utils'
+utils.set_keymaps({
 	['§'] = {
-		name = 'DAP',
 		['§'] = { '<cmd>lua require("dapui").toggle()<cr>', 'Toggle DAP UI' },
 		['?'] = { '<cmd>WhichKey §<cr>', 'Show DAP Keys' },
 		b = { '<cmd>lua require("dap").toggle_breakpoint()<cr>', 'Toggle Breakpoint' },
@@ -41,4 +40,4 @@ wk.register {
 			'Terminate',
 		},
 	},
-}
+}, {})

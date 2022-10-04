@@ -1,8 +1,7 @@
-local wk = require 'which-key'
+local utils = require 'utils'
 
-wk.register({
+utils.set_keymaps({
 	u = {
-		name = 'Telescope',
 		['<space>'] = { ':Telescope ', 'Telescope <prompt>' },
 		u = { '<cmd>Telescope find_files<cr>', 'Find Files' },
 		t = { '<cmd>Telescope<cr>', 'Telescope' },
@@ -14,9 +13,8 @@ wk.register({
 	},
 }, { prefix = '<leader>' })
 
-wk.register({
+utils.set_keymaps({
 	u = {
-		name = 'Telescope',
 		u = { '<cmd>Telescope git_files<cr>', 'Find Git Files' },
 	},
 }, { prefix = '<localleader>' })
