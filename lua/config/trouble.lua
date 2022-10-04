@@ -1,4 +1,4 @@
-local utils = require 'utils'
+local wk = require 'which-key'
 
 local trouble = require 'trouble'
 
@@ -11,6 +11,11 @@ trouble.setup {
 	use_daignostic_signs = true,
 }
 
-utils.set_keymap('n', '<m-t>t', '<cmd>TroubleToggle<cr>', utils.noresilent)
-utils.set_keymap('n', '<m-t><m-t>', '<cmd>TroubleToggle<cr>', utils.noresilent)
-utils.set_keymap('n', '<m-t>q', '<cmd>TroubleToggle quickfix<cr>', utils.noresilent)
+wk.register {
+	['<m-t>'] = {
+		name = 'Trouble',
+		t = { '<cmd>TroubleToggle<cr>', 'Toggle Trouble' },
+		['<m-t>'] = { '<cmd>TroubleToggle<cr>', 'Toggle Trouble' },
+		q = { '<cmd>TroubleToggle quickfix<cr>', 'Toggle Trouble QuickFix' },
+	},
+}

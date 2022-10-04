@@ -1,55 +1,54 @@
-local utils = require 'utils'
-local set_keymap = utils.set_keymap
+local wk = require 'which-key'
 
-set_keymap(
-	'n',
-	'<leader>e',
-	'<cmd>Defx -buffer-name=defx -show-ignored-files<cr>',
-	utils.noresilent
-)
-set_keymap(
-	'n',
-	'<localleader>e',
-	"<cmd>Defx -buffer-name=defx -show-ignored-files `expand('%:p:h')`<cr>",
-	utils.noresilent
-)
+wk.register {
+	['<leader>'] = {
+		name = 'Defx',
+		e = { '<cmd>Defx -buffer-name=defx -show-ignored-files<cr>', 'Defx' },
+	},
+	['<localleader>'] = {
+		name = 'Defx at current working directory',
+		e = { "<cmd>Defx -buffer-name=defx -show-ignored-files `expand('%:p:h')`<cr>", 'Defx' },
+	},
+}
 
 function DefxKeymap()
-	local settings = { noremap = true, expr = true, silent = true }
-	local set_buf_map = vim.api.nvim_buf_set_keymap
+	local current_buffer = 0
+	local opts = { buffer = current_buffer }
 
-	set_buf_map('0', 'n', '*', 'defx#do_action("toggle_select_all")', settings)
-	set_buf_map('0', 'n', '<cr>', 'defx#async_action("drop")', settings)
-	set_buf_map('0', 'n', '<tab>', 'defx#async_action("toggle_select") . "j"', settings)
-	set_buf_map('0', 'n', 'K', 'defx#do_action("new_directory")', settings)
-	set_buf_map('0', 'n', 'N', 'defx#do_action("new_file")', settings)
-	set_buf_map('0', 'n', '<c-p>', 'defx#do_action("preview")', settings)
-	set_buf_map('0', 'n', 'h', 'defx#async_action("cd", [".."])', settings)
-	set_buf_map('0', 'n', 'j', 'line(".") == line("$") ? "gg" : "j"', settings)
-	set_buf_map('0', 'n', 'k', 'line(".") == 1 ? "G" : "k"', settings)
-	set_buf_map('0', 'n', 'l', 'defx#async_action("open")', settings)
-	set_buf_map('0', 'n', 'd', 'defx#do_action("remove")', settings)
-	set_buf_map('0', 'n', 'c', 'defx#do_action("copy")', settings)
-	set_buf_map('0', 'n', 'm', 'defx#do_action("move")', settings)
-	set_buf_map('0', 'n', 'p', 'defx#do_action("paste")', settings)
-	set_buf_map('0', 'n', 'r', 'defx#do_action("rename")', settings)
-	set_buf_map('0', 'n', 'q', 'defx#do_action("quit")', settings)
-	set_buf_map('0', 'n', 'o', 'defx#do_action("open_or_close_tree")', settings)
-	set_buf_map('0', 'n', 'O', 'defx#do_action("open_tree_recursive")', settings)
-	set_buf_map('0', 'n', '<c-l>', 'defx#do_action("redraw")', settings)
-
-	set_buf_map(
-		'0',
-		'n',
-		'<c-x>',
-		'defx#async_action("multi", ["quit", ["drop", "split"]])',
-		settings
-	)
-	set_buf_map(
-		'0',
-		'n',
-		'<c-v>',
-		'defx#async_action("multi", ["quit", ["drop", "vsplit"]])',
-		settings
-	)
+	wk.register({
+		name = 'Defx',
+		['*'] = { 'defx#do_action("toggle_select_all")', 'Select All', expr = true },
+		['<cr>'] = { 'defx#async_action("drop")', 'Open', expr = true },
+		['<tab>'] = { 'defx#async_action("toggle_select") . "j"', 'Select Current', expr = true },
+		['K'] = { 'defx#do_action("new_directory")', 'Make Directory', expr = true },
+		['N'] = { 'defx#do_action("new_file")', 'New File', expr = true },
+		['<c-p>'] = { 'defx#do_action("preview")', 'Preview', expr = true },
+		['h'] = { 'defx#async_action("cd", [".."])', 'Go to parent directory', expr = true },
+		['j'] = { 'line(".") == line("$") ? "gg" : "j"', 'Move down', expr = true },
+		['k'] = { 'line(".") == 1 ? "G" : "k"', 'Move Up', expr = true },
+		['l'] = { 'defx#async_action("open")', 'Open', expr = true },
+		['d'] = { 'defx#do_action("remove")', 'Delete', expr = true },
+		['c'] = { 'defx#do_action("copy")', 'Copy', expr = true },
+		['m'] = { 'defx#do_action("move")', 'Move', expr = true },
+		['p'] = { 'defx#do_action("paste")', 'Paste', expr = true },
+		['r'] = { 'defx#do_action("rename")', 'Remove', expr = true },
+		['q'] = { 'defx#do_action("quit")', 'Quit', expr = true },
+		['o'] = { 'defx#do_action("open_or_close_tree")', 'Toggle Directory Tree', expr = true },
+		['O'] = {
+			'defx#do_action("open_tree_recursive")',
+			'Toggle Directory Tree Recursively',
+			expr = true,
+		},
+		['<c-l>'] = { 'defx#do_action("redraw")', 'Refresh', expr = true },
+		['<c-x>'] = {
+			'defx#async_action("multi", ["quit", ["drop", "split"]])',
+			'Open in Horizontal Split',
+			expr = true,
+		},
+		['<c-v>'] = {
+			'defx#async_action("multi", ["quit", ["drop", "vsplit"]])',
+			'Open in Vertical Split',
+			expr = true,
+		},
+	}, opts)
 end

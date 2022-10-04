@@ -1,18 +1,27 @@
-local utils = require 'utils'
-local set_keymap = utils.set_keymap
-local nore = utils.nore
+local wk = require 'which-key'
 
-set_keymap('n', '<leader>ga', '<cmd>Git add --patch<cr>', nore)
-set_keymap('n', '<leader>gb', '<cmd>Git blame<cr>', nore)
-set_keymap('n', '<leader>gc', '<cmd>Git commit<cr>', nore)
-set_keymap('n', '<leader>gd', '<cmd>Gdiff<cr>', nore)
-set_keymap('n', '<leader>gf', '<cmd>Git fetch<cr>', nore)
-set_keymap('n', '<leader>gg', '<cmd>Git<space>', nore)
-set_keymap('n', '<leader>gk', ':Git checkout<space>', nore)
-set_keymap('n', '<leader>gl', '<cmd>Git pull<cr>', nore)
-set_keymap('n', '<leader>gp', '<cmd>Git push<cr>', nore)
-set_keymap('n', '<leader>gs', '<cmd>Git<cr><c-w><s-h>', nore)
-set_keymap('n', '<leader>gw', '<cmd>Gwrite<cr>', nore)
-set_keymap('n', '<localleader>gc', '<cmd>Git commit --amend<cr>', nore)
-set_keymap('n', '<localleader>gw', '<cmd>Git add --patch %<cr>', nore)
-set_keymap('n', '<leader>ge', ':Gedit<space>', nore)
+wk.register({
+	g = {
+		name = 'Git',
+		a = { '<cmd>Git add --patch<cr>', 'Add patch' },
+		b = { '<cmd>Git blame<cr>', 'Blame' },
+		c = { '<cmd>Git commit<cr>', 'Commit' },
+		d = { '<cmd>Gdiff<cr>', 'Diff' },
+		f = { '<cmd>Git fetch<cr>', 'Fetch' },
+		g = { '<cmd>Git<space>', 'Git <prompt>' },
+		k = { ':Git checkout<space>', 'Checkout <prompt>' },
+		l = { '<cmd>Git pull<cr>', 'Pull' },
+		p = { '<cmd>Git push<cr>', 'Push' },
+		s = { '<cmd>Git<cr><c-w><s-h>', 'Status' },
+		w = { '<cmd>Gwrite<cr>', 'Add' },
+		e = { ':Gedit<space>', 'Edit <prompt>' },
+	},
+}, { prefix = '<leader>' })
+
+wk.register({
+	g = {
+		name = 'Git',
+		c = { '<cmd>Git commit --amend<cr>', 'Amend Commit' },
+		w = { '<cmd>Git add --patch %<cr>', 'Add patch current file' },
+	},
+}, { prefix = '<localleader>' })
