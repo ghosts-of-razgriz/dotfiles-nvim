@@ -13,6 +13,7 @@ require 'hass.lsp.go'
 require 'hass.lsp.sumneko'
 require 'hass.lsp.vimscript'
 require 'hass.lsp.eslint'
+require 'hass.lsp.tsserver'
 
 require 'hass.lsp.efm.stylua'
 require 'hass.lsp.efm.prettier'
