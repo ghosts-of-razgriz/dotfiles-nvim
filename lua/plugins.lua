@@ -29,5 +29,19 @@ packer.startup(function(use)
     end
   }
 
+  -- lazy plugins
+  use {
+    'Shougo/deoplete.nvim',
+    requires = {
+      'Shougo/context_filetype.vim',
+      'Shougo/deoplete-lsp',
+      {
+        'neovim/nvim-lspconfig',
+        config = function()
+          require 'plugin.lsp'
+        end
+      }
+    }
+  }
 end)
 
