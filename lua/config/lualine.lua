@@ -1,6 +1,6 @@
 local lualine = require 'lualine'
 
-local lualine_theme = 'dracula'
+local lualine_theme = 'auto'
 
 local mode_icons = {
 	['n'] = '🄽',
