@@ -14,9 +14,9 @@ packer.startup(function(use)
 		config = 'require "config.lsp"',
 		requires = {
 			'folke/lsp-colors.nvim',
-			{ 'jose-elias-alvarez/null-ls.nvim', wants = 'plenary' },
+			{ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' },
+			'hrsh7th/cmp-nvim-lsp',
 		},
-		wants = 'cmp-nvim-lsp',
 	}
 
 	use {

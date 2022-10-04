@@ -83,5 +83,5 @@ lualine.setup {
 		lualine_z = { 'location' },
 	},
 	inactive_sections = {},
-	extensions = { 'nvim-tree' },
+	extensions = {},
 }
