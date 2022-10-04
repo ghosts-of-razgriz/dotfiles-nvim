@@ -1,0 +1,22 @@
+local function set_keymap(...)
+	vim.api.nvim_set_keymap(...)
+end
+local opts = { noremap = true, silent = true }
+
+set_keymap('n', '<leader>u<space>', ':Telescope ', { noremap = true })
+set_keymap('n', '<leader>uu', ':Telescope find_files<cr>', opts)
+set_keymap('n', '<localleader>uu', ':Telescope git_files<cr>', opts)
+set_keymap('n', '<leader>ut', ':Telescope<cr>', opts)
+set_keymap('n', '<leader>ub', ':Telescope buffers<cr>', opts)
+set_keymap('n', '<leader>ub', ':Telescope buffers<cr>', opts)
+set_keymap('n', '<leader>ug', ':Telescope live_grep<cr>', opts)
+set_keymap('n', '<leader>uc', ':Telescope commands<cr>', opts)
+set_keymap('n', '<leader>uk', ':Telescope keymaps<cr>', opts)
+-- set_keymap('n', '<leader>uo', ':Telescope lsp_document_symbols<cr>', opts)
+-- set_keymap('n', '<localleader>uo', ':Telescope lsp_workspace_symbols<cr>', opts)
+-- set_keymap('n', 'ge', ':Telescope lsp_document_diagnostics<cr>', opts)
+-- set_keymap('n', 'gE', ':Telescope lsp_workspace_diagnostics<cr>', opts)
+-- set_keymap('n', 'gd', ':Telescope lsp_definitions<cr>', opts)
+-- set_keymap('n', 'gi', ':Telescope lsp_implementations<cr>', opts)
+-- set_keymap('n', 'gk', ':Telescope lsp_references<cr>', opts)
+-- set_keymap('n', 'gK', ':Telescope grep_string<cr>', opts)
