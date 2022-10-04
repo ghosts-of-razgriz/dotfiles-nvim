@@ -5,22 +5,21 @@ packer.startup(function(use)
   use {'wbthomason/packer.nvim', opt = true}
 
   -- Experimental
-  -- use {
-  --   'akinsho/nvim-bufferline.lua',
-  --   requires = {
-  --     'kyazdani42/nvim-web-devicons',
-  --     config = function()
-  --       require'nvim-web-devicons'.setup {
-  --         default=true;
-  --       }
-  --     end,
-  --   }
-  -- }
   use {
-    'glepnir/galaxyline.nvim',
-    config = "require 'packer.config.galaxyline'",
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    'famiu/feline.nvim',
+    config = "require 'packer.config.feline'",
+    requires = {
+      {'kyazdani42/nvim-web-devicons'},
+      {
+        'lewis6991/gitsigns.nvim',
+        config = "require('gitsigns').setup()",
+        requires = {
+          'nvim-lua/plenary.nvim',
+        }
+      },
+    }
   }
+
 
   -- color schemes
   use {'dracula/vim', as = 'dracula'}
