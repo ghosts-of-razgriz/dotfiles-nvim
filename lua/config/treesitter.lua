@@ -1,0 +1,20 @@
+local treesitter = require 'nvim-treesitter.configs'
+
+treesitter.setup {
+	ensure_installed = {
+		'css',
+		'dockerfile',
+		'fish',
+		'go',
+		'gomod',
+		'html',
+		'javascript',
+		'json',
+		'lua',
+		'scss',
+		'toml',
+		'typescript',
+		'yaml',
+	},
+	hightlight = { enable = true },
+}

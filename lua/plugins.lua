@@ -38,4 +38,16 @@ packer.startup(function(use)
 		config = 'require "config.telescope"',
 		setup = 'require "setup.telescope"',
 	}
+
+	-- synctax
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		config = 'require "config.treesitter"',
+	}
+
+	-- auto closer
+	use {
+		'windwp/nvim-autopairs',
+		config = 'require "config.autopairs"',
+	}
 end)
