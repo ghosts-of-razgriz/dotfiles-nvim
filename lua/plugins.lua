@@ -12,9 +12,6 @@ packer.startup(function(use)
 	-- packer manage itself
 	use { 'wbthomason/packer.nvim' }
 
-	-- keymapping helper
-	use { 'folke/which-key.nvim', config = 'require "config.whichkey"' }
-
 	-- color schemes
 	-- use { 'folke/tokyonight.nvim', config = 'require "config.color"' }
 	use_local('tokyonight.nvim', { config = 'require "config.color"' })
@@ -92,7 +89,7 @@ packer.startup(function(use)
 	use {
 		'mfussenegger/nvim-dap',
 		config = 'require "config.dap"',
-		requires = { 'leoluz/nvim-dap-go', 'folke/which-key.nvim' },
+		requires = { 'leoluz/nvim-dap-go' },
 	}
 	use {
 		'rcarriga/nvim-dap-ui',
@@ -135,4 +132,5 @@ packer.startup(function(use)
 	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
 	use { 'kyazdani42/nvim-web-devicons' }
 	use { 'rafcamlet/nvim-luapad', cmd = { 'Luapad' }, config = 'require "config.luapad"' }
+	use { 'mattn/emmet-vim', cmd = { 'EmmetInstall' }, config = 'require "config.emmet"' }
 end)
