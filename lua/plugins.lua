@@ -13,4 +13,17 @@ packer.startup(function(use)
 		config = 'require "config.lsp"',
 		requires = { 'folke/lsp-colors.nvim' },
 	}
+
+	use {
+		'hrsh7th/nvim-cmp',
+		config = 'require "config.cmp"',
+		requires = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-nvim-lsp',
+			'onsails/lspkind-nvim',
+			'L3MON4D3/LuaSnip',
+		},
+	}
 end)
