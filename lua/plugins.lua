@@ -71,6 +71,18 @@ packer.startup(function(use)
 		},
 		config = "require 'packer.config.treesitter'",
 	}
+
+	-- autocomplete
+	use {
+		'cohama/lexima.vim',
+		config = "require 'packer.config.lexima'",
+	}
+	use {
+		'hrsh7th/nvim-compe',
+		config = "require 'packer.config.compe'",
+		setup = "require 'packer.setup.compe'",
+	}
+
 	use {
 		'tpope/vim-fugitive',
 		cmd = {
