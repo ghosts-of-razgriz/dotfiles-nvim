@@ -21,7 +21,6 @@ packer.startup(function(use)
 		requires = {
 			'folke/lsp-colors.nvim',
 			{ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' },
-			'Maan2003/lsp_lines.nvim',
 			'hrsh7th/cmp-nvim-lsp',
 		},
 	}

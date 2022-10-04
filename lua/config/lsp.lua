@@ -15,7 +15,6 @@ require 'lsp.gopls'
 require 'lsp.sumneko'
 require 'lsp.tsserver'
 require 'lsp.null_ls'
-require 'lsp.lsp_lines'
 
 local lspconfig = require 'lspconfig'
 

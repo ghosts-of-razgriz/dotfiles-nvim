@@ -15,12 +15,12 @@ end
 
 fn.system 'packadd packer.nvim'
 
-local augPackerReSource = vim.api.nvim_create_augroup('PackerReSource', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-	pattern = { 'plugins.lua' },
-	command = '<cmd>luafile %<cr>',
-	group = augPackerReSource,
-})
+-- local augPackerReSource = vim.api.nvim_create_augroup('PackerReSource', { clear = true })
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+-- 	pattern = { 'plugins.lua' },
+-- 	command = '<cmd>luafile %<cr>',
+-- 	group = augPackerReSource,
+-- })
 
 local packer = require 'packer'
 packer.init { package_root = pack_path }
