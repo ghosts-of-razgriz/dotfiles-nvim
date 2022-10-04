@@ -25,6 +25,16 @@ telescope.setup {
 			n = { ['<c-t>'] = trouble_provider.open_with_trouble },
 		},
 	},
-	pickers = { find_files = { hidden = false } },
+	pickers = {
+		find_files = {
+			find_command = {
+				'rg',
+				'--files',
+				'--iglob',
+				'!.git',
+				'--hidden',
+			},
+		},
+	},
 }
 telescope.load_extension 'fzf'
