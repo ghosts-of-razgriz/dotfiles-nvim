@@ -28,4 +28,16 @@ packer.startup(function(use)
 		config = "require 'packer.config.lualine'",
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
+
+	-- fuzzy finder
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			{'nvim-lua/popup.nvim'},
+			{'nvim-lua/plenary.nvim'},
+		},
+		config = "require 'packer.config.telescope'",
+		setup = "require 'packer.setup.telescope'",
+	}
+
 end)
