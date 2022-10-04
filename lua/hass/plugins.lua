@@ -31,4 +31,13 @@ packer.startup(function(use)
 
 	-- syntax detection
 	use { 'nvim-treesitter/nvim-treesitter', config = "require 'hass.config.treesitter'" }
+
+	-- file explorer
+	use {
+		'Shougo/defx.nvim',
+		cmd = 'Defx',
+		config = "require 'hass.config.defx'",
+		setup = "require 'hass.setup.defx'",
+		requires = { { 'kristijanhusak/defx-icons', config = "require 'hass.config.defx-icons'" } },
+	}
 end)
