@@ -11,11 +11,10 @@ vim.g.ultest_output_on_line = 1
 
 vim.g['test#go#gotest#options'] = '-v'
 
-local wk = require 'which-key'
+local utils = require 'utils'
 
-wk.register({
+utils.set_keymaps({
 	t = {
-		name = 'Ultest',
 		t = { '<cmd>Ultest<cr>', 'Test' },
 		l = { '<cmd>UltestLast<cr>', 'Test Last' },
 		n = { '<cmd>UltestNearest<cr>', 'Test Nearest' },
@@ -27,9 +26,8 @@ wk.register({
 	},
 }, { prefix = '<leader>' })
 
-wk.register({
+utils.set_keymaps({
 	t = {
-		name = 'Ultest',
 		s = { '<cmd>UltestSummary!<cr>', 'Summary!' },
 		x = { '<cmd>UltestStopNearest<cr>', 'Stop Nearest' },
 	},
