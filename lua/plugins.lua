@@ -86,9 +86,22 @@ packer.startup(function(use)
 	-- status line
 	use { 'nvim-lualine/lualine.nvim', config = 'require "config.lualine"' }
 
-	-- navigation
+	-- git
+	use {
+		'tpope/vim-fugitive',
+		setup = 'require "setup.fugitive"',
+		cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
+	}
+
+	-- general
 	use {
 		'ssh://git@git.razgriz.io:12222/neovim/traverse.nvim.git',
 		config = 'require "config.traverse"',
 	}
+
+	use { 'tpope/vim-repeat' }
+	use { 'tpope/vim-surround' }
+	use { 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } }
+	use { 'b3nj5m1n/kommentary', keys = 'gc', config = 'require "config.kommentary"' }
+	use { 'AndrewRadev/splitjoin.vim', keys = { 'gJ', 'gS' } }
 end)
