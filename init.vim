@@ -17,4 +17,13 @@ let g:loaded_tutor_mode_plugin = 1
 let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
 
+" ----- global leader
+ let g:mapleader = "\<space>"
+
+ " ----- local leader
+ let g:maplocalleader = "\<c-space>"
+
+" ----- set confpath variable
+let $CONFPATH = fnamemodify(expand('<sfile>'), ':h')
+
 lua require 'init'
