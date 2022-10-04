@@ -1,2 +1,3 @@
 pack/packer/
 plugin/packer_compiled.lua
+tmp/
