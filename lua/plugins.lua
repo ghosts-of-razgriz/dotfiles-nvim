@@ -21,6 +21,7 @@ packer.startup(function(use)
 		requires = {
 			'folke/lsp-colors.nvim',
 			{ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' },
+			'Maan2003/lsp_lines.nvim',
 			'hrsh7th/cmp-nvim-lsp',
 		},
 	}
@@ -133,8 +134,8 @@ packer.startup(function(use)
 	}
 
 	use {
-		'anuvyklack/pretty-fold.nvim',
+		'anuvyklack/fold-preview.nvim',
 		requires = { 'anuvyklack/nvim-keymap-amend' },
-		config = 'require "config.pretty-fold"',
+		config = 'require "config.fold-preview"',
 	}
 end)
