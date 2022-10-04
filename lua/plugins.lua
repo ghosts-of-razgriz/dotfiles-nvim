@@ -38,9 +38,6 @@ packer.startup(function(use)
         config = function()
           vim.call('deoplete#enable')
         end,
-        setup = function()
-          vim.g.loaded_deoplete = 1
-        end,
         event = "InsertEnter *",
         run = ":UpdateRemotePlugins",
         requires = {
@@ -49,10 +46,26 @@ packer.startup(function(use)
           {
             'neovim/nvim-lspconfig',
             config = function()
-              require 'plugin.lsp'
+              require 'packer.lsp'
             end
           }
         }
+      }
+
+    use {
+        'Shougo/denite.nvim',
+        cmd = 'Denite',
+        config = function()
+          require 'packer.denite'
+        end,
+        setup = function()
+          local settings = {  noremap = true, silent = true }
+          vim.api.nvim_set_keymap('n', '<leader>uu', ':Denite file/rec<cr>', settings)
+          vim.api.nvim_set_keymap('n', '<localleader>uu', ':Denite directory_rec<cr>', settings)
+          vim.api.nvim_set_keymap('n', '<leader>ub', ':Denite buffer<cr>', settings)
+          vim.api.nvim_set_keymap('n', '<leader>ur', ':Denite -resume<cr>', settings)
+          vim.api.nvim_set_keymap('n', '<leader>uh', ':Denite help<cr>', settings)
+        end
       }
   end)
 
