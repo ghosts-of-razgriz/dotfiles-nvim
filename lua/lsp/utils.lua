@@ -11,7 +11,7 @@ end
 
 function M.make_capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	return cmp_nvim_lsp.default_capabilities(capabilities)
+	return cmp_nvim_lsp.update_capabilities(capabilities)
 end
 
 function M.toggle_formatting()
