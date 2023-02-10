@@ -12,6 +12,7 @@ lspconfig.gopls.setup {
 		lsputils.set_lsp_keymap(bufnr)
 	end,
 	cmd = { 'gopls', 'serve' },
+	filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl' },
 	settings = {
 		gopls = {
 			analyses = {
