@@ -1,1 +1,0 @@
-rm -rf pack/packer/{opt,start} plugin/packer_compiled.lua
