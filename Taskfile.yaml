@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  clean:
+    desc: clean all
+    deps: 
+      - task: clean:compiled
+      - task: clean:plugins
+  clean:compiled:
+    desc: delete the compiled packer config
+    cmds:
+      - rm -f ./plugin/packer_compiled.lua
+  clean:plugins:
+    desc: delete the downloaded plugins
+    cmds:
+      - rm -rf ./pack/packer/opt
+      - rm -rf ./pack/packer/start
