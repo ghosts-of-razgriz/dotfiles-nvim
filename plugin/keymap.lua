@@ -6,6 +6,8 @@ utils.set_keymaps({
 	h = { '<cmd>set hlsearch!<cr>', 'Toggle Search Highlight' },
 	['-'] = { '<cmd>wincmd _<cr><cmd>wincmd |<cr>', 'Zoom in' },
 	['='] = { '<cmd>wincmd =<cr>', 'Zoom out' },
+	['<leader>-'] = { '<cmd>wincmd _<cr>', 'Maximize pane height' },
+	['<leader>f'] = { '<cmd>luafile %<cr>', 'reload current luafile' },
 }, { prefix = '<leader>' })
 
 utils.set_keymaps({
