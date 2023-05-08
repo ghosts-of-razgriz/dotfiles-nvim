@@ -15,6 +15,7 @@ require 'lsp.gopls'
 require 'lsp.lua_ls'
 require 'lsp.null_ls'
 require 'lsp.emmet_ls'
+require 'lsp.pyright'
 
 utils.set_keymaps({
 	['\\'] = { '<cmd>lua require "lsp.utils".toggle_formatting()<cr>', 'Toggle LSP Formatting' },
