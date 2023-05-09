@@ -1,4 +1,5 @@
-local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰋽 ', Info = '󰌶 ' }
+
 local utils = require 'utils'
 
 for type, icon in pairs(signs) do
@@ -8,7 +9,7 @@ end
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics,
-	{ virtual_text = { spacing = 5, prefix = '' } }
+	{ virtual_text = { spacing = 5, prefix = ' ' } }
 )
 
 require 'lsp.gopls'
