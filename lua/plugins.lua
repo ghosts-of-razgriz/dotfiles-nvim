@@ -95,7 +95,7 @@ packer.startup(function(use)
 
 	-- general
 	use {
-		'git@gitlab.razgriz.io:neovim/traverse.nvim',
+		'https://gitlab.razgriz.io/neovim/traverse.nvim',
 		config = 'require "config.traverse"',
 	}
 
