@@ -18,6 +18,7 @@ require 'lsp.null_ls'
 require 'lsp.emmet_ls'
 require 'lsp.pyright'
 require 'lsp.vim_ls'
+require 'lsp.dockerfile_ls'
 
 utils.set_keymaps({
 	['\\'] = { '<cmd>lua require "lsp.utils".toggle_formatting()<cr>', 'Toggle LSP Formatting' },
