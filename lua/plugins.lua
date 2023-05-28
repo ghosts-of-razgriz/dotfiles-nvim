@@ -25,6 +25,12 @@ packer.startup(function(use)
 		config = 'require "config.trouble"',
 	}
 
+	use {
+		'L3MON4D3/LuaSnip',
+		before = 'nvim-cmp',
+		config = 'require "config.luasnip"',
+	}
+
 	-- auto-complete
 	use {
 		'hrsh7th/nvim-cmp',
@@ -35,7 +41,7 @@ packer.startup(function(use)
 			'hrsh7th/cmp-nvim-lua',
 			'hrsh7th/cmp-nvim-lsp',
 			'onsails/lspkind-nvim',
-			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
 		},
 	}
 
