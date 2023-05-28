@@ -1,4 +1,8 @@
-vim.call('defx#custom#option', '_', { columns = 'indent:icons:filename:indent:git:indent:time' })
+vim.call(
+	'defx#custom#option',
+	'_',
+	{ columns = 'indent:icons:filename:indent:git:indent:time:indent:size' }
+)
 
 local augDefexKeymap = vim.api.nvim_create_augroup('DefxKeymap', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
