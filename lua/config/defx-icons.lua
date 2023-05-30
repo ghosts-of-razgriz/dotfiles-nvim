@@ -1,5 +1,5 @@
 vim.g.defx_icons_enable_syntax_highlight = 1
-vim.g.defx_icons_column_length = 2
+vim.g.defx_icons_column_length = 3
 vim.g.defx_icons_directory_icon = ''
 vim.g.defx_icons_mark_icon = '✓'
 vim.g.defx_icons_parent_icon = ''
