@@ -12,7 +12,7 @@ utils.set_keymaps({
 			'<cmd>lua vim.cmd("Git checkout " .. vim.fn.input("Checkout: "))<cr>',
 			'Checkout <prompt>',
 		},
-		l = { '<cmd>Git pull<cr>', 'Pull' },
+		l = { '<cmd>Git sla<cr>', 'single line log' },
 		p = { '<cmd>Git push<cr>', 'Push' },
 		s = { '<cmd>Git<cr><c-w><s-h>', 'Status' },
 		w = { '<cmd>Gwrite<cr>', 'Add' },
@@ -24,5 +24,6 @@ utils.set_keymaps({
 	g = {
 		c = { '<cmd>Git commit --amend<cr>', 'Amend Commit' },
 		w = { '<cmd>Git add --patch %<cr>', 'Add patch current file' },
+		p = { '<cmd>Git pull<cr>', 'Pull' },
 	},
 }, { prefix = '<localleader>' })
