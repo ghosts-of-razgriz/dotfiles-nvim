@@ -22,6 +22,24 @@ return {
 		},
 	},
 
+	-- fuzzy finder
+	{
+		'nvim-telescope/telescope.nvim',
+		dependencies = {
+			'nvim-lua/popup.nvim',
+			'nvim-lua/plenary.nvim',
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+			'folke/trouble.nvim',
+		},
+		config = function()
+			require 'config.telescope'
+		end,
+		init = function()
+			require 'init.telescope'
+		end,
+		cmd = { 'Telescope' },
+	},
+
 	-- syntax
 	{
 		'sheerun/vim-polyglot',
