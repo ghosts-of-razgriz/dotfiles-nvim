@@ -54,27 +54,13 @@ local function dirty()
 	return m
 end
 
-local function filepath()
-	local path = vim.fn.expand '%'
-	if vim.fn.winwidth(0) <= 84 then
-		path = vim.fn.pathshorten(path)
-	end
-	path = vim.fn.pathshorten(path)
-
-	if not path or #path == 0 then
-		return ''
-	end
-
-	return path
-end
-
 local function is_file_open()
 	return #(vim.fn.expand '%') > 0
 end
 
 local function lsp_name()
 	local msg = 'No Active LSP'
-	local clients = vim.lsp.get_active_clients()
+	local clients = vim.lsp.get_clients()
 	if next(clients) == nil then
 		return msg
 	end

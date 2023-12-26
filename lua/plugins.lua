@@ -22,6 +22,16 @@ return {
 		},
 	},
 
+	-- diagnostics
+	{
+		'folke/trouble.nvim',
+		lazy = false,
+		dependencies = { 'kyazdani42/nvim-web-devicons' },
+		config = function()
+			require 'config.trouble'
+		end,
+	},
+
 	-- fuzzy finder
 	{
 		'nvim-telescope/telescope.nvim',
@@ -29,7 +39,6 @@ return {
 			'nvim-lua/popup.nvim',
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-			'folke/trouble.nvim',
 		},
 		config = function()
 			require 'config.telescope'
