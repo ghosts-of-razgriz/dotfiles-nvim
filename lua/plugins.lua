@@ -24,6 +24,12 @@ return {
 
 	-- syntax
 	{
+		'sheerun/vim-polyglot',
+		init = function()
+			vim.g.polyglot_disabled = { 'autoindent', 'ftdetect' }
+		end,
+	},
+	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
 		config = function()
@@ -38,6 +44,15 @@ return {
 			require 'config.autopairs'
 		end,
 		event = { 'InsertEnter' },
+	},
+
+	-- status line
+	{
+		'nvim-lualine/lualine.nvim',
+		lazy = false,
+		config = function()
+			require 'config.lualine'
+		end,
 	},
 
 	-- general
