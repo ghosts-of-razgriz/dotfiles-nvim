@@ -17,6 +17,7 @@ require 'lsp.lua_ls'
 require 'lsp.null_ls'
 require 'lsp.emmet_ls'
 require 'lsp.pyright'
+require 'lsp.tsserver'
 require 'lsp.vim_ls'
 require 'lsp.dockerfile_ls'
 
