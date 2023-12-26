@@ -15,6 +15,7 @@ t.setup {
 		'scss',
 		'toml',
 		'typescript',
+		'vimdoc',
 		'yaml',
 	},
 	hightlight = { enable = true },
