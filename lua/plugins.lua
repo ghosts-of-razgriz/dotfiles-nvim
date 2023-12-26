@@ -22,6 +22,15 @@ return {
 		},
 	},
 
+	-- syntax
+	{
+		'nvim-treesitter/nvim-treesitter',
+		lazy = false,
+		config = function()
+			require 'config.treesitter'
+		end,
+	},
+
 	-- general
 	{
 		'neovim/traverse.nvim',
