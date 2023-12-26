@@ -32,6 +32,24 @@ return {
 		end,
 	},
 
+	-- auto-complete
+	{
+		'hrsh7th/nvim-cmp',
+		config = function()
+			require 'config.cmp'
+		end,
+		dependencies = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-nvim-lsp',
+			'onsails/lspkind-nvim',
+			'saadparwaiz1/cmp_luasnip',
+			'L3MON4D3/LuaSnip',
+		},
+		event = { 'InsertEnter' },
+	},
+
 	-- fuzzy finder
 	{
 		'nvim-telescope/telescope.nvim',
@@ -64,6 +82,26 @@ return {
 		end,
 	},
 
+	-- file explorer
+	{
+		'Shougo/defx.nvim',
+		cmd = 'Defx',
+		config = function()
+			require 'config.defx'
+		end,
+		init = function()
+			require 'init.defx'
+		end,
+		requires = {
+			{
+				'kristijanhusak/defx-icons',
+				config = function()
+					require 'config.defx-icons'
+				end,
+			},
+		},
+	},
+
 	-- autopair
 	{
 		'windwp/nvim-autopairs',
@@ -80,6 +118,15 @@ return {
 		config = function()
 			require 'config.lualine'
 		end,
+	},
+
+	-- git
+	{
+		'tpope/vim-fugitive',
+		init = function()
+			require 'init.fugitive'
+		end,
+		cmd = { 'Git', 'Gedit', 'Gdiff', 'Gwrite' },
 	},
 
 	-- general

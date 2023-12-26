@@ -2,7 +2,6 @@ local leader = '<leader>'
 local localleader = '<localleader>'
 
 local noresilent = { noremap = true, silent = true }
-local nore = { noremap = true }
 
 vim.keymap.set('n', leader .. 'q', '<cmd>quit<cr>', noresilent) -- quit
 vim.keymap.set('n', leader .. 'w', '<cmd>write<cr>', noresilent) -- write
