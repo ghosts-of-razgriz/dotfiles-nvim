@@ -1,4 +1,5 @@
 return {
+	-- color scheme
 	{
 		'catppuccin/nvim',
 		name = 'catppuccin',
@@ -7,6 +8,8 @@ return {
 			require 'config.color'
 		end,
 	},
+
+	-- language server
 	{
 		'neovim/nvim-lspconfig',
 		name = 'lspconfig',
@@ -17,5 +20,15 @@ return {
 		dependencies = {
 			'stevearc/conform.nvim',
 		},
+	},
+
+	-- general
+	{
+		'neovim/traverse.nvim',
+		config = function()
+			require 'config.traverse'
+		end,
+		keys = { '<c-h>', '<c-j>', '<c-k>', '<c-l>' },
+		url = 'https://gitlab.razgriz.io/neovim/traverse.nvim',
 	},
 }
