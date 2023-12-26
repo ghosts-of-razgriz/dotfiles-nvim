@@ -31,6 +31,15 @@ return {
 		end,
 	},
 
+	-- autopair
+	{
+		'windwp/nvim-autopairs',
+		config = function()
+			require 'config.autopairs'
+		end,
+		event = { 'InsertEnter' },
+	},
+
 	-- general
 	{
 		'neovim/traverse.nvim',

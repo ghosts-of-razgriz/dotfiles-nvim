@@ -1,6 +1,7 @@
 local t = require 'nvim-treesitter.configs'
 
 t.setup {
+	autopairs = { enable = true },
 	ensure_installed = {
 		'css',
 		'dockerfile',
