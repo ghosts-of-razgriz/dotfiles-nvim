@@ -138,4 +138,20 @@ return {
 		keys = { '<c-h>', '<c-j>', '<c-k>', '<c-l>' },
 		url = 'https://gitlab.razgriz.io/neovim/traverse.nvim',
 	},
+	{ 'christoomey/vim-system-copy', keys = { 'cp', 'cP' } },
+	{ 'AndrewRadev/splitjoin.vim', lazy = false },
+	{
+		'b3nj5m1n/kommentary',
+		keys = 'gc',
+		config = function()
+			require 'config.kommentary'
+		end,
+	},
+	{
+		'kylechui/nvim-surround',
+		event = 'VeryLazy',
+		config = function()
+			require('nvim-surround').setup {}
+		end,
+	},
 }
