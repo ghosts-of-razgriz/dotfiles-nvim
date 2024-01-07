@@ -25,3 +25,5 @@ local plugins = require 'plugins'
 local opts = { defaults = { lazy = true } }
 
 lazy.setup(plugins, opts)
+
+vim.keymap.set('n', '<localleader>l', '<cmd>Lazy<cr>', { noremap = true })

@@ -154,4 +154,16 @@ return {
 			require('nvim-surround').setup {}
 		end,
 	},
+
+	-- filetype specific
+	-- typst
+	{
+
+		'chomosuke/typst-preview.nvim',
+		ft = 'typst',
+		build = function()
+			require('typst-preview').update()
+		end,
+	},
+	{ 'kaarmu/typst.vim', ft = { 'typst' } },
 }

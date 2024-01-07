@@ -1,11 +1,13 @@
 local M = {}
 
 function M.disable_formatting(client)
-	client.server_capabilities.document_formatting = false
-	client.server_capabilities.document_range_formatting = false
+	if client.name ~= 'null-ls' then
+		client.server_capabilities.document_formatting = false
+		client.server_capabilities.document_range_formatting = false
+	end
 end
 
-function M.make_capabilties()
+function M.make_capabilities()
 	return vim.lsp.protocol.make_client_capabilities()
 end
 
@@ -22,6 +24,19 @@ function M.set_keymap(bufnr)
 	vim.keymap.set('n', '<c-p>', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
 
 	vim.keymap.set('i', '<c-x><c-x>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+end
+
+function M.on_attach(client)
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			pattern = { '<buffer>' },
+			callback = function()
+				if vim.g.lsp_format == 1 then
+					vim.lsp.buf.format()
+				end
+			end,
+		})
+	end
 end
 
 return M

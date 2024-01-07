@@ -7,7 +7,7 @@ local u = require 'lsp.utils'
 local lsp_path = string.gsub(vim.fn.system 'which lua-language-server', '\n', '')
 
 l.lua_ls.setup {
-	capabilties = u.make_capabilties(),
+	capabilities = u.make_capabilities(),
 	on_attach = function(client, bufnr)
 		u.disable_formatting(client)
 		u.set_keymap(bufnr)
