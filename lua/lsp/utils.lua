@@ -1,10 +1,8 @@
 local M = {}
 
 function M.disable_formatting(client)
-	if client.name ~= 'null-ls' then
-		client.server_capabilities.document_formatting = false
-		client.server_capabilities.document_range_formatting = false
-	end
+	client.server_capabilities.document_formatting = false
+	client.server_capabilities.document_range_formatting = false
 end
 
 function M.make_capabilities()
@@ -23,7 +21,7 @@ function M.set_keymap(bufnr)
 	vim.keymap.set('n', '<c-n>', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 	vim.keymap.set('n', '<c-p>', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
 
-	vim.keymap.set('i', '<c-x><c-x>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+	vim.keymap.set('i', '<c-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 end
 
 function M.on_attach(client)
