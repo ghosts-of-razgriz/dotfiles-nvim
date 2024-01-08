@@ -22,3 +22,6 @@ vim.keymap.set('n', localleader .. 'h', '<cmd>tabprevious<cr>', noresilent) -- n
 vim.keymap.set('n', localleader .. 'l', '<cmd>tabnext<cr>', noresilent) -- new tab
 
 vim.keymap.set('i', 'jk', '<esc>', noresilent) -- exit insert mode
+
+vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv")
+vim.keymap.set('v', 'K', ":m '>-2<cr>gv=gv")
