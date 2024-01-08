@@ -23,6 +23,6 @@ local lazy = require 'lazy'
 
 local opts = {}
 
-lazy.setup('plugins', opts)
+lazy.setup({ spec = 'plugins', change_detection = { notify = false } }, opts)
 
 vim.keymap.set('n', '¬', '<cmd>Lazy<cr>', { noremap = true }) -- alt-l <m-l>
