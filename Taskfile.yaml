@@ -4,15 +4,27 @@ tasks:
   clean:
     desc: clean all
     deps: 
-      - task: clean:compiled
       - task: clean:plugins
-
-  clean:compiled:
-    desc: delete the compiled packer config
-    cmds:
-      - rm -f ./plugin/packer_compiled.lua
+      - task: clean:state
 
   clean:plugins:
     desc: delete the downloaded plugins
     cmds:
       - rm -rf $HOME/.local/share/nvim
+
+  clean:state:
+    desc: delete the downloaded plugins
+    cmds:
+      - rm -rf $HOME/.local/state/nvim
+
+  clean:swap:
+    desc: delete the downloaded plugins
+    cmds:
+      - rm -rf ./tmp/swap
+      - mkdir ./tmp/swap
+
+  clean:undo:
+    desc: delete the downloaded plugins
+    cmds:
+      - rm -rf ./tmp/undo
+      - mkdir ./tmp/undo
