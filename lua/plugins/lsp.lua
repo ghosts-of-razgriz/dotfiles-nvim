@@ -47,5 +47,6 @@ return {
 			config = trouble_config,
 			init = trouble_init,
 		},
+		'j-hui/fidget.nvim',
 	},
 }
