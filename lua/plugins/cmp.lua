@@ -104,8 +104,8 @@ return {
 		'hrsh7th/cmp-nvim-lua',
 		'hrsh7th/cmp-nvim-lsp',
 		'onsails/lspkind-nvim',
-		'L3MON4D3/LuaSnip',
+		{ 'L3MON4D3/LuaSnip', config = luasnip_config },
 		{ 'saadparwaiz1/cmp_luasnip' },
 	},
-	event = { 'InsertEnter', config = luasnip_config },
+	event = { 'InsertEnter' },
 }
