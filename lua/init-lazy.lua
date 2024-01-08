@@ -21,8 +21,8 @@ vim.opt.rtp:prepend(lazy_path)
 
 local lazy = require 'lazy'
 
-local opts = { defaults = { lazy = true } }
+local opts = {}
 
 lazy.setup('plugins', opts)
 
-vim.keymap.set('n', '<localleader>l', '<cmd>Lazy<cr>', { noremap = true })
+vim.keymap.set('n', '¬', '<cmd>Lazy<cr>', { noremap = true }) -- alt-l <m-l>
