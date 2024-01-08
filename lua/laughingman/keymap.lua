@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 vim.cmd [[let g:maplocalleader = "\<c-space>"]]
 
 local leader = '<leader>'
@@ -22,4 +22,3 @@ vim.keymap.set('n', localleader .. 'h', '<cmd>tabprevious<cr>', noresilent) -- n
 vim.keymap.set('n', localleader .. 'l', '<cmd>tabnext<cr>', noresilent) -- new tab
 
 vim.keymap.set('i', 'jk', '<esc>', noresilent) -- exit insert mode
-

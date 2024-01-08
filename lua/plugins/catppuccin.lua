@@ -12,7 +12,3 @@ return {
 	end,
 	priority = 1000,
 }
-
-vim.g.catppuccin_flavour = 'mocha'
-
-vim.cmd [[colorscheme catppuccin]]
