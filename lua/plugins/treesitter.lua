@@ -7,6 +7,7 @@ return {
 		t.setup {
 			autopairs = { enable = true },
 			ensure_installed = {
+				'bibtex',
 				'css',
 				'dockerfile',
 				'fish',
@@ -16,6 +17,8 @@ return {
 				'javascript',
 				'json',
 				'lua',
+				'markdown',
+				'markdown_inline',
 				'scss',
 				'toml',
 				'typescript',
