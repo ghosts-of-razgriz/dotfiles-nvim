@@ -38,6 +38,7 @@ return {
 
 		require 'lsp.conform'
 		require 'lsp.lua-ls'
+		require 'lsp.typst-ls'
 	end,
 	dependencies = {
 		'stevearc/conform.nvim',
