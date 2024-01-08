@@ -1,7 +1,6 @@
 return {
 	'catppuccin/nvim',
 	name = 'catppuccin',
-	lazy = false,
 	config = function()
 		local c = require 'catppuccin'
 

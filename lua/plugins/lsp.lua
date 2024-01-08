@@ -22,7 +22,6 @@ end
 return {
 	'neovim/nvim-lspconfig',
 	name = 'lspconfig',
-	lazy = false,
 	config = function()
 		local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰋽 ', Info = '󰌶 ' }
 

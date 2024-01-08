@@ -1,6 +1,5 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	lazy = false,
 	config = function()
 		local t = require 'nvim-treesitter.configs'
 
