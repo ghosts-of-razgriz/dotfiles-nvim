@@ -12,7 +12,7 @@ local trouble_config = function()
 end
 
 local trouble_init = function()
-	local prefix = '<m-t>'
+	local prefix = '†' -- alt-t <m-t>
 	local nore = { noremap = true }
 
 	vim.keymap.set('n', prefix .. prefix, '<cmd>TroubleToggle<cr>', nore)
