@@ -41,6 +41,7 @@ return {
 		require 'lsp.gopls'
 		require 'lsp.tsserver'
 		require 'lsp.dockerls'
+		require 'lsp.ansiblels'
 	end,
 	dependencies = {
 		'stevearc/conform.nvim',
