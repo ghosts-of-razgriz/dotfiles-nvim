@@ -40,6 +40,7 @@ return {
 		require 'lsp.typst-ls'
 		require 'lsp.gopls'
 		require 'lsp.tsserver'
+		require 'lsp.dockerls'
 	end,
 	dependencies = {
 		'stevearc/conform.nvim',
