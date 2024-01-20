@@ -18,6 +18,7 @@ return {
 				'html',
 				'javascript',
 				'json',
+				'kdl',
 				'lua',
 				'make',
 				'markdown',
@@ -38,4 +39,5 @@ return {
 			},
 		}
 	end,
+	-- dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
 }
