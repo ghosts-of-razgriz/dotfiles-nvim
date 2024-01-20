@@ -47,7 +47,7 @@ return {
 		'stevearc/conform.nvim',
 		{
 			'folke/trouble.nvim',
-			dependencies = { 'kyazdani42/nvim-web-devicons' },
+			dependencies = { 'nvim-tree/nvim-web-devicons' },
 			config = trouble_config,
 			init = trouble_init,
 		},
