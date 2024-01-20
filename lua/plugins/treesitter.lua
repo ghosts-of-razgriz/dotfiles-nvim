@@ -2,6 +2,7 @@ return {
 	'nvim-treesitter/nvim-treesitter',
 	config = function()
 		local t = require 'nvim-treesitter.configs'
+		local tc = require 'treesitter-context'
 
 		t.setup {
 			autopairs = { enable = true },
@@ -38,6 +39,11 @@ return {
 				enable_autocmd = false,
 			},
 		}
+
+		tc.setup()
 	end,
-	-- dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+	dependencies = {
+		-- 'JoosepAlviste/nvim-ts-context-commentstring',
+		'nvim-treesitter/nvim-treesitter-context',
+	},
 }
