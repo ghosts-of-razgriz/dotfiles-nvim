@@ -21,7 +21,7 @@ local fugitive_init = function()
 		'<cmd>lua vim.cmd("Git checkout " .. vim.fn.input("Checkout: "))<cr>',
 		opts
 	)
-	vim.keymap.set('n', leader .. 'gl', '<cmd>Git sla<cr>', opts)
+	vim.keymap.set('n', leader .. 'gl', '<cmd>Git log --graph<cr>', opts)
 	vim.keymap.set('n', leader .. 'gp', '<cmd>Git push<cr>', opts)
 	vim.keymap.set('n', leader .. 'gs', '<cmd>Git<cr><c-w><s-h>', opts)
 	vim.keymap.set('n', leader .. 'gw', '<cmd>Gwrite<cr>', opts)
