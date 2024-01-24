@@ -56,10 +56,7 @@ if vim.fn.executable 'prettierd' == 1 then
 	c.formatters_by_ft.typescript = { 'prettierd' }
 	c.formatters_by_ft.json = { 'prettierd' }
 	c.formatters_by_ft.css = { 'prettierd' }
-end
-
-if vim.fn.executable 'yamlfmt' == 1 then
-	c.formatters_by_ft.yaml = { 'yamlfmt' }
+	c.formatters_by_ft.yaml = { 'prettierd' }
 end
 
 vim.keymap.set('n', '<space><space>f', '<cmd>ConformToggle<cr>', { noremap = true })
