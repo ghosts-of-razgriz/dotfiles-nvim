@@ -11,7 +11,7 @@ vim.keymap.set('n', leader .. 'w', '<cmd>write<cr>', noresilent) -- write
 vim.keymap.set('n', leader .. 'h', '<cmd>set hlsearch!<cr>', noresilent) -- toggle search highlight
 vim.keymap.set('n', leader .. '-', '<cmd>wincmd _<cr><cmd>wincmd |<cr>', noresilent) -- zoom in
 vim.keymap.set('n', leader .. '=', '<cmd>wincmd =<cr>', noresilent) -- zoom out
-vim.keymap.set('n', leader .. leader .. 'l', '<cmd>luafile %<cr>', { noremap = true }) -- reload current luafile
+vim.keymap.set('n', leader .. leader .. 'f', '<cmd>luafile %<cr>', { noremap = true }) -- reload current luafile
 
 vim.keymap.set('n', localleader .. 'q', '<cmd>quit!<cr>', noresilent) -- force quit
 vim.keymap.set('n', localleader .. 'a', '<cmd>quitall!<cr>', noresilent) -- force quit all

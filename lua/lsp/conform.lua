@@ -59,4 +59,4 @@ if vim.fn.executable 'prettierd' == 1 then
 	c.formatters_by_ft.yaml = { 'prettierd' }
 end
 
-vim.keymap.set('n', '<space><space>f', '<cmd>ConformToggle<cr>', { noremap = true })
+vim.keymap.set('n', '<c-\\>f', '<cmd>ConformToggle<cr>', { noremap = true })

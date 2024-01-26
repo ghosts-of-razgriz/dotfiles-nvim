@@ -25,4 +25,4 @@ local opts = {}
 
 lazy.setup({ spec = 'plugins', change_detection = { notify = false } }, opts)
 
-vim.keymap.set('n', '<m-l>', '<cmd>Lazy<cr>', { noremap = true })
+vim.keymap.set('n', '<space><space>l', '<cmd>Lazy<cr>', { noremap = true })
