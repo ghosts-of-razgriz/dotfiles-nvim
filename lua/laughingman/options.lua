@@ -82,7 +82,7 @@ opt.formatoptions = opt.formatoptions
 
 -- invisiable characters
 opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }
-opt.list = false
+opt.list = true
 
 opt.showmode = false
 
