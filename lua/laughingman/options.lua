@@ -81,7 +81,7 @@ opt.formatoptions = opt.formatoptions
 	- '2' -- I'm not in gradeschool anymore
 
 -- invisiable characters
-opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->', eol = '' }
+opt.listchars = { trail = '•', nbsp = '⦸', tab = '-->' }
 opt.list = true
 
 opt.showmode = false
