@@ -60,4 +60,8 @@ if vim.fn.executable 'prettierd' == 1 then
 	c.formatters_by_ft.markdown = { 'prettierd' }
 end
 
+if vim.fn.executable 'rustfmt' == 1 then
+	c.formatters_by_ft.rust = { 'rustfmt' }
+end
+
 vim.keymap.set('n', '<c-\\>f', '<cmd>ConformToggle<cr>', { noremap = true })

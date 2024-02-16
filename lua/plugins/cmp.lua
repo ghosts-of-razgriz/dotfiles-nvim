@@ -20,6 +20,7 @@ local cmp_config = function()
 			{ name = 'nvim_lsp', keyword_length = 1 },
 			{ name = 'luasnip', keyword_length = 1 },
 			{ name = 'nvim_lua', keyword_length = 2 },
+			{ name = 'creates', keyword_length = 2 },
 			{ name = 'buffer', keyword_length = 3 },
 			{ name = 'path', keyword_length = 3 },
 		},
@@ -106,6 +107,7 @@ return {
 		'onsails/lspkind-nvim',
 		{ 'L3MON4D3/LuaSnip', config = luasnip_config },
 		{ 'saadparwaiz1/cmp_luasnip' },
+		{ 'saecki/crates.nvim' },
 	},
 	event = { 'InsertEnter' },
 }

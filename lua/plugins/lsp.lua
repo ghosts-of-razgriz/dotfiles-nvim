@@ -39,6 +39,7 @@ return {
 		require 'lsp.lua-ls'
 		require 'lsp.typst-ls'
 		require 'lsp.gopls'
+		require 'lsp.rust-analyzer'
 		require 'lsp.tsserver'
 		require 'lsp.dockerls'
 		require 'lsp.ansiblels'
