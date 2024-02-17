@@ -1,6 +1,6 @@
 local data_path = tostring(vim.fn.stdpath('data'))
 
-local function install_debugpy()
+local install_debugpy = function()
 	vim.system({ 'rm', '-rf', data_path .. '/debugpy' }):wait()
 	vim.system({ 'python', '-m', 'venv', 'debugpy' }, { cwd = data_path, text = true }):wait()
 	vim.system(
@@ -10,9 +10,12 @@ local function install_debugpy()
 		:wait()
 end
 
+local dap_init = function() end
+
 return {
 	'rcarriga/nvim-dap-ui',
 	event = 'VeryLazy',
+	init = dap_init,
 	dependencies = {
 		'mfussenegger/nvim-dap',
 		{

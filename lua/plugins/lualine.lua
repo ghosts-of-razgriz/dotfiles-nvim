@@ -34,7 +34,7 @@ local lualine_config = function()
 		['t'] = '🅃',
 	}
 
-	local function get_mode()
+	local get_mode = function()
 		local mode = vim.api.nvim_get_mode().mode
 		if mode_icons[mode] == nil then
 			return mode
@@ -43,7 +43,7 @@ local lualine_config = function()
 		return mode_icons[mode] .. ' '
 	end
 
-	local function dirty()
+	local dirty = function()
 		local buf = vim.fn.bufnr('%')
 		local is_dirty = vim.fn.getbufinfo(buf)[1].changed
 		local m = ''
@@ -55,11 +55,11 @@ local lualine_config = function()
 		return m
 	end
 
-	local function is_file_open()
+	local is_file_open = function()
 		return #(vim.fn.expand('%')) > 0
 	end
 
-	local function lsp_name()
+	local lsp_name = function()
 		local msg = 'No Active LSP'
 		local clients = vim.lsp.get_clients()
 		if next(clients) == nil then
@@ -80,7 +80,7 @@ local lualine_config = function()
 		return table.concat(client_names, ', ')
 	end
 
-	local function lsp_format()
+	local lsp_format = function()
 		if vim.g.lsp_format == 1 then
 			return ''
 		else
