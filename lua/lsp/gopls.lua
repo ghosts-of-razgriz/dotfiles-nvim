@@ -1,11 +1,11 @@
-if vim.fn.executable 'gopls' == 0 then
+if vim.fn.executable('gopls') == 0 then
 	return
 end
 
-local l = require 'lspconfig'
-local u = require 'lsp.utils'
+local l = require('lspconfig')
+local u = require('lsp.utils')
 
-l.gopls.setup {
+l.gopls.setup({
 	capabilities = u.make_capabilities(),
 	on_attach = function(client, bufnr)
 		u.disable_formatting(client)
@@ -21,4 +21,4 @@ l.gopls.setup {
 			staticcheck = true,
 		},
 	},
-}
+})

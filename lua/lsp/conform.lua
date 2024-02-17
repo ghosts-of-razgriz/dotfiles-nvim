@@ -1,24 +1,24 @@
-local c = require 'conform'
+local c = require('conform')
 
 vim.api.nvim_create_user_command('ConformDisable', function()
 	vim.g.conform_autoformat = false
-	print 'Conform: autoformat disabled'
+	print('Conform: autoformat disabled')
 end, {
 	desc = 'Disable autoformat-on-save',
 })
 
 vim.api.nvim_create_user_command('ConformEnable', function()
 	vim.g.conform_autoformat = true
-	print 'Conform: autoformat enabled'
+	print('Conform: autoformat enabled')
 end, {
 	desc = 'Enable autoformat-on-save',
 })
 
 vim.api.nvim_create_user_command('ConformToggle', function()
 	if vim.g.conform_autoformat then
-		vim.cmd 'ConformDisable'
+		vim.cmd('ConformDisable')
 	else
-		vim.cmd 'ConformEnable'
+		vim.cmd('ConformEnable')
 	end
 end, {
 	desc = 'Toggle autoformat-on-save',
@@ -26,7 +26,7 @@ end, {
 
 vim.g.conform_autoformat = true
 
-c.setup {
+c.setup({
 	format_on_save = function()
 		if vim.g.conform_autoformat then
 			return {
@@ -36,21 +36,21 @@ c.setup {
 		end
 	end,
 	notify_on_error = false,
-}
+})
 
-if vim.fn.executable 'stylua' == 1 then
+if vim.fn.executable('stylua') == 1 then
 	c.formatters_by_ft.lua = { 'stylua' }
 end
 
-if vim.fn.executable 'goimports' == 1 then
+if vim.fn.executable('goimports') == 1 then
 	c.formatters_by_ft.go = { 'goimports' }
 end
 
-if vim.fn.executable 'typstfmt' == 1 then
+if vim.fn.executable('typstfmt') == 1 then
 	c.formatters_by_ft.typst = { 'typstfmt' }
 end
 
-if vim.fn.executable 'prettierd' == 1 then
+if vim.fn.executable('prettierd') == 1 then
 	c.formatters_by_ft.html = { 'prettierd' }
 	c.formatters_by_ft.javascript = { 'prettierd' }
 	c.formatters_by_ft.typescript = { 'prettierd' }
@@ -60,11 +60,11 @@ if vim.fn.executable 'prettierd' == 1 then
 	c.formatters_by_ft.markdown = { 'prettierd' }
 end
 
-if vim.fn.executable 'rustfmt' == 1 then
+if vim.fn.executable('rustfmt') == 1 then
 	c.formatters_by_ft.rust = { 'rustfmt' }
 end
 
-if vim.fn.executable 'ruff' == 1 then
+if vim.fn.executable('ruff') == 1 then
 	c.formatters_by_ft.python = { 'ruff_format', 'ruff_fix' }
 end
 

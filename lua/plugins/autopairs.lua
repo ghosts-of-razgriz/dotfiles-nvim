@@ -11,7 +11,7 @@
 return {
 	'echasnovski/mini.pairs',
 	config = function()
-		local p = require 'mini.pairs'
+		local p = require('mini.pairs')
 
 		p.setup()
 	end,

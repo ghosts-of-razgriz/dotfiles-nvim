@@ -1,4 +1,4 @@
-local data_path = tostring(vim.fn.stdpath 'data')
+local data_path = tostring(vim.fn.stdpath('data'))
 
 local function install_debugpy()
 	vim.system({ 'rm', '-rf', data_path .. '/debugpy' }):wait()
@@ -19,7 +19,7 @@ return {
 			'mfussenegger/nvim-dap-python',
 			build = install_debugpy,
 			config = function()
-				local dapp = require 'dap-python'
+				local dapp = require('dap-python')
 
 				dapp.setup(data_path .. '/debugpy/bin/python')
 			end,

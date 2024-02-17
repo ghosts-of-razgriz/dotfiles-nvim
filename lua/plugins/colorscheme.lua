@@ -17,12 +17,12 @@ return {
 	priority = 1000,
 	opts = {},
 	config = function()
-		local t = require 'tokyonight'
+		local t = require('tokyonight')
 
-		t.setup {
+		t.setup({
 			style = 'moon',
 			transparent = true,
-		}
-		vim.cmd [[colorscheme tokyonight]]
+		})
+		vim.cmd([[colorscheme tokyonight]])
 	end,
 }

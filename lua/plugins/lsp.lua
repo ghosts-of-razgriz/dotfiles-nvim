@@ -1,14 +1,14 @@
 local trouble_config = function()
-	local t = require 'trouble'
+	local t = require('trouble')
 
-	t.setup {
+	t.setup({
 		position = 'bottom',
 		height = 8,
 		-- action_keys
 		auto_open = false,
 		auto_close = false,
 		use_daignostic_signs = true,
-	}
+	})
 end
 
 local trouble_init = function()
@@ -35,16 +35,16 @@ return {
 			{ virtual_text = { spacing = 5, prefix = ' ' } }
 		)
 
-		require 'lsp.conform'
+		require('lsp.conform')
 
-		require 'lsp.lua-ls'
-		require 'lsp.typst-ls'
-		require 'lsp.gopls'
-		require 'lsp.rust-analyzer'
-		require 'lsp.pylyzer'
-		require 'lsp.tsserver'
-		require 'lsp.dockerls'
-		require 'lsp.ansiblels'
+		require('lsp.lua-ls')
+		require('lsp.typst-ls')
+		require('lsp.gopls')
+		require('lsp.rust-analyzer')
+		require('lsp.pylyzer')
+		require('lsp.tsserver')
+		require('lsp.dockerls')
+		require('lsp.ansiblels')
 	end,
 	dependencies = {
 		'stevearc/conform.nvim',

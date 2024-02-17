@@ -1,5 +1,5 @@
 local lualine_config = function()
-	local l = require 'lualine'
+	local l = require('lualine')
 
 	local lualine_theme = 'tokyonight'
 
@@ -44,7 +44,7 @@ local lualine_config = function()
 	end
 
 	local function dirty()
-		local buf = vim.fn.bufnr '%'
+		local buf = vim.fn.bufnr('%')
 		local is_dirty = vim.fn.getbufinfo(buf)[1].changed
 		local m = ''
 
@@ -56,7 +56,7 @@ local lualine_config = function()
 	end
 
 	local function is_file_open()
-		return #(vim.fn.expand '%') > 0
+		return #(vim.fn.expand('%')) > 0
 	end
 
 	local function lsp_name()
@@ -88,7 +88,7 @@ local lualine_config = function()
 		end
 	end
 
-	l.setup {
+	l.setup({
 		options = {
 			theme = lualine_theme,
 			component_separators = { left = '|', right = '|' },
@@ -134,7 +134,7 @@ local lualine_config = function()
 		},
 		inactive_sections = {},
 		extensions = {},
-	}
+	})
 end
 
 return {

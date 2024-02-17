@@ -16,7 +16,7 @@ local defx_config = function()
 		end,
 		group = augDefexKeymap,
 	})
-	vim.cmd [[highlight! link defxExrenameModified NvimStringBody]]
+	vim.cmd([[highlight! link defxExrenameModified NvimStringBody]])
 end
 
 local defx_init = function()

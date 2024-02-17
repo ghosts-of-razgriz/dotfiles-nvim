@@ -1,11 +1,11 @@
-if vim.fn.executable 'typst-lsp' == 0 then
+if vim.fn.executable('typst-lsp') == 0 then
 	return
 end
 
-local l = require 'lspconfig'
-local u = require 'lsp.utils'
+local l = require('lspconfig')
+local u = require('lsp.utils')
 
-l.typst_lsp.setup {
+l.typst_lsp.setup({
 	capabilities = u.make_capabilities(),
 	on_attach = function(client, bufnr)
 		u.disable_formatting(client)
@@ -14,4 +14,4 @@ l.typst_lsp.setup {
 	settings = {
 		exportPdf = 'never',
 	},
-}
+})

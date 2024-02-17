@@ -1,3 +1,3 @@
-require 'laughingman'
+require('laughingman')
 
-require 'init-lazy'
+require('init-lazy')

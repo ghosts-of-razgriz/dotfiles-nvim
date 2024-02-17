@@ -1,10 +1,10 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	config = function()
-		local t = require 'nvim-treesitter.configs'
-		local tc = require 'treesitter-context'
+		local t = require('nvim-treesitter.configs')
+		local tc = require('treesitter-context')
 
-		t.setup {
+		t.setup({
 			autopairs = { enable = true },
 			ensure_installed = {
 				'bibtex',
@@ -39,7 +39,7 @@ return {
 				enable = true,
 				enable_autocmd = false,
 			},
-		}
+		})
 
 		tc.setup()
 	end,

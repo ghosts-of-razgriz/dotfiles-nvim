@@ -1,12 +1,12 @@
-if vim.fn.executable 'lua-language-server' == 0 then
+if vim.fn.executable('lua-language-server') == 0 then
 	return
 end
 
-local l = require 'lspconfig'
-local u = require 'lsp.utils'
-local lsp_path = string.gsub(vim.fn.system 'which lua-language-server', '\n', '')
+local l = require('lspconfig')
+local u = require('lsp.utils')
+local lsp_path = string.gsub(vim.fn.system('which lua-language-server'), '\n', '')
 
-l.lua_ls.setup {
+l.lua_ls.setup({
 	capabilities = u.make_capabilities(),
 	on_attach = function(client, bufnr)
 		u.disable_formatting(client)
@@ -19,10 +19,10 @@ l.lua_ls.setup {
 			diagnostics = { globals = { 'vim' } },
 			workspace = {
 				library = {
-					[vim.fn.expand '$VIMRUNTIME/lua'] = true,
-					[vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
+					[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+					[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
 				},
 			},
 		},
 	},
-}
+})

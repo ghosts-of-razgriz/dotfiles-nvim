@@ -1,17 +1,17 @@
 local cmp_config = function()
-	local c = require 'cmp'
-	local lspk = require 'lspkind'
-	local ls = require 'luasnip'
+	local c = require('cmp')
+	local lspk = require('lspkind')
+	local ls = require('luasnip')
 
-	c.setup {
+	c.setup({
 		mapping = {
-			['<c-y>'] = c.mapping.confirm { select = true },
-			['<C-n>'] = c.mapping.select_next_item { behavior = c.SelectBehavior.Insert },
-			['<C-p>'] = c.mapping.select_prev_item { behavior = c.SelectBehavior.Insert },
-			['<C-e>'] = c.mapping {
+			['<c-y>'] = c.mapping.confirm({ select = true }),
+			['<C-n>'] = c.mapping.select_next_item({ behavior = c.SelectBehavior.Insert }),
+			['<C-p>'] = c.mapping.select_prev_item({ behavior = c.SelectBehavior.Insert }),
+			['<C-e>'] = c.mapping({
 				i = c.mapping.abort(),
 				c = c.mapping.close(),
-			},
+			}),
 			['<C-Space>'] = c.mapping(c.mapping.complete(), { 'i', 'c' }),
 			['<C-d>'] = c.mapping.scroll_docs(-4),
 			['<C-f>'] = c.mapping.scroll_docs(4),
@@ -30,7 +30,7 @@ local cmp_config = function()
 			end,
 		},
 		formatting = {
-			format = lspk.cmp_format {
+			format = lspk.cmp_format({
 				with_text = true,
 				menu = {
 					nvim_lsp = '[LSP]',
@@ -39,7 +39,7 @@ local cmp_config = function()
 					buffer = '[buf]',
 					path = '[path]',
 				},
-			},
+			}),
 		},
 
 		window = {
@@ -54,17 +54,17 @@ local cmp_config = function()
 			native_menu = false,
 			ghost_text = false,
 		},
-	}
+	})
 
-	vim.cmd [[set pumheight=6]]
+	vim.cmd([[set pumheight=6]])
 end
 
 local luasnip_config = function()
-	local ls = require 'luasnip'
-	local snippet_path = vim.fn.stdpath 'config' .. '/snippets/'
-	require('luasnip.loaders.from_lua').load { paths = snippet_path }
+	local ls = require('luasnip')
+	local snippet_path = vim.fn.stdpath('config') .. '/snippets/'
+	require('luasnip.loaders.from_lua').load({ paths = snippet_path })
 
-	ls.config.set_config {
+	ls.config.set_config({
 		history = true,
 		updateevents = 'TextChanged,TextChangedI',
 		enable_autosnippets = true,
@@ -75,7 +75,7 @@ local luasnip_config = function()
 				},
 			},
 		},
-	}
+	})
 
 	vim.keymap.set({ 'i', 's' }, '<c-j>', function()
 		if ls.jumpable(1) then

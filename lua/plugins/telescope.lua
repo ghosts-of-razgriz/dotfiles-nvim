@@ -1,8 +1,8 @@
 local telescope_config = function()
-	local t = require 'telescope'
+	local t = require('telescope')
 	--local trouble = require 'trouble.providers.telescope'
 
-	t.setup {
+	t.setup({
 		defaults = {
 			prompt_prefix = ' ',
 			selection_caret = ' ',
@@ -37,9 +37,9 @@ local telescope_config = function()
 				},
 			},
 		},
-	}
+	})
 
-	t.load_extension 'fzf'
+	t.load_extension('fzf')
 end
 
 local telescope_init = function()
@@ -55,6 +55,7 @@ local telescope_init = function()
 	vim.keymap.set('n', leader .. 'uc', '<cmd>Telescope commands<cr>', nore) -- commands
 	vim.keymap.set('n', leader .. 'uk', '<cmd>Telescope keymaps<cr>', nore) -- keymaps
 	vim.keymap.set('n', leader .. 'ur', '<cmd>Telescope resume<cr>', nore) -- resume
+	vim.keymap.set('n', leader .. 'uh', '<cmd>Telescope help_tags<cr>', nore) -- help tags
 
 	vim.keymap.set('n', localleader .. 'uy', '<cmd>Telescope git_files<cr>', nore) -- git files
 end

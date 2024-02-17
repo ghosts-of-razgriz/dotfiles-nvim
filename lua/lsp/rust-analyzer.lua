@@ -1,11 +1,11 @@
-if vim.fn.executable 'rust-analyzer' == 0 then
+if vim.fn.executable('rust-analyzer') == 0 then
 	return
 end
 
-local l = require 'lspconfig'
-local u = require 'lsp.utils'
+local l = require('lspconfig')
+local u = require('lsp.utils')
 
-l.rust_analyzer.setup {
+l.rust_analyzer.setup({
 	capabilities = u.make_capabilities(),
 	on_attach = function(client, bufnr)
 		u.disable_formatting(client)
@@ -18,4 +18,4 @@ l.rust_analyzer.setup {
 			},
 		},
 	},
-}
+})

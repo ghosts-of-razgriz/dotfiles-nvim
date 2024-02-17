@@ -1,5 +1,5 @@
 local opt = vim.opt
-local config_path = vim.fn.stdpath 'config'
+local config_path = vim.fn.stdpath('config')
 
 opt.encoding = 'utf8'
 
@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd('VimResized', {
 	group = augVimResize,
 	callback = function()
 		vim.schedule(function()
-			vim.cmd [[:wincmd =]]
+			vim.cmd([[:wincmd =]])
 		end)
 	end,
 })

@@ -2,9 +2,9 @@ return {
 	'folke/noice.nvim',
 	event = 'VeryLazy',
 	config = function()
-		local n = require 'noice'
+		local n = require('noice')
 
-		n.setup {
+		n.setup({
 			lsp = {
 				override = {
 					['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -19,7 +19,7 @@ return {
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
 				lsp_doc_border = true, -- add a border to hover docs and signature help
 			},
-		}
+		})
 	end,
 	dependencies = {
 		'MunifTanjim/nui.nvim',

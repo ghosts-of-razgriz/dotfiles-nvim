@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.cmd [[let g:maplocalleader = "\<c-space>"]]
+vim.cmd([[let g:maplocalleader = "\<c-space>"]])
 
 local leader = '<leader>'
 local localleader = '<localleader>'
