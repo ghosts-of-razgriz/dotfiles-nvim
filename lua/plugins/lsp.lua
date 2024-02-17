@@ -36,10 +36,12 @@ return {
 		)
 
 		require 'lsp.conform'
+
 		require 'lsp.lua-ls'
 		require 'lsp.typst-ls'
 		require 'lsp.gopls'
 		require 'lsp.rust-analyzer'
+		require 'lsp.pylyzer'
 		require 'lsp.tsserver'
 		require 'lsp.dockerls'
 		require 'lsp.ansiblels'

@@ -64,4 +64,8 @@ if vim.fn.executable 'rustfmt' == 1 then
 	c.formatters_by_ft.rust = { 'rustfmt' }
 end
 
+if vim.fn.executable 'ruff' == 1 then
+	c.formatters_by_ft.python = { 'ruff_format', 'ruff_fix' }
+end
+
 vim.keymap.set('n', '<c-\\>f', '<cmd>ConformToggle<cr>', { noremap = true })
