@@ -7,6 +7,7 @@ return {
 		t.setup({
 			autopairs = { enable = true },
 			ensure_installed = {
+				'bash',
 				'bibtex',
 				'css',
 				'dockerfile',
@@ -25,11 +26,13 @@ return {
 				'markdown',
 				'markdown_inline',
 				'python',
+				'regex',
 				'scss',
 				'sql',
 				'terraform',
 				'toml',
 				'typescript',
+				'vim',
 				'vimdoc',
 				'yaml',
 			},
