@@ -3,23 +3,21 @@ vim.cmd([[let g:maplocalleader = "\<c-space>"]])
 
 local leader = '<leader>'
 local localleader = '<localleader>'
-local noresilent = { noremap = true, silent = true }
-local mapcmd = function(cmd)
-	return '<cmd>' .. cmd .. '<cr>'
-end
 
-vim.keymap.set('n', leader .. 'q', mapcmd('quit'), noresilent)
-vim.keymap.set('n', leader .. 'w', mapcmd('write'), noresilent)
-vim.keymap.set('n', leader .. 'h', mapcmd('set hlsearch!'), noresilent)
-vim.keymap.set('n', leader .. '-', mapcmd('wincmd _') .. mapcmd('wincmd |'), noresilent)
-vim.keymap.set('n', leader .. leader .. 'f', mapcmd('luafile %'), noresilent)
+local u = require('laughingman.utils')
 
-vim.keymap.set('n', localleader .. 'q', mapcmd('quit!'), noresilent)
-vim.keymap.set('n', localleader .. 'a', mapcmd('quitall!'), noresilent)
-vim.keymap.set('n', localleader .. '\\', mapcmd('vsplit'), noresilent)
-vim.keymap.set('n', localleader .. '-', mapcmd('split'), noresilent)
-vim.keymap.set('n', localleader .. '<tab>', mapcmd('tabnew'), noresilent)
-vim.keymap.set('n', localleader .. 'h', mapcmd('tabprevious'), noresilent)
-vim.keymap.set('n', localleader .. 'l', mapcmd('tabnext'), noresilent)
+u.nmap({ leader .. 'q', u.mapcmd('quit'), true })
+u.nmap({ leader .. 'w', u.mapcmd('write'), true })
+u.nmap({ leader .. 'h', u.mapcmd('set hlsearch!'), true })
+u.nmap({ leader .. '-', u.mapcmd('wincmd _') .. u.mapcmd('wincmd |'), true })
+u.nmap({ leader .. leader .. 'f', u.mapcmd('luafile %'), true })
 
-vim.keymap.set('i', 'jk', '<esc>', noresilent)
+u.nmap({ localleader .. 'q', u.mapcmd('quit!'), true })
+u.nmap({ localleader .. 'a', u.mapcmd('quitall!'), true })
+u.nmap({ localleader .. '\\', u.mapcmd('vsplit'), true })
+u.nmap({ localleader .. '-', u.mapcmd('split'), true })
+u.nmap({ localleader .. '<tab>', u.mapcmd('tabnew'), true })
+u.nmap({ localleader .. 'h', u.mapcmd('tabprevious'), true })
+u.nmap({ localleader .. 'l', u.mapcmd('tabnext'), true })
+
+u.imap({ 'jk', '<esc>', true })

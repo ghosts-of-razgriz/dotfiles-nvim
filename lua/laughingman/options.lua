@@ -22,6 +22,8 @@ o.belloff = 'all' -- disable bell
 o.mouse = '' -- diable mouse
 o.laststatus = 3 -- global statusline, overwritten by lualine
 o.virtualedit = 'block' -- visual block can select empty space
+o.foldlevel = 5 -- starting fold level
+o.conceallevel = 1 -- do some concealing
 
 -- line numbering
 o.number = true
