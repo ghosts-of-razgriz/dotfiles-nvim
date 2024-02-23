@@ -3,21 +3,20 @@ vim.cmd([[let g:maplocalleader = "\<c-space>"]])
 
 local leader = '<leader>'
 local localleader = '<localleader>'
+local opts = { silent = true, noremap = true }
 
-local u = require('laughingman.utils')
+vim.keymap.set('n', leader .. 'q', '<cmd>quit<cr>', opts)
+vim.keymap.set('n', leader .. 'w', '<cmd>write<cr>', opts)
+vim.keymap.set('n', leader .. 'h', '<cmd>set hlsearch!<cr>', opts)
+vim.keymap.set('n', leader .. '-', '<cmd>wincmd _<cr>' .. '<cmd>wincmd |<cr>', opts)
+vim.keymap.set('n', leader .. leader .. 'f', '<cmd>luafile %<cr>', opts)
 
-u.nmap({ leader .. 'q', u.mapcmd('quit'), true })
-u.nmap({ leader .. 'w', u.mapcmd('write'), true })
-u.nmap({ leader .. 'h', u.mapcmd('set hlsearch!'), true })
-u.nmap({ leader .. '-', u.mapcmd('wincmd _') .. u.mapcmd('wincmd |'), true })
-u.nmap({ leader .. leader .. 'f', u.mapcmd('luafile %'), true })
+vim.keymap.set('n', localleader .. 'q', '<cmd>quit!<cr>', opts)
+vim.keymap.set('n', localleader .. 'a', '<cmd>quitall!<cr>', opts)
+vim.keymap.set('n', localleader .. '\\', '<cmd>vsplit<cr>', opts)
+vim.keymap.set('n', localleader .. '-', '<cmd>split<cr>', opts)
+vim.keymap.set('n', localleader .. '<tab>', '<cmd>tabnew<cr>', opts)
+vim.keymap.set('n', localleader .. 'h', '<cmd>tabprevious<cr>', opts)
+vim.keymap.set('n', localleader .. 'l', '<cmd>tabnext<cr>', opts)
 
-u.nmap({ localleader .. 'q', u.mapcmd('quit!'), true })
-u.nmap({ localleader .. 'a', u.mapcmd('quitall!'), true })
-u.nmap({ localleader .. '\\', u.mapcmd('vsplit'), true })
-u.nmap({ localleader .. '-', u.mapcmd('split'), true })
-u.nmap({ localleader .. '<tab>', u.mapcmd('tabnew'), true })
-u.nmap({ localleader .. 'h', u.mapcmd('tabprevious'), true })
-u.nmap({ localleader .. 'l', u.mapcmd('tabnext'), true })
-
-u.imap({ 'jk', '<esc>', true })
+vim.keymap.set('i', 'jk', '<esc>', opts)

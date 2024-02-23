@@ -21,6 +21,4 @@ require('lazy').setup({
 	change_detection = { notify = false },
 }, opts)
 
-local u = require('laughingman.utils')
-
-u.nmap({ '<space><space>l', u.mapcmd('Lazy'), false })
+vim.keymap.set('n', '<space><space>l', '<cmd>Lazy<cr>', { silent = true, noremap = true })

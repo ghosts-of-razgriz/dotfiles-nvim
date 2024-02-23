@@ -6,6 +6,7 @@ return {
 
 		t.setup({
 			style = 'night',
+			-- TODO: turn transparent on
 			transparent = false,
 		})
 		vim.cmd([[colorscheme tokyonight]])
