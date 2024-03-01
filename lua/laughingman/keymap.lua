@@ -13,6 +13,7 @@ vim.keymap.set('n', leader .. leader .. 'f', '<cmd>luafile %<cr>', opts)
 
 vim.keymap.set('n', localleader .. 'q', '<cmd>quit!<cr>', opts)
 vim.keymap.set('n', localleader .. 'a', '<cmd>quitall!<cr>', opts)
+vim.keymap.set('n', localleader .. 'w', '<cmd>edit!<cr>', opts)
 vim.keymap.set('n', localleader .. '\\', '<cmd>vsplit<cr>', opts)
 vim.keymap.set('n', localleader .. '-', '<cmd>split<cr>', opts)
 vim.keymap.set('n', localleader .. '<tab>', '<cmd>tabnew<cr>', opts)
