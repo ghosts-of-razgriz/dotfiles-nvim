@@ -24,6 +24,10 @@ M.setup = function(capabilities)
 			},
 		},
 	})
+
+	if vim.fn.executable('stylua') == 1 then
+		require('conform').formatters_by_ft.lua = { 'stylua' }
+	end
 end
 
 return M
