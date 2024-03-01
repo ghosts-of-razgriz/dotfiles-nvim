@@ -12,4 +12,7 @@ return {
 
 		vim.bo.indentexpr = 'v:lua.require"nvim-treesitter".indentexpr()'
 	end,
+	dependencies = {
+		{ 'nvim-treesitter/nvim-treesitter-context', opt = {} },
+	},
 }
