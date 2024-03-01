@@ -46,16 +46,18 @@ return {
 				map(prefix .. prefix .. 'q', '<cmd>LspRestart<cr>')
 				map(prefix .. prefix .. 'i', '<cmd>LspInfo<cr>')
 
+				map('<c-n>', vim.diagnostic.goto_next)
+				map('<c-p>', vim.diagnostic.goto_prev)
 				map('K', vim.lsp.buf.hover)
 			end,
 		})
 
-		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- capabilities = vim.tbl_deep_extend(
-		-- 	'force',
-		-- 	capabilities,
-		-- 	require('cmp_nvim_lsp').default_capabilities()
-		-- )
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = vim.tbl_deep_extend(
+			'force',
+			capabilities,
+			require('cmp_nvim_lsp').default_capabilities()
+		)
 
 		require('lsp.lua-ls').setup(capabilities)
 	end,
