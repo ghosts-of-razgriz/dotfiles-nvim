@@ -59,18 +59,18 @@ return {
 		local lleader = '<localleader>'
 		local nore = { noremap = true }
 
-		vim.keymap.set('n', leader .. 'sh', '<cmd>Telescope help_tags<cr>', nore)
-		vim.keymap.set('n', leader .. 'ss', '<cmd>Telescope find_files<cr>', nore)
-		vim.keymap.set('n', leader .. 'sb', '<cmd>Telescope buffers<cr>', nore)
-		vim.keymap.set('n', leader .. 'sc', '<cmd>Telescope commands<cr>', nore)
-		vim.keymap.set('n', leader .. 'sk', '<cmd>Telescope keymaps<cr>', nore)
-		vim.keymap.set('n', leader .. 'sr', '<cmd>Telescope resume<cr>', nore)
-		vim.keymap.set('n', leader .. 'sg', '<cmd>Telescope live_grep<cr>', nore)
-		vim.keymap.set('n', leader .. 'sd', '<cmd>Telescope diagnostics<cr>', nore)
-		vim.keymap.set('n', leader .. 'sw', '<cmd>Telescope grep_string<cr>', nore)
-		vim.keymap.set('n', leader .. 'sg', '<cmd>Telescope git_commits<cr>', nore)
-		vim.keymap.set('n', leader .. 's<space>', '<cmd>Telescope builtin<cr>', nore)
+		vim.keymap.set('n', leader .. 'uh', '<cmd>Telescope help_tags<cr>', nore)
+		vim.keymap.set('n', leader .. 'uu', '<cmd>Telescope find_files<cr>', nore)
+		vim.keymap.set('n', leader .. 'ub', '<cmd>Telescope buffers<cr>', nore)
+		vim.keymap.set('n', leader .. 'uc', '<cmd>Telescope commands<cr>', nore)
+		vim.keymap.set('n', leader .. 'uk', '<cmd>Telescope keymaps<cr>', nore)
+		vim.keymap.set('n', leader .. 'ur', '<cmd>Telescope resume<cr>', nore)
+		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_grep<cr>', nore)
+		vim.keymap.set('n', leader .. 'ud', '<cmd>Telescope diagnostics<cr>', nore)
+		vim.keymap.set('n', leader .. 'uw', '<cmd>Telescope grep_string<cr>', nore)
+		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope git_commits<cr>', nore)
+		vim.keymap.set('n', leader .. 'ut', '<cmd>Telescope builtin<cr>', nore)
 
-		vim.keymap.set('n', lleader .. 'sf', '<cmd>Telescope git_files<cr>', nore)
+		vim.keymap.set('n', lleader .. 'uf', '<cmd>Telescope git_files<cr>', nore)
 	end,
 }
