@@ -1,4 +1,1 @@
-pack/packer
-tmp
-plugin/packer_compiled.vim
-plugin/packer_compiled.lua
+lazy-lock.json
