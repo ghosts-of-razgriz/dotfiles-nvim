@@ -60,5 +60,8 @@ return {
 		)
 
 		require('lsp.lua-ls').setup(capabilities)
+		require('lsp.go-ls').setup(capabilities)
+		require('lsp.typescript-ls').setup(capabilities)
+		require('lsp.typst-ls').setup(capabilities)
 	end,
 }
