@@ -1,6 +1,7 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	cmd = { 'Telescope' },
+	cond = not vim.g.started_by_firenvim,
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		{

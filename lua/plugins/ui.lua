@@ -1,5 +1,6 @@
 return {
 	'folke/noice.nvim',
+	cond = not vim.g.started_by_firenvim,
 	event = 'VeryLazy',
 	config = function()
 		local n = require('noice')
