@@ -72,7 +72,7 @@ o.formatoptions = o.formatoptions
 	- '2' -- I'm not in gradeschool anymore
 
 -- invisiable characters
-o.listchars = { trail = '•', nbsp = '⦸', tab = '-->' }
+o.listchars = { trail = '•', nbsp = '⦸', tab = '│․․' }
 o.list = true
 
 -- auto balance panes if window changes size
