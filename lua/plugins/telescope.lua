@@ -67,10 +67,11 @@ return {
 		vim.keymap.set('n', leader .. 'ur', '<cmd>Telescope resume<cr>', nore)
 		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_grep<cr>', nore)
 		vim.keymap.set('n', leader .. 'ud', '<cmd>Telescope diagnostics<cr>', nore)
-		vim.keymap.set('n', leader .. 'uw', '<cmd>Telescope grep_string<cr>', nore)
-		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope git_commits<cr>', nore)
 		vim.keymap.set('n', leader .. 'ut', '<cmd>Telescope builtin<cr>', nore)
 
+		vim.keymap.set('n', lleader .. 'ug', '<cmd>Telescope grep_string<cr>', nore)
+		vim.keymap.set('n', lleader .. 'ub', '<cmd>Telescope current_buffer_fuzzy_find<cr>', nore)
 		vim.keymap.set('n', lleader .. 'uf', '<cmd>Telescope git_files<cr>', nore)
+		vim.keymap.set('n', lleader .. 'uc', '<cmd>Telescope git_commits<cr>', nore)
 	end,
 }
