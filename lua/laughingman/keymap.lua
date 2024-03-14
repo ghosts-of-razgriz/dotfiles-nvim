@@ -26,3 +26,12 @@ vim.keymap.set('n', '<c-k>', '<cmd>wincmd k<cr>', opts)
 vim.keymap.set('n', '<c-l>', '<cmd>wincmd l<cr>', opts)
 
 vim.keymap.set('i', 'jk', '<esc>', opts)
+
+vim.keymap.set('i', '<Left>', '<Nop>', opts)
+vim.keymap.set('i', '<Right>', '<Nop>', opts)
+vim.keymap.set('i', '<Up>', '<Nop>', opts)
+vim.keymap.set('i', '<Down>', '<Nop>', opts)
+vim.keymap.set('i', '<S-Left>', '<Nop>', opts)
+vim.keymap.set('i', '<S-Right>', '<Nop>', opts)
+vim.keymap.set('i', '<S-Up>', '<Nop>', opts)
+vim.keymap.set('i', '<S-Down>', '<Nop>', opts)
