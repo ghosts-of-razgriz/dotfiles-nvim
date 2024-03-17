@@ -20,11 +20,6 @@ vim.keymap.set('n', localleader .. '<tab>', '<cmd>tabnew<cr>', opts)
 vim.keymap.set('n', localleader .. 'h', '<cmd>tabprevious<cr>', opts)
 vim.keymap.set('n', localleader .. 'l', '<cmd>tabnext<cr>', opts)
 
-vim.keymap.set('n', '<c-h>', '<cmd>wincmd h<cr>', opts)
-vim.keymap.set('n', '<c-j>', '<cmd>wincmd j<cr>', opts)
-vim.keymap.set('n', '<c-k>', '<cmd>wincmd k<cr>', opts)
-vim.keymap.set('n', '<c-l>', '<cmd>wincmd l<cr>', opts)
-
 vim.keymap.set('i', 'jk', '<esc>', opts)
 
 vim.keymap.set('i', '<Left>', '<Nop>', opts)
