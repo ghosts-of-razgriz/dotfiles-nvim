@@ -5,6 +5,9 @@ return {
 	config = function()
 		require('nvim-treesitter').setup({
 			auto_install = true,
+			highlight = {
+				enable = true,
+			},
 		})
 
 		vim.opt.foldmethod = 'expr'
