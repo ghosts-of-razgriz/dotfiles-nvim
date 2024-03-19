@@ -9,6 +9,7 @@ vim.keymap.set('n', leader .. 'q', '<cmd>quit<cr>', opts)
 vim.keymap.set('n', leader .. 'w', '<cmd>write<cr>', opts)
 vim.keymap.set('n', leader .. 'h', '<cmd>set hlsearch!<cr>', opts)
 vim.keymap.set('n', leader .. '-', '<cmd>wincmd _<cr>' .. '<cmd>wincmd |<cr>', opts)
+vim.keymap.set('n', leader .. '=', '<cmd>wincmd =<cr>', opts)
 vim.keymap.set('n', leader .. leader .. 'f', '<cmd>luafile %<cr>', opts)
 
 vim.keymap.set('n', localleader .. 'q', '<cmd>quit!<cr>', opts)
