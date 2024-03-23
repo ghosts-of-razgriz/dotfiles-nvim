@@ -110,6 +110,7 @@ return {
 		require('lsp.fish-ls').setup(capabilities)
 		require('lsp.lua-ls').setup(capabilities)
 		require('lsp.go-ls').setup(capabilities)
+		require('lsp.rust-ls').setup(capabilities)
 		require('lsp.typescript-ls').setup(capabilities)
 		require('lsp.typst-ls').setup(capabilities)
 	end,
