@@ -4,6 +4,27 @@ return {
 	dependencies = {
 		{ 'j-hui/fidget.nvim', opts = {} },
 		{
+			'folke/trouble.nvim',
+			config = function()
+				require('trouble').setup({
+					position = 'bottom',
+					height = 8,
+					-- action_keys
+					auto_open = false,
+					auto_close = false,
+					use_daignostic_signs = true,
+				})
+			end,
+			init = function()
+				local prefix = '<m-t>'
+				local nore = { noremap = true }
+
+				vim.keymap.set('n', prefix .. prefix, '<cmd>TroubleToggle<cr>', nore)
+				vim.keymap.set('n', prefix .. 'q', '<cmd>TroubleToggle quickfix<cr>', nore)
+			end,
+			dependencies = { 'nvim-tree/nvim-web-devicons' },
+		},
+		{
 			'stevearc/conform.nvim',
 			config = function()
 				local c = require('conform')
@@ -113,5 +134,6 @@ return {
 		require('lsp.rust-ls').setup(capabilities)
 		require('lsp.typescript-ls').setup(capabilities)
 		require('lsp.typst-ls').setup(capabilities)
+		require('lsp.vim-ls').setup(capabilities)
 	end,
 }
