@@ -30,19 +30,19 @@ return {
 
 		vim.keymap.set(
 			'n',
-			leader .. 'e',
+			leader .. leader .. 'e',
 			'<cmd>Defx -buffer-name=defx -show-ignored-files<cr>',
 			nore
 		)
 		vim.keymap.set(
 			'n',
-			leader .. 'E',
+			leader .. leader .. 'E',
 			'<cmd>Defx -new -buffer-name=defx-new -show-ignored-files<cr>',
 			nore
 		)
 		vim.keymap.set(
 			'n',
-			localleader .. 'e',
+			localleader .. localleader .. 'e',
 			"<cmd>Defx -buffer-name=defx -show-ignored-files `expand('%:p:h')`<cr>",
 			nore
 		)
