@@ -25,7 +25,7 @@ return {
 		-- )
 		-- vim.keymap.set('n', leader .. 'gl', '<cmd>Git log --graph --oneline --decorate<cr>', opts)
 		-- vim.keymap.set('n', leader .. 'gp', '<cmd>Git push<cr>', opts)
-		vim.keymap.set('n', localleader .. 'gs', '<cmd>Git<cr><c-w><s-h>', opts)
+		vim.keymap.set('n', localleader .. 'gs', '<cmd>Git<cr>', opts)
 		-- vim.keymap.set('n', leader .. 'gw', '<cmd>Gwrite<cr>', opts)
 		-- vim.keymap.set('n', leader .. 'ge', ':Gedit<space>', opts)
 
