@@ -8,7 +8,11 @@ return {
 	},
 	cmd = { 'Neogit' },
 	config = function()
-		require('neogit').setup({})
+		require('neogit').setup({
+			commit_editor = {
+				kind = 'vsplit',
+			},
+		})
 	end,
 	init = function()
 		local leader = '<leader>'
