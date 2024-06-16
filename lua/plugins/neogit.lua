@@ -12,6 +12,12 @@ return {
 			commit_editor = {
 				kind = 'vsplit',
 			},
+			sections = {
+				recent = {
+					folded = false,
+					hidden = false,
+				},
+			},
 		})
 	end,
 	init = function()
