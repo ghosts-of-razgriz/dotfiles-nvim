@@ -19,8 +19,8 @@ return {
 				local prefix = '<m-t>'
 				local nore = { noremap = true }
 
-				vim.keymap.set('n', prefix .. prefix, '<cmd>TroubleToggle<cr>', nore)
-				vim.keymap.set('n', prefix .. 'q', '<cmd>TroubleToggle quickfix<cr>', nore)
+				vim.keymap.set('n', prefix .. prefix, '<cmd>Trouble diagnostics<cr>', nore)
+				vim.keymap.set('n', prefix .. 'q', '<cmd>Trouble quickfix<cr>', nore)
 			end,
 			dependencies = { 'nvim-tree/nvim-web-devicons' },
 		},
