@@ -32,4 +32,7 @@ return {
 			end,
 		})
 	end,
+	dependencies = {
+		{ 'nvim-treesitter/nvim-treesitter-context', opt = {} },
+	},
 }
