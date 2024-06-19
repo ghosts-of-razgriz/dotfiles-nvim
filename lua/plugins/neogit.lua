@@ -18,6 +18,9 @@ return {
 					hidden = false,
 				},
 			},
+			filewatcher = {
+				enabled = false,
+			},
 		})
 	end,
 	init = function()
