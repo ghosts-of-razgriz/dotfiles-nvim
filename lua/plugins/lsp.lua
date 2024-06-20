@@ -71,6 +71,18 @@ return {
 				vim.keymap.set('n', '\\\\f', '<cmd>ConformToggle<cr>', { noremap = true })
 			end,
 		},
+		{
+			'mfussenegger/nvim-lint',
+			config = function()
+				local l = require('lint')
+
+				vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
+					callback = function()
+						l.try_lint()
+					end,
+				})
+			end,
+		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd('LspAttach', {

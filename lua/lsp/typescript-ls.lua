@@ -8,16 +8,25 @@ M.setup = function(capabilities)
 	end
 
 	if vim.fn.executable('prettierd') == 1 then
-		local c = require('conform')
-
-		c.formatters_by_ft.html = { 'prettierd' }
-		c.formatters_by_ft.javascript = { 'prettierd' }
-		c.formatters_by_ft.typescript = { 'prettierd' }
-		c.formatters_by_ft.json = { 'prettierd' }
-		c.formatters_by_ft.css = { 'prettierd' }
-		c.formatters_by_ft.yaml = { 'prettierd' }
-		c.formatters_by_ft.markdown = { 'prettierd' }
+		require('conform').formatters_by_ft = {
+			html = { 'prettierd' },
+			javascript = { 'prettierd' },
+			javascriptreact = { 'prettierd' },
+			typescript = { 'prettierd' },
+			typescriptreact = { 'prettierd' },
+			json = { 'prettierd' },
+			css = { 'prettierd' },
+			yaml = { 'prettierd' },
+			markdown = { 'prettierd' },
+		}
 	end
+
+	require('lint').linters_by_ft = {
+		javascript = { 'eslint' },
+		javascriptreact = { 'eslint' },
+		typescript = { 'eslint' },
+		typescriptreact = { 'eslint' },
+	}
 end
 
 return M
