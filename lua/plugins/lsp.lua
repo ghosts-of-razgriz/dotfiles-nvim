@@ -134,7 +134,6 @@ return {
 		require('lsp.go-ls').setup(capabilities)
 		require('lsp.rust-ls').setup(capabilities)
 		require('lsp.typescript-ls').setup(capabilities)
-		require('lsp.emmet-ls').setup(capabilities)
 		require('lsp.typst-ls').setup(capabilities)
 		require('lsp.vim-ls').setup(capabilities)
 	end,
