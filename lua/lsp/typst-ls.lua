@@ -9,10 +9,6 @@ M.setup = function(capabilities)
 			},
 		})
 	end
-
-	if vim.fn.executable('typstfmt') == 1 then
-		require('conform').formatters_by_ft.typst = { 'typstfmt' }
-	end
 end
 
 return M

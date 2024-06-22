@@ -15,10 +15,6 @@ M.setup = function(capabilities)
 			},
 		})
 	end
-
-	if vim.fn.executable('rustfmt') == 1 then
-		require('conform').formatters_by_ft.rust = { 'rustfmt' }
-	end
 end
 
 return M

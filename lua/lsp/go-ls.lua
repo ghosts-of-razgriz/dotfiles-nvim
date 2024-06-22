@@ -16,10 +16,6 @@ M.setup = function(capabilities)
 			},
 		})
 	end
-
-	if vim.fn.executable('goimports') == 1 then
-		require('conform').formatters_by_ft.go = { 'goimports' }
-	end
 end
 
 return M
