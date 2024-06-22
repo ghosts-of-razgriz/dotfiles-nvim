@@ -24,18 +24,6 @@ return {
 			end,
 			dependencies = { 'nvim-tree/nvim-web-devicons' },
 		},
-		{
-			'mfussenegger/nvim-lint',
-			config = function()
-				local l = require('lint')
-
-				vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
-					callback = function()
-						l.try_lint()
-					end,
-				})
-			end,
-		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd('LspAttach', {
@@ -94,7 +82,6 @@ return {
 		)
 
 		require('lsp.c-ls').setup(capabilities)
-		require('lsp.fish-ls').setup(capabilities)
 		require('lsp.lua-ls').setup(capabilities)
 		require('lsp.go-ls').setup(capabilities)
 		require('lsp.rust-ls').setup(capabilities)
