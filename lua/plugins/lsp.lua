@@ -55,10 +55,11 @@ return {
 				local prefix = '\\'
 
 				map(prefix .. 'd', vim.lsp.buf.definition)
-				map(prefix .. 'D', vim.lsp.buf.declaration)
+				map(prefix .. prefix .. 'd', vim.lsp.buf.declaration)
 				map(prefix .. 'r', vim.lsp.buf.rename)
 				map(prefix .. 'a', vim.lsp.buf.code_action)
 				map(prefix .. 'h', vim.lsp.buf.signature_help)
+				map(prefix .. 't', vim.lsp.buf.type_definition)
 
 				map(prefix .. 'f', '<cmd>Telescope lsp_references<cr>')
 				map(prefix .. 'i', '<cmd>Telescope lsp_implementations<cr>')
@@ -67,6 +68,7 @@ return {
 				map(prefix .. prefix .. 'w', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
 				map(prefix .. prefix .. 'q', '<cmd>LspRestart<cr>')
 				map(prefix .. prefix .. 'i', '<cmd>LspInfo<cr>')
+				map(prefix .. prefix .. 'c', '<cmd>ConformInfo<cr>')
 
 				map('<c-n>', vim.diagnostic.goto_next)
 				map('<c-p>', vim.diagnostic.goto_prev)
