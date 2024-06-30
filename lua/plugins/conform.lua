@@ -26,7 +26,7 @@ return {
 				typescriptreact = { 'prettierd' },
 				yaml = { 'prettierd' },
 
-				typst = { 'typstfmt' },
+				typst = { 'typstyle' },
 
 				rust = { 'rustfmt' },
 			},
