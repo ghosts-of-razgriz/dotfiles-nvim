@@ -85,10 +85,29 @@ return {
 
 		require('lsp.c-ls').setup(capabilities)
 		require('lsp.lua-ls').setup(capabilities)
-		require('lsp.go-ls').setup(capabilities)
 		require('lsp.rust-ls').setup(capabilities)
-		require('lsp.typescript-ls').setup(capabilities)
-		require('lsp.typst-ls').setup(capabilities)
 		require('lsp.vim-ls').setup(capabilities)
+
+		local lspconfig = require('lspconfig')
+
+		lspconfig.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
+		lspconfig.tsserver.setup({ capabilities = capabilities })
+		lspconfig.typst_lsp.setup({
+			capabilities = capabilities,
+			settings = { exportPdf = 'never' },
+		})
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+			cmd = { 'gopls', 'serve' },
+			filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl' },
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+				},
+			},
+		})
 	end,
 }
