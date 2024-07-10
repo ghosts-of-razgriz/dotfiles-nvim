@@ -70,8 +70,12 @@ return {
 				map(prefix .. prefix .. 'i', '<cmd>LspInfo<cr>')
 				map(prefix .. prefix .. 'c', '<cmd>ConformInfo<cr>')
 
-				map('<c-n>', vim.diagnostic.goto_next)
-				map('<c-p>', vim.diagnostic.goto_prev)
+				map('<c-n>', function()
+					vim.diagnostic.jump({ count = 1, float = true })
+				end)
+				map('<c-p>', function()
+					vim.diagnostic.jump({ count = -1, float = true })
+				end)
 				map('K', vim.lsp.buf.hover)
 			end,
 		})
