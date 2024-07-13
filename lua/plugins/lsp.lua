@@ -89,7 +89,6 @@ return {
 
 		require('lsp.c-ls').setup(capabilities)
 		require('lsp.lua-ls').setup(capabilities)
-		require('lsp.rust-ls').setup(capabilities)
 		require('lsp.vim-ls').setup(capabilities)
 
 		local lspconfig = require('lspconfig')
@@ -110,6 +109,18 @@ return {
 						unusedparams = true,
 					},
 					staticcheck = true,
+				},
+			},
+		})
+		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
+			filetypes = { 'rust' },
+			root_dir = require('lspconfig.util').root_pattern('Cargo.toml'),
+			settings = {
+				['rust-analyzer'] = {
+					cargo = {
+						allFeatures = true,
+					},
 				},
 			},
 		})
