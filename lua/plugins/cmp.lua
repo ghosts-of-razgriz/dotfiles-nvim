@@ -6,7 +6,7 @@ return {
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-nvim-lua',
 		'hrsh7th/cmp-nvim-lsp',
-		{ 'jackieaskins/cmp-emmet', build = 'npm run release'  },
+		{ 'jackieaskins/cmp-emmet', build = 'npm run release', dir = '~/code/cmp-emmet' },
 		'onsails/lspkind-nvim',
 		{
 			'L3MON4D3/LuaSnip',
@@ -102,7 +102,7 @@ return {
 						nvim_lua = '[api]',
 						buffer = '[buf]',
 						path = '[path]',
-						emmet = '[em]'
+						emmet = '[em]',
 					},
 				}),
 			},
