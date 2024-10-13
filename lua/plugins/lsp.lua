@@ -94,7 +94,7 @@ return {
 		local lspconfig = require('lspconfig')
 
 		lspconfig.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
-		lspconfig.tsserver.setup({ capabilities = capabilities })
+		lspconfig.ts_ls.setup({ capabilities = capabilities })
 		lspconfig.typst_lsp.setup({
 			capabilities = capabilities,
 			settings = { exportPdf = 'never' },
