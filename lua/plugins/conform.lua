@@ -29,6 +29,8 @@ return {
 				typst = { 'typstyle' },
 
 				rust = { 'rustfmt' },
+
+				nix = { 'nixfmt' },
 			},
 			format_on_save = function()
 				if vim.g.conform_autoformat then
