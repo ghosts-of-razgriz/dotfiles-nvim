@@ -87,12 +87,9 @@ return {
 			require('cmp_nvim_lsp').default_capabilities()
 		)
 
-		require('lsp.c-ls').setup(capabilities)
-		require('lsp.lua-ls').setup(capabilities)
-		require('lsp.vim-ls').setup(capabilities)
-
 		local lspconfig = require('lspconfig')
 
+		lspconfig.ccls.setup({ capabilities = capabilities })
 		lspconfig.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
 		lspconfig.typst_lsp.setup({
@@ -112,6 +109,24 @@ return {
 				},
 			},
 		})
+
+		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					runtime = { version = 'LuaJIT' },
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							'${3rd}/luv/library',
+							unpack(vim.api.nvim_get_runtime_file('', true)),
+						},
+					},
+					completion = { callSnippet = 'Replace' },
+				},
+			},
+		})
+
 		lspconfig.rust_analyzer.setup({
 			capabilities = capabilities,
 			filetypes = { 'rust' },
@@ -128,6 +143,5 @@ return {
 		lspconfig.nil_ls.setup({
 			capabilities = capabilities,
 		})
-
 	end,
 }
