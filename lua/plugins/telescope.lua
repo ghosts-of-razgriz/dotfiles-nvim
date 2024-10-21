@@ -12,6 +12,7 @@ return {
 			end,
 		},
 		{ 'nvim-telescope/telescope-ui-select.nvim' },
+		'jonarrien/telescope-cmdline.nvim',
 	},
 	config = function()
 		require('telescope').setup({
@@ -48,11 +49,31 @@ return {
 				['ui-select'] = {
 					require('telescope.themes').get_dropdown(),
 				},
+				cmdline = {
+					-- Adjust telescope picker size and layout
+					picker = {
+						layout_config = {
+							width = 120,
+							height = 25,
+						},
+					},
+					-- Adjust your mappings
+					mappings = {
+						complete = '<c-y>',
+						run_selection = '<cr>',
+						run_input = '<c-cr>',
+					},
+					-- Triggers any shell command using overseer.nvim (`:!`)
+					overseer = {
+						enabled = true,
+					},
+				},
 			},
 		})
 
 		pcall(require('telescope').load_extension, 'fzf')
 		pcall(require('telescope').load_extension, 'ui-select')
+		pcall(require('telescope').load_extension, 'cmdline')
 	end,
 	init = function()
 		local leader = '<leader>'
@@ -62,7 +83,7 @@ return {
 		vim.keymap.set('n', leader .. 'uh', '<cmd>Telescope help_tags<cr>', nore)
 		vim.keymap.set('n', leader .. 'uu', '<cmd>Telescope find_files<cr>', nore)
 		vim.keymap.set('n', leader .. 'ub', '<cmd>Telescope buffers<cr>', nore)
-		vim.keymap.set('n', leader .. 'uc', '<cmd>Telescope commands<cr>', nore)
+		vim.keymap.set('n', leader .. 'uc', '<cmd>Telescope cmdline<cr>', nore)
 		vim.keymap.set('n', leader .. 'uk', '<cmd>Telescope keymaps<cr>', nore)
 		vim.keymap.set('n', leader .. 'ur', '<cmd>Telescope resume<cr>', nore)
 		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_grep<cr>', nore)
