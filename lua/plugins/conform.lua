@@ -31,6 +31,8 @@ return {
 				rust = { 'rustfmt' },
 
 				nix = { 'nixfmt' },
+
+				python = { 'ruff' },
 			},
 			format_on_save = function()
 				if vim.g.conform_autoformat then

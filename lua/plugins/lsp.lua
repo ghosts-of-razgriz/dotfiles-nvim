@@ -127,6 +127,8 @@ return {
 			},
 		})
 
+		lspconfig.pylyzer.setup({ capabilities = capabilities })
+
 		lspconfig.rust_analyzer.setup({
 			capabilities = capabilities,
 			filetypes = { 'rust' },
