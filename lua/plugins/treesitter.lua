@@ -4,7 +4,6 @@ return {
 	branch = 'main',
 	config = function()
 		require('nvim-treesitter').setup({
-			auto_install = true,
 			highlight = {
 				enable = true,
 			},
@@ -34,5 +33,13 @@ return {
 	end,
 	dependencies = {
 		{ 'nvim-treesitter/nvim-treesitter-context', opt = {} },
+		{
+			'lewis6991/ts-install.nvim',
+			config = function()
+				require('ts-install').setup({
+					auto_install = true,
+				})
+			end,
+		},
 	},
 }
