@@ -32,7 +32,6 @@ return {
 		})
 	end,
 	dependencies = {
-		{ 'nvim-treesitter/nvim-treesitter-context', opt = {} },
 		{
 			'lewis6991/ts-install.nvim',
 			config = function()
