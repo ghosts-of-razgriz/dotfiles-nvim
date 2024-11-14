@@ -31,3 +31,8 @@ vim.keymap.set('i', '<S-Left>', '<Nop>', opts)
 vim.keymap.set('i', '<S-Right>', '<Nop>', opts)
 vim.keymap.set('i', '<S-Up>', '<Nop>', opts)
 vim.keymap.set('i', '<S-Down>', '<Nop>', opts)
+
+vim.keymap.set('n', '<c-h>', '<c-w>h', opts)
+vim.keymap.set('n', '<c-j>', '<c-w>j', opts)
+vim.keymap.set('n', '<c-k>', '<c-w>k', opts)
+vim.keymap.set('n', '<c-l>', '<c-w>l', opts)
