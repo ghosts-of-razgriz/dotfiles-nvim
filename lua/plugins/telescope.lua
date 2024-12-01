@@ -89,6 +89,7 @@ return {
 		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_grep<cr>', nore)
 		vim.keymap.set('n', leader .. 'ud', '<cmd>Telescope diagnostics<cr>', nore)
 		vim.keymap.set('n', leader .. 'ut', '<cmd>Telescope builtin<cr>', nore)
+		vim.keymap.set('n', leader .. 'um', '<cmd>Telescope marks<cr>', nore)
 
 		vim.keymap.set('n', lleader .. 'ug', '<cmd>Telescope grep_string<cr>', nore)
 		vim.keymap.set('n', lleader .. 'ub', '<cmd>Telescope current_buffer_fuzzy_find<cr>', nore)
