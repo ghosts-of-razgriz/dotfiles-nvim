@@ -5,7 +5,6 @@ return {
 		require('marks').setup({
 			mappings = {
 				toggle = 'm,',
-				preview = 'm.',
 			},
 		})
 	end,
