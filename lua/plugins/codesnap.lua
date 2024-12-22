@@ -1,5 +1,13 @@
 return {
 	'mistricky/codesnap.nvim',
+	enabled = function()
+		local neovim_build = os.getenv('NEOVIM_BUILD')
+		if neovim_build then
+			return false
+		else
+			return true
+		end
+	end,
 	build = 'make build_generator',
 	keys = {
 		{ '<leader>cc', '<cmd>CodeSnap<cr>', mode = 'x' },
