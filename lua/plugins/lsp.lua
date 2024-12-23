@@ -92,7 +92,7 @@ return {
 		lspconfig.ccls.setup({ capabilities = capabilities })
 		lspconfig.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
-		lspconfig.typst_lsp.setup({
+		lspconfig.tinymist.setup({
 			capabilities = capabilities,
 			settings = { exportPdf = 'never' },
 		})
