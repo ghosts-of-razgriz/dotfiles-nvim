@@ -28,6 +28,9 @@ return {
 
 				typst = { 'typstyle' },
 
+				ruby = { 'rufo' },
+				eruby = { 'erb_format' },
+
 				rust = { 'rustfmt' },
 
 				nix = { 'nixfmt' },

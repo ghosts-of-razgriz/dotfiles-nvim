@@ -63,9 +63,9 @@ return {
 
 				map(prefix .. 'f', '<cmd>Telescope lsp_references<cr>')
 				map(prefix .. 'i', '<cmd>Telescope lsp_implementations<cr>')
-				map(prefix .. 'w', '<cmd>Telescope lsp_document_symbols<cr>')
+				map(prefix .. 's', '<cmd>Telescope lsp_document_symbols<cr>')
 
-				map(prefix .. prefix .. 'w', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
+				map(prefix .. prefix .. 's', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
 				map(prefix .. prefix .. 'q', '<cmd>LspRestart<cr>')
 				map(prefix .. prefix .. 'i', '<cmd>LspInfo<cr>')
 				map(prefix .. prefix .. 'c', '<cmd>ConformInfo<cr>')
@@ -90,7 +90,11 @@ return {
 		local lspconfig = require('lspconfig')
 
 		lspconfig.ccls.setup({ capabilities = capabilities })
+
+		lspconfig.emmet_language_server.setup({ capabilities = capabilities })
 		lspconfig.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
+		lspconfig.tailwindcss.setup({ capabilities = capabilities })
+
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
 		lspconfig.tinymist.setup({
 			capabilities = capabilities,
@@ -141,6 +145,8 @@ return {
 				},
 			},
 		})
+
+		lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 
 		lspconfig.nil_ls.setup({
 			capabilities = capabilities,

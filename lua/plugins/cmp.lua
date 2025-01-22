@@ -6,11 +6,6 @@ return {
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-nvim-lua',
 		'hrsh7th/cmp-nvim-lsp',
-		{
-			'jackieaskins/cmp-emmet',
-			build = 'npm run release',
-			enabled = SimpleBuild(),
-		},
 		'onsails/lspkind-nvim',
 		{
 			'L3MON4D3/LuaSnip',
@@ -86,7 +81,6 @@ return {
 			sources = {
 				{ name = 'nvim_lua', keyword_length = 2 },
 				{ name = 'nvim_lsp', keyword_length = 2 },
-				{ name = 'emmet', keyword_length = 1 },
 				{ name = 'luasnip', keyword_length = 2 },
 				{ name = 'path', keyword_length = 3 },
 				{ name = 'buffer', keyword_length = 5 },
@@ -106,7 +100,6 @@ return {
 						nvim_lua = '[api]',
 						buffer = '[buf]',
 						path = '[path]',
-						emmet = '[em]',
 					},
 				}),
 			},
