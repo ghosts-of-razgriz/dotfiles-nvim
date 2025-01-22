@@ -37,6 +37,7 @@ return {
 			config = function()
 				require('ts-install').setup({
 					auto_install = true,
+					ignore_install = { 'NeogitStatus' },
 				})
 			end,
 		},
