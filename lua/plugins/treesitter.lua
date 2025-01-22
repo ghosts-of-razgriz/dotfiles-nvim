@@ -40,5 +40,6 @@ return {
 				})
 			end,
 		},
+		{ 'tree-sitter/tree-sitter-embedded-template' },
 	},
 }
