@@ -36,3 +36,8 @@ vim.keymap.set('n', '<c-h>', '<c-w>h', opts)
 vim.keymap.set('n', '<c-j>', '<c-w>j', opts)
 vim.keymap.set('n', '<c-k>', '<c-w>k', opts)
 vim.keymap.set('n', '<c-l>', '<c-w>l', opts)
+
+vim.keymap.set('n', leader .. 'co', '<cmd>copen<cr>', opts)
+vim.keymap.set('n', leader .. 'cj', '<cmd>cnext<cr>', opts)
+vim.keymap.set('n', leader .. 'ck', '<cmd>cprev<cr>', opts)
+vim.keymap.set('n', leader .. 'cr', ':cfdo %s/FIND/REPLACE/g | update', opts)
