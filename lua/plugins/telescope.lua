@@ -15,7 +15,8 @@ return {
 		'jonarrien/telescope-cmdline.nvim',
 	},
 	config = function()
-		require('telescope').setup({
+		local telescope = require('telescope')
+		telescope.setup({
 			defaults = {
 				prompt_prefix = ' ',
 				selection_caret = ' ',
@@ -71,9 +72,12 @@ return {
 			},
 		})
 
-		pcall(require('telescope').load_extension, 'fzf')
-		pcall(require('telescope').load_extension, 'ui-select')
-		pcall(require('telescope').load_extension, 'cmdline')
+		require('telescope._extensions.live_multigrep')
+
+		pcall(telescope.load_extension, 'fzf')
+		pcall(telescope.load_extension, 'ui-select')
+		pcall(telescope.load_extension, 'cmdline')
+		pcall(telescope.load_extension, 'live_multigrep')
 	end,
 	init = function()
 		local leader = '<leader>'
@@ -86,7 +90,7 @@ return {
 		vim.keymap.set('n', leader .. 'uc', '<cmd>Telescope cmdline<cr>', nore)
 		vim.keymap.set('n', leader .. 'uk', '<cmd>Telescope keymaps<cr>', nore)
 		vim.keymap.set('n', leader .. 'ur', '<cmd>Telescope resume<cr>', nore)
-		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_grep<cr>', nore)
+		vim.keymap.set('n', leader .. 'ug', '<cmd>Telescope live_multigrep<cr>', nore)
 		vim.keymap.set('n', leader .. 'ud', '<cmd>Telescope diagnostics<cr>', nore)
 		vim.keymap.set('n', leader .. 'ut', '<cmd>Telescope builtin<cr>', nore)
 		vim.keymap.set('n', leader .. 'um', '<cmd>Telescope marks<cr>', nore)
