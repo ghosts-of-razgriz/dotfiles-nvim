@@ -36,6 +36,7 @@ return {
 				nix = { 'nixfmt' },
 
 				python = { 'ruff' },
+				zig = { 'zigfmt' },
 			},
 			format_on_save = function()
 				if vim.g.conform_autoformat then
