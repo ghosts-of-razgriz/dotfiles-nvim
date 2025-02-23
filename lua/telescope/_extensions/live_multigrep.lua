@@ -9,6 +9,20 @@ local live_multigrep = function(opts)
 	opts = opts or {}
 	opts.cwd = opts.cwd or vim.uv.cwd()
 
+	local default_args = {
+		'--color=never',
+		'--no-heading',
+		'--with-filename',
+		'--line-number',
+		'--column',
+		'--smart-case',
+	}
+
+	local additional_args = opts.additional_args and vim.split(opts.additional_args, ',') or {}
+	if next(additional_args) then
+		default_args = vim.iter({ default_args, additional_args }):flatten():totable()
+	end
+
 	local finder = finders.new_async_job({
 		command_generator = function(prompt)
 			if not prompt or prompt == '' then
@@ -27,14 +41,7 @@ local live_multigrep = function(opts)
 				table.insert(args, pieces[2])
 			end
 
-			return vim.list_extend(args, {
-				'--color=never',
-				'--no-heading',
-				'--with-filename',
-				'--line-number',
-				'--column',
-				'--smart-case',
-			})
+			return vim.iter({ args, default_args }):flatten():totable()
 		end,
 		entry_maker = make_entry.gen_from_vimgrep(opts),
 		cwd = opts.cwd,
