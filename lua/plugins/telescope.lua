@@ -98,7 +98,7 @@ return {
 		vim.keymap.set(
 			'n',
 			lleader .. 'ug',
-			'<cmd>Telescope live_multigrep additional_args=--hidden,--no-ignore<cr>',
+			'<cmd>Telescope live_multigrep additional_args=--no-ignore<cr>',
 			nore
 		)
 		vim.keymap.set('n', lleader .. 'uk', '<cmd>Telescope grep_string<cr>', nore)

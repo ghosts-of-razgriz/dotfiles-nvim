@@ -16,6 +16,7 @@ local live_multigrep = function(opts)
 		'--line-number',
 		'--column',
 		'--smart-case',
+		'--hidden',
 	}
 
 	local additional_args = opts.additional_args and vim.split(opts.additional_args, ',') or {}
