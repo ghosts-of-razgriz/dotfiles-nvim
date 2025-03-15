@@ -19,6 +19,10 @@ local opts = {}
 require('lazy').setup({
 	spec = 'plugins',
 	change_detection = { notify = false },
+	dev = {
+		path = vim.loop.os_homedir() .. '/code/neovim-plugins',
+		fallback = false,
+	},
 }, opts)
 
 vim.keymap.set('n', '<space><space>l', '<cmd>Lazy<cr>', { silent = true, noremap = true })
