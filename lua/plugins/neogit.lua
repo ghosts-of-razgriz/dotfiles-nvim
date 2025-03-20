@@ -5,6 +5,7 @@ return {
 		'sindrets/diffview.nvim',
 		'nvim-telescope/telescope.nvim',
 	},
+	dev = true,
 	cmd = { 'Neogit' },
 	config = function()
 		require('neogit').setup({
@@ -15,6 +16,7 @@ return {
 				recent = {
 					folded = false,
 					hidden = false,
+					always = true,
 				},
 			},
 		})
