@@ -75,8 +75,6 @@ o.formatoptions = o.formatoptions
 o.listchars = { trail = '•', nbsp = '⦸', tab = '  ' }
 o.list = true
 
-o.winborder = 'rounded'
-
 -- auto balance panes if window changes size
 local augVimResize = vim.api.nvim_create_augroup('VimResize', { clear = true })
 vim.api.nvim_create_autocmd('VimResized', {
