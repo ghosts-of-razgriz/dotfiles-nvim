@@ -4,6 +4,7 @@ return {
 
 	opts = {
 		formatters_by_ft = {
+			just = { 'just' },
 			lua = { 'stylua' },
 		},
 		format_on_save = function()
