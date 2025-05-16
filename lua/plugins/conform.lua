@@ -1,13 +1,10 @@
+local formatters = require('formatters')
 return {
 	'stevearc/conform.nvim',
 	event = 'VeryLazy',
 
 	opts = {
-		formatters_by_ft = {
-			just = { 'just' },
-			lua = { 'stylua' },
-			nix = { 'nixfmt' },
-		},
+		formatters_by_ft = formatters,
 		format_on_save = function()
 			if vim.g.conform_autoformat then
 				return {
