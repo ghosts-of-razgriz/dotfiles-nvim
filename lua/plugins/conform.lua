@@ -6,6 +6,7 @@ return {
 		formatters_by_ft = {
 			just = { 'just' },
 			lua = { 'stylua' },
+			nix = { 'nixfmt' },
 		},
 		format_on_save = function()
 			if vim.g.conform_autoformat then
