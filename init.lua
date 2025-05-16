@@ -1,4 +1,4 @@
-require 'laughingman'
+require('laughingman')
 
 local lazy_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 

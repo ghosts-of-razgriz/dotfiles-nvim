@@ -7,18 +7,18 @@ return {
 	},
 	dev = true,
 	cmd = { 'Neogit' },
-		opts = {
-			commit_editor = {
-				kind = 'vsplit',
-			},
-			sections = {
-				recent = {
-					folded = false,
-					hidden = false,
-					always = true,
-				},
+	opts = {
+		commit_editor = {
+			kind = 'vsplit',
+		},
+		sections = {
+			recent = {
+				folded = false,
+				hidden = false,
+				always = true,
 			},
 		},
+	},
 	init = function()
 		local leader = '<leader>'
 
