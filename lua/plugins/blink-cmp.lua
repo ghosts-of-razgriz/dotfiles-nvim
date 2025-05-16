@@ -43,6 +43,7 @@ return {
 					},
 				},
 				scrollbar = false,
+				border = 'rounded',
 			},
 		},
 
