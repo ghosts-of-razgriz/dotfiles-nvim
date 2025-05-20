@@ -57,6 +57,6 @@ return {
 			end,
 		})
 
-		require('lsp-servers').init()
+		require('language-servers').init()
 	end,
 }

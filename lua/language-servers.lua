@@ -4,9 +4,7 @@ M.init = function()
 	local capabilities = require('blink.cmp').get_lsp_capabilities()
 	local lsp = require('lspconfig')
 
-	lsp.just.setup({
-		capabilities = capabilities,
-	})
+	lsp.just.setup({ capabilities = capabilities })
 
 	lsp.lua_ls.setup({
 		capabilities = capabilities,
@@ -24,6 +22,8 @@ M.init = function()
 			},
 		},
 	})
+
+	lsp.nil_ls.setup({ capabilities = capabilities })
 end
 
 return M
