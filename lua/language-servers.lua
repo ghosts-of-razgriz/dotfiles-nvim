@@ -24,6 +24,12 @@ M.init = function()
 	})
 
 	lsp.nil_ls.setup({ capabilities = capabilities })
+
+	lsp.emmet_language_server.setup({ capabilities = capabilities })
+	lsp.biome.setup({ capabilities = capabilities, cmd = { 'npx', 'biome', 'lsp-proxy' } })
+	lsp.tailwindcss.setup({ capabilities = capabilities })
+	lsp.ts_ls.setup({ capabilities = capabilities })
+	lsp.ruby_lsp.setup({ capabilities = capabilities })
 end
 
 return M
