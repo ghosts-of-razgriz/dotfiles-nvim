@@ -30,6 +30,7 @@ M.init = function()
 	lsp.tailwindcss.setup({ capabilities = capabilities })
 	lsp.ts_ls.setup({ capabilities = capabilities })
 	lsp.ruby_lsp.setup({ capabilities = capabilities })
+	lsp.gopls.setup({ capabilities = capabilities })
 end
 
 return M
