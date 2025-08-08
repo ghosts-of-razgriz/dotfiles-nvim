@@ -5,13 +5,14 @@ return {
 	opts = {
 		flavour = 'macchiato',
 		integrations = {
-			notify = true
+			notify = true,
 		},
 		styles = {
-			keywords = { 'italic'}
-		}
+			keywords = { 'italic' },
+		},
 	},
 	config = function()
-	vim.cmd.colorscheme([[catppuccin]])
-	end
+		vim.cmd.colorscheme([[catppuccin]])
+	end,
 }
+
