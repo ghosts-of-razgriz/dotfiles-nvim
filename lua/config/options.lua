@@ -8,6 +8,8 @@ o.pumblend = 17
 o.wildmode = 'longest:full'
 o.wildoptions = 'pum'
 
+o.winborder = 'rounded'
+
 o.cmdheight = 1 -- cmd bar height
 o.cursorline = true -- display current line cursor
 o.equalalways = false -- don't auto resize
