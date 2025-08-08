@@ -13,3 +13,6 @@ clean-state:
     rm -rf $HOME/.local/state/$NVIM_APPNAME
     mkdir -p $HOME/.local/state/$NVIM_APPNAME/swap
     mkdir -p $HOME/.local/state/$NVIM_APPNAME/undo
+
+clean-lock:
+	rm -f ./lazy-lock.json
