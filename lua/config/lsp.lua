@@ -1,4 +1,8 @@
-vim.lsp.enable({ 'emmylua_ls' })
+vim.lsp.enable({
+	'emmylua_ls',
+	'nil_ls',
+	'gopls',
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('laughingman-lsp-attach', { clear = true }),
