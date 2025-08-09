@@ -6,6 +6,7 @@ return {
 		flavour = 'macchiato',
 		integrations = {
 			notify = true,
+			blink_cmp = { style = 'bordered' },
 		},
 		styles = {
 			keywords = { 'italic' },
@@ -15,4 +16,3 @@ return {
 		vim.cmd.colorscheme([[catppuccin]])
 	end,
 }
-
