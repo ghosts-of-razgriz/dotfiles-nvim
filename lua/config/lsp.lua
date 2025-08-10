@@ -49,18 +49,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		map(prefix .. prefix .. 'c', '<cmd>ConformInfo<cr>')
 
 		map('<c-n>', function()
-			vim.diagnostic.jump({ count = 1, float = true })
+			vim.diagnostic.jump({ count = 1 })
 		end)
 		map('<c-p>', function()
-			vim.diagnostic.jump({ count = -1, float = true })
+			vim.diagnostic.jump({ count = -1 })
 		end)
 		map('K', vim.lsp.buf.hover)
 	end,
 })
 
 vim.diagnostic.config({
-	-- virtual_lines = true,
-	virtual_lines = { current_line = true },
+	virtual_lines = false,
+	virtual_text = false,
+	float = false,
+	-- virtual_lines = { current_line = true },
 	signs = {
 		active = true,
 		text = {

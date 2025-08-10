@@ -9,6 +9,7 @@ return {
 	},
 	{
 		'f-person/git-blame.nvim',
+		cond = false, -- disabled for in favour of tine-inline-diagnostic
 		event = 'VeryLazy',
 		opts = {
 			enabled = true,
