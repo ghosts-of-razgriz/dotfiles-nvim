@@ -24,6 +24,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 					callback = vim.lsp.buf.clear_references,
 				})
 			end
+
+			if client and client.server_capabilities.inlayHintProvider then
+				vim.lsp.inlay_hint.enable(true)
+			end
 		end
 
 		local map = function(keys, fn)

@@ -15,6 +15,10 @@ return {
 		},
 		config = function()
 			vim.cmd.colorscheme([[catppuccin]])
+
+			local inlay_hint_hlgroup = vim.api.nvim_get_hl(0, { name = 'LspInlayHint' })
+			inlay_hint_hlgroup.italic = true
+			vim.api.nvim_set_hl(0, 'LspInlayHint', inlay_hint_hlgroup)
 		end,
 	},
 	{
